@@ -7,6 +7,7 @@ aws.redshift
 
 
 
+
 Filters
 -------
 
@@ -83,6 +84,11 @@ Matches if an redshift database is in the default vpc
     - type
 
 
+
+
+Permissions - ec2:DescribeVpcs
+
+
 .. _aws.redshift.filters.json-diff:
 
 json-diff
@@ -120,6 +126,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.redshift.filters.kms-key:
@@ -235,6 +246,11 @@ of the kms key by using 'c7n:AliasName'
     - type
 
 
+
+
+Permissions - kms:ListKeys
+
+
 .. _aws.redshift.filters.param:
 
 param
@@ -343,6 +359,11 @@ Filter redshift clusters based on parameter values
 
 
 
+Permissions - redshift:DescribeClusterParameters
+
+
+
+
 Actions
 -------
 
@@ -440,6 +461,11 @@ apply a filter to the rule
     - type
 
 
+
+
+Permissions - redshift:DeleteCluster
+
+
 .. _aws.redshift.actions.enable-vpc-routing:
 
 enable-vpc-routing
@@ -484,6 +510,11 @@ More: https://docs.aws.amazon.com/redshift/latest/mgmt/enhanced-vpc-routing.html
     - type
 
 
+
+
+Permissions - redshift:ModifyCluster
+
+
 .. _aws.redshift.actions.pause:
 
 pause
@@ -509,6 +540,11 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+Permissions - redshift:PauseCluster
+
+
 .. _aws.redshift.actions.resume:
 
 resume
@@ -532,6 +568,11 @@ Parent base class for filters and actions.
         - resume
     required:
     - type
+
+
+
+
+Permissions - redshift:ResumeCluster
 
 
 .. _aws.redshift.actions.retention:
@@ -576,6 +617,11 @@ Action to set the snapshot retention period (in days)
     - type
 
 
+
+
+Permissions - redshift:ModifyCluster
+
+
 .. _aws.redshift.actions.set-attributes:
 
 set-attributes
@@ -616,6 +662,11 @@ Action to modify Redshift clusters
         - set-attributes
     required:
     - attributes
+
+
+
+
+Permissions - redshift:ModifyCluster
 
 
 .. _aws.redshift.actions.set-logging:
@@ -667,6 +718,11 @@ Action to enable/disable Redshift logging for a Redshift Cluster.
     - state
 
 
+
+
+Permissions - redshift:EnableLogging
+
+
 .. _aws.redshift.actions.set-public-access:
 
 set-public-access
@@ -706,6 +762,11 @@ Action to set the 'PubliclyAccessible' setting on a redshift cluster
     - type
 
 
+
+
+Permissions - redshift:ModifyCluster
+
+
 .. _aws.redshift.actions.snapshot:
 
 snapshot
@@ -743,4 +804,9 @@ Action to take a snapshot of a redshift cluster
         - snapshot
     required:
     - type
+
+
+
+
+Permissions - redshift:CreateClusterSnapshot
 

@@ -7,6 +7,7 @@ aws.rest-api
 
 
 
+
 Filters
 -------
 
@@ -156,6 +157,11 @@ Check a resource's embedded iam policy for cross account access.
     - type
 
 
+
+
+Permissions - apigateway:GET
+
+
 .. _aws.rest-api.filters.json-diff:
 
 json-diff
@@ -193,6 +199,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 
@@ -270,6 +281,11 @@ contrived example to delete rest api
     - type
 
 
+
+
+Permissions - apigateway:DELETE
+
+
 .. _aws.rest-api.actions.update:
 
 update
@@ -337,4 +353,9 @@ contrived example to update description on api gateways
     required:
     - patch
     - type
+
+
+
+
+Permissions - apigateway:PATCH
 

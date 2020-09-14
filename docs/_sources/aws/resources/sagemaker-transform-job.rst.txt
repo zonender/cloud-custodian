@@ -7,6 +7,7 @@ aws.sagemaker-transform-job
 
 
 
+
 Filters
 -------
 
@@ -90,4 +91,9 @@ Stops a SageMaker Transform job
         - stop
     required:
     - type
+
+
+
+
+Permissions - sagemaker:StopTransformJob
 

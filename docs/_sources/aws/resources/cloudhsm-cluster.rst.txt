@@ -7,6 +7,7 @@ aws.cloudhsm-cluster
 
 
 
+
 Filters
 -------
 
@@ -15,9 +16,13 @@ Filters
   
   - :ref:`finding <aws.common.filters.finding>`
   
+  - :ref:`marked-for-op <aws.common.filters.marked-for-op>`
+  
   - :ref:`ops-item <aws.common.filters.ops-item>`
   
   - :ref:`reduce <aws.common.filters.reduce>`
+  
+  - :ref:`subnet <aws.common.filters.subnet>`
   
   - :ref:`value <aws.common.filters.value>`
   
@@ -33,9 +38,13 @@ Actions
   
   - :ref:`copy-related-tag <aws.common.actions.copy-related-tag>`
   
+  - :ref:`delete <aws.cloudhsm-cluster.actions.delete>`
+
   - :ref:`invoke-lambda <aws.common.actions.invoke-lambda>`
   
   - :ref:`invoke-sfn <aws.common.actions.invoke-sfn>`
+  
+  - :ref:`mark-for-op <aws.common.actions.mark-for-op>`
   
   - :ref:`notify <aws.common.actions.notify>`
   
@@ -52,4 +61,34 @@ Actions
   - :ref:`webhook <aws.common.actions.webhook>`
   
 
+
+
+.. _aws.cloudhsm-cluster.actions.delete:
+
+delete
+++++++
+Parent base class for filters and actions.
+    
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      type:
+        enum:
+        - delete
+    required:
+    - type
+
+
+
+
+Permissions - cloudhsm:DeleteCluster
 

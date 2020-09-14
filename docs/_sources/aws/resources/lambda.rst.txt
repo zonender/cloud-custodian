@@ -7,6 +7,7 @@ aws.lambda
 
 
 
+
 Filters
 -------
 
@@ -191,6 +192,11 @@ This can be useful when combining this filter with the delete action.
     - type
 
 
+
+
+Permissions - lambda:GetPolicy
+
+
 .. _aws.lambda.filters.event-source:
 
 event-source
@@ -284,6 +290,11 @@ event-source
     - type
 
 
+
+
+Permissions - lambda:GetPolicy
+
+
 .. _aws.lambda.filters.json-diff:
 
 json-diff
@@ -321,6 +332,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.lambda.filters.kms-key:
@@ -436,6 +452,11 @@ of the kms key by using 'c7n:AliasName'
     - type
 
 
+
+
+Permissions - kms:ListKeys
+
+
 .. _aws.lambda.filters.reserved-concurrency:
 
 reserved-concurrency
@@ -531,6 +552,11 @@ reserved-concurrency
 
 
 
+Permissions - lambda:GetFunction
+
+
+
+
 Actions
 -------
 
@@ -606,6 +632,11 @@ Delete a lambda function (including aliases and older versions).
     - type
 
 
+
+
+Permissions - lambda:DeleteFunction
+
+
 .. _aws.lambda.actions.remove-statements:
 
 remove-statements
@@ -651,6 +682,11 @@ Action to remove policy/permission statements from lambda functions.
     - type
 
 
+
+
+Permissions - lambda:GetPolicy, lambda:RemovePermission
+
+
 .. _aws.lambda.actions.set-concurrency:
 
 set-concurrency
@@ -684,4 +720,9 @@ the resource.
         - type: 'null'
     required:
     - value
+
+
+
+
+Permissions - lambda:DeleteFunctionConcurrency, lambda:PutFunctionConcurrency
 

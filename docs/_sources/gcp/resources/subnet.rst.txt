@@ -8,6 +8,7 @@ gcp.subnet
 GCP resource: https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks
     
 
+
 Filters
 -------
 
@@ -78,6 +79,11 @@ Enable vpc flow logs on a subnet.
     - type
 
 
+
+
+Permissions - compute.subnetworks.update
+
+
 .. _gcp.subnet.actions.set-gcp-private:
 
 set-gcp-private
@@ -103,4 +109,9 @@ Enable/Disable GCP Private IP Access for a subnet
         - set-gcp-private
     required:
     - type
+
+
+
+
+Permissions - compute.subnetworks.setPrivateIpGoogleAccess
 

@@ -7,6 +7,7 @@ aws.dynamodb-table
 
 
 
+
 Filters
 -------
 
@@ -150,6 +151,11 @@ Check for continuous backups and point in time recovery (PITR) on a dynamodb tab
     - type
 
 
+
+
+Permissions - dynamodb:DescribeContinuousBackups
+
+
 .. _aws.dynamodb-table.filters.json-diff:
 
 json-diff
@@ -187,6 +193,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.dynamodb-table.filters.kms-key:
@@ -304,6 +315,11 @@ of the kms key by using 'c7n:AliasName'
 
 
 
+Permissions - kms:ListKeys
+
+
+
+
 Actions
 -------
 
@@ -382,6 +398,11 @@ Creates a manual backup of a DynamoDB table. Use of the optional
     - type
 
 
+
+
+Permissions - dynamodb:CreateBackup
+
+
 .. _aws.dynamodb-table.actions.delete:
 
 delete
@@ -416,6 +437,11 @@ Action to delete dynamodb tables
         - delete
     required:
     - type
+
+
+
+
+Permissions - dynamodb:DeleteTable
 
 
 .. _aws.dynamodb-table.actions.set-continuous-backup:
@@ -460,6 +486,11 @@ Set continuous backups and point in time recovery (PITR) on a dynamodb table.
     - type
 
 
+
+
+Permissions - dynamodb:UpdateContinuousBackups
+
+
 .. _aws.dynamodb-table.actions.set-stream:
 
 set-stream
@@ -501,4 +532,9 @@ Action to enable/disable streams on table.
         - set-stream
     required:
     - type
+
+
+
+
+Permissions - dynamodb:UpdateTable
 

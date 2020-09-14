@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2791,6 +2804,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeImageAttribute</p>
 </div>
 <div class="section" id="image-age">
 <span id="aws-ami-filters-image-age"></span><h3>image-age<a class="headerlink" href="#image-age" title="Permalink to this headline">¶</a></h3>
@@ -2873,6 +2887,7 @@ false: image has instances spawned from it</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:DescribeAutoScalingGroups, autoscaling:DescribeLaunchConfigurations, ec2:DescribeInstances, ec2:DescribeTags</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -2940,6 +2955,7 @@ the target AMI. It is advised to use in conjunction with a filter.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:CopyImage</p>
 </div>
 <div class="section" id="deregister">
 <span id="aws-ami-actions-deregister"></span><h3>deregister<a class="headerlink" href="#deregister" title="Permalink to this headline">¶</a></h3>
@@ -2972,6 +2988,7 @@ a filter (such as image-age)</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DeregisterImage</p>
 </div>
 <div class="section" id="remove-launch-permissions">
 <span id="aws-ami-actions-remove-launch-permissions"></span><h3>remove-launch-permissions<a class="headerlink" href="#remove-launch-permissions" title="Permalink to this headline">¶</a></h3>
@@ -3003,6 +3020,7 @@ launching it</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:ResetImageAttribute</p>
 </div>
 </div>
 </div>

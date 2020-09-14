@@ -22,6 +22,7 @@ This policy will find all collections with Offer Throughput > 100
             op: gt
             value: 100
 
+
 Filters
 -------
 
@@ -108,6 +109,9 @@ This policy will ensure that no collections have offers with more than 400 RU/s 
     - type
 
 
+
+
+
 .. _azure.cosmosdb-collection.actions.restore-throughput-state:
 
 restore-throughput-state
@@ -150,6 +154,9 @@ the tag 'on-hour-state' from its associated Cosmos DB account.
     required:
     - state-tag
     - type
+
+
+
 
 
 .. _azure.cosmosdb-collection.actions.save-throughput-state:
@@ -200,4 +207,7 @@ a tag called 'on-hour-state' on the parent Cosmos DB account.
     required:
     - state-tag
     - type
+
+
+
 

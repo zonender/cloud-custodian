@@ -7,6 +7,7 @@ aws.iam-policy
 
 
 
+
 Filters
 -------
 
@@ -98,6 +99,11 @@ above.
     - type
 
 
+
+
+Permissions - iam:ListPolicies, iam:ListPolicyVersions
+
+
 .. _aws.iam-policy.filters.json-diff:
 
 json-diff
@@ -137,6 +143,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.iam-policy.filters.unused:
 
 unused
@@ -172,6 +183,11 @@ Filter IAM policies that are not being used
     - type
 
 
+
+
+Permissions - iam:ListPolicies
+
+
 .. _aws.iam-policy.filters.used:
 
 used
@@ -205,6 +221,11 @@ Filter IAM policies that are being used
         - used
     required:
     - type
+
+
+
+
+Permissions - iam:ListPolicies
 
 
 
@@ -267,4 +288,9 @@ For example, if you want to automatically delete all unused IAM policies.
         - delete
     required:
     - type
+
+
+
+
+Permissions - iam:DeletePolicy
 

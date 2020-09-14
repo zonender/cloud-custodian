@@ -7,6 +7,7 @@ aws.simpledb
 
 
 
+
 Filters
 -------
 
@@ -71,4 +72,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - sdb:DeleteDomain
 

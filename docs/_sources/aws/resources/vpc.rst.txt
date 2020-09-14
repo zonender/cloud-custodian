@@ -7,6 +7,7 @@ aws.vpc
 
 
 
+
 Filters
 -------
 
@@ -106,6 +107,11 @@ a `present: false` parameter.
     - type
 
 
+
+
+Permissions - ec2:DescribeDhcpOptions
+
+
 .. _aws.vpc.filters.flow-logs:
 
 flow-logs
@@ -196,6 +202,11 @@ particular configuration.
         - flow-logs
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeFlowLogs
 
 
 .. _aws.vpc.filters.internet-gateway:
@@ -309,6 +320,11 @@ Filter VPCs based on Internet Gateway attributes
     - type
 
 
+
+
+Permissions - ec2:DescribeInternetGateways
+
+
 .. _aws.vpc.filters.json-diff:
 
 json-diff
@@ -346,6 +362,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.vpc.filters.nat-gateway:
@@ -459,6 +480,11 @@ Filter VPCs based on NAT Gateway attributes
     - type
 
 
+
+
+Permissions - ec2:DescribeNatGateways
+
+
 .. _aws.vpc.filters.security-group:
 
 security-group
@@ -568,6 +594,11 @@ Filter VPCs based on Security Group attributes
         - version
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeSecurityGroups
 
 
 .. _aws.vpc.filters.subnet:
@@ -681,6 +712,11 @@ Filter VPCs based on Subnet attributes
     - type
 
 
+
+
+Permissions - ec2:DescribeSubnets
+
+
 .. _aws.vpc.filters.vpc-attributes:
 
 vpc-attributes
@@ -718,6 +754,11 @@ Filters VPCs based on their DNS attributes
         - vpc-attributes
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeVpcAttribute
 
 
 
@@ -818,4 +859,9 @@ Create flow logs for a network resource
       type:
         enum:
         - set-flow-log
+
+
+
+
+Permissions - ec2:CreateFlowLogs, logs:CreateLogGroup
 

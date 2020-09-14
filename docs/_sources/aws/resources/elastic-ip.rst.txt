@@ -7,6 +7,7 @@ aws.elastic-ip
 
 
 
+
 Filters
 -------
 
@@ -72,6 +73,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.elastic-ip.filters.shield-enabled:
 
 shield-enabled
@@ -97,6 +103,11 @@ Parent base class for filters and actions.
         - shield-enabled
     required:
     - type
+
+
+
+
+Permissions - shield:ListProtections
 
 
 
@@ -185,6 +196,11 @@ will be released.
     - type
 
 
+
+
+Permissions - ec2:ReleaseAddress, ec2:DisassociateAddress
+
+
 .. _aws.elastic-ip.actions.set-shield:
 
 set-shield
@@ -214,4 +230,9 @@ for resources that no longer exist.
         - set-shield
     required:
     - type
+
+
+
+
+Permissions - shield:CreateProtection, shield:ListProtections
 

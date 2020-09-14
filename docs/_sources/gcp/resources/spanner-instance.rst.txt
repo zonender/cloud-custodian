@@ -7,6 +7,7 @@ gcp.spanner-instance
 
 https://cloud.google.com/spanner/docs/reference/rest/v1/projects.instances
 
+
 Filters
 -------
 
@@ -93,6 +94,9 @@ in which to interpret the clock (default value is 'utc')
 
 
 
+
+
+
 Actions
 -------
 
@@ -153,6 +157,11 @@ GCP action is https://cloud.google.com/spanner/docs/reference/rest/v1/projects.i
         - delete
     required:
     - type
+
+
+
+
+Permissions - spanner.instances.delete
 
 
 .. _gcp.spanner-instance.actions.mark-for-op:
@@ -217,6 +226,11 @@ to marking the resource for action 4 days in the future.
     - type
 
 
+
+
+Permissions - spanner.instances.update
+
+
 .. _gcp.spanner-instance.actions.set:
 
 set
@@ -260,6 +274,11 @@ GCP action is https://cloud.google.com/spanner/docs/reference/rest/v1/projects.i
     required:
     - nodeCount
     - type
+
+
+
+
+Permissions - spanner.instances.update
 
 
 .. _gcp.spanner-instance.actions.set-labels:
@@ -345,4 +364,9 @@ This policy will label all existing resource groups with a value such as environ
         - set-labels
     required:
     - type
+
+
+
+
+Permissions - spanner.instances.update
 

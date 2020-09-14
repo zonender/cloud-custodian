@@ -7,6 +7,7 @@ aws.sqs
 
 
 
+
 Filters
 -------
 
@@ -169,6 +170,11 @@ Filter SQS queues which have cross account permissions
     - type
 
 
+
+
+Permissions - sqs:GetQueueAttributes
+
+
 .. _aws.sqs.filters.json-diff:
 
 json-diff
@@ -206,6 +212,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.sqs.filters.kms-key:
@@ -329,6 +340,11 @@ The KmsMasterId returned for SQS sometimes has the alias name directly in the va
 
 
 
+Permissions - kms:ListKeys
+
+
+
+
 Actions
 -------
 
@@ -409,6 +425,11 @@ to include a filter
     - type
 
 
+
+
+Permissions - sqs:DeleteQueue
+
+
 .. _aws.sqs.actions.remove-statements:
 
 remove-statements
@@ -455,6 +476,11 @@ Action to remove policy statements from SQS
     - type
 
 
+
+
+Permissions - sqs:GetQueueAttributes, sqs:RemovePermission
+
+
 .. _aws.sqs.actions.set-encryption:
 
 set-encryption
@@ -492,6 +518,11 @@ Action to set encryption key on SQS queue
         - set-encryption
     required:
     - key
+
+
+
+
+Permissions - sqs:SetQueueAttributes
 
 
 .. _aws.sqs.actions.set-retention-period:
@@ -537,4 +568,9 @@ Action to set the retention period on an SQS queue (in seconds)
         - set-retention-period
     required:
     - type
+
+
+
+
+Permissions - sqs:SetQueueAttributes
 

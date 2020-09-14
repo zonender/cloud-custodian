@@ -7,6 +7,7 @@ aws.cache-snapshot
 
 
 
+
 Filters
 -------
 
@@ -92,6 +93,9 @@ Filters elasticache snapshots based on their age (in days)
 
 
 
+
+
+
 Actions
 -------
 
@@ -173,6 +177,11 @@ Copy specified tags from Elasticache cluster to Snapshot
     - tags
 
 
+
+
+Permissions - elasticache:DescribeCacheClusters, elasticache:ListTagsForResource, elasticache:AddTagsToResource
+
+
 .. _aws.cache-snapshot.actions.delete:
 
 delete
@@ -212,4 +221,9 @@ apply a filter
         - delete
     required:
     - type
+
+
+
+
+Permissions - elasticache:DeleteSnapshot
 

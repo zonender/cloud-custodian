@@ -60,6 +60,7 @@ This policy will find all web apps with minimum TLS encryption version not equal
             value: '1.2'
             op: ne
 
+
 Filters
 -------
 

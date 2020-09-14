@@ -7,6 +7,7 @@ aws.subnet
 
 
 
+
 Filters
 -------
 
@@ -127,6 +128,11 @@ particular configuration.
     - type
 
 
+
+
+Permissions - ec2:DescribeFlowLogs
+
+
 .. _aws.subnet.filters.json-diff:
 
 json-diff
@@ -164,6 +170,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 
@@ -264,4 +275,9 @@ Create flow logs for a network resource
       type:
         enum:
         - set-flow-log
+
+
+
+
+Permissions - ec2:CreateFlowLogs, logs:CreateLogGroup
 

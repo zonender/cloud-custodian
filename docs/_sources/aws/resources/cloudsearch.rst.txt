@@ -7,6 +7,7 @@ aws.cloudsearch
 
 
 
+
 Filters
 -------
 
@@ -73,4 +74,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - cloudsearch:DeleteDomain
 

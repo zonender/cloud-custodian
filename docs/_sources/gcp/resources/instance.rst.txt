@@ -7,6 +7,7 @@ gcp.instance
 
 
 
+
 Filters
 -------
 
@@ -97,6 +98,9 @@ in which to interpret the clock (default value is 'utc')
 
 
 
+
+
+
 Actions
 -------
 
@@ -151,6 +155,11 @@ an encapsulation of the 80%.
     - type
 
 
+
+
+Permissions - compute.instances.delete
+
+
 .. _gcp.instance.actions.detach-disks:
 
 detach-disks
@@ -191,6 +200,11 @@ that are set to auto delete.
         - detach-disks
     required:
     - type
+
+
+
+
+Permissions - compute.instances.detachDisk
 
 
 .. _gcp.instance.actions.mark-for-op:
@@ -253,6 +267,11 @@ to marking the resource for action 4 days in the future.
         type: string
     required:
     - type
+
+
+
+
+Permissions - compute.instances.update
 
 
 .. _gcp.instance.actions.set-labels:
@@ -340,6 +359,11 @@ This policy will label all existing resource groups with a value such as environ
     - type
 
 
+
+
+Permissions - compute.instances.update
+
+
 .. _gcp.instance.actions.start:
 
 start
@@ -369,6 +393,11 @@ an encapsulation of the 80%.
     - type
 
 
+
+
+Permissions - compute.instances.start
+
+
 .. _gcp.instance.actions.stop:
 
 stop
@@ -396,4 +425,9 @@ an encapsulation of the 80%.
         - stop
     required:
     - type
+
+
+
+
+Permissions - compute.instances.stop
 

@@ -8,6 +8,7 @@ aws.app-elb
 Resource manager for v2 ELBs (AKA ALBs and NLBs).
     
 
+
 Filters
 -------
 
@@ -168,6 +169,11 @@ Value filter that allows filtering on ELBv2 attributes
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.app-elb.filters.default-vpc:
 
 default-vpc
@@ -200,6 +206,11 @@ Filter all ELB that exist within the default vpc
         - default-vpc
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeVpcs
 
 
 .. _aws.app-elb.filters.healthcheck-protocol-mismatch:
@@ -237,6 +248,11 @@ does not match the load balancer health check protocol
         - healthcheck-protocol-mismatch
     required:
     - type
+
+
+
+
+Permissions - elasticloadbalancing:DescribeTargetGroups
 
 
 .. _aws.app-elb.filters.is-logging:
@@ -285,6 +301,11 @@ Matches AppELBs that are logging to S3.
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.app-elb.filters.is-not-logging:
 
 is-not-logging
@@ -331,6 +352,11 @@ Matches AppELBs that are NOT logging to S3.
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.app-elb.filters.json-diff:
 
 json-diff
@@ -368,6 +394,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.app-elb.filters.listener:
@@ -487,6 +518,11 @@ Adding the `matched` flag will filter on previously matched listeners
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.app-elb.filters.shield-enabled:
 
 shield-enabled
@@ -512,6 +548,11 @@ Parent base class for filters and actions.
         - shield-enabled
     required:
     - type
+
+
+
+
+Permissions - shield:ListProtections
 
 
 .. _aws.app-elb.filters.target-group:
@@ -607,6 +648,11 @@ Filter ALB based on matching target group value
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeTargetGroups
+
+
 .. _aws.app-elb.filters.waf-enabled:
 
 waf-enabled
@@ -634,6 +680,11 @@ Parent base class for filters and actions.
         type: string
     required:
     - type
+
+
+
+
+Permissions - waf-regional:ListResourcesForWebACL, waf-regional:ListWebACLs
 
 
 
@@ -722,6 +773,11 @@ to the rule
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DeleteLoadBalancer, elasticloadbalancing:ModifyLoadBalancerAttributes
+
+
 .. _aws.app-elb.actions.modify-listener:
 
 modify-listener
@@ -773,6 +829,11 @@ Action to modify the policy for an App ELB
     - type
 
 
+
+
+Permissions - elasticloadbalancing:ModifyListener
+
+
 .. _aws.app-elb.actions.set-s3-logging:
 
 set-s3-logging
@@ -820,6 +881,11 @@ Action to enable/disable S3 logging for an application loadbalancer.
     - state
 
 
+
+
+Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes
+
+
 .. _aws.app-elb.actions.set-shield:
 
 set-shield
@@ -851,6 +917,11 @@ for resources that no longer exist.
     - type
 
 
+
+
+Permissions - shield:CreateProtection, shield:ListProtections
+
+
 .. _aws.app-elb.actions.set-waf:
 
 set-waf
@@ -880,4 +951,9 @@ Enable/Disable waf protection on applicable resource.
     required:
     - web-acl
     - type
+
+
+
+
+Permissions - waf-regional:AssociateWebACL, waf-regional:ListWebACLs
 

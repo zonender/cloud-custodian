@@ -45,6 +45,7 @@ Delete all Resource Groups in the subscription tagged with 'ShouldBeDeleted'.
         actions:
             - type: delete
 
+
 Filters
 -------
 
@@ -98,6 +99,9 @@ Parent base class for filters and actions.
         - empty-group
     required:
     - type
+
+
+
 
 
 

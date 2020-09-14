@@ -7,6 +7,7 @@ aws.ml-model
 
 
 
+
 Filters
 -------
 
@@ -82,4 +83,9 @@ It is recommended to use a filter to avoid unwanted deletion of models
         - delete
     required:
     - type
+
+
+
+
+Permissions - machinelearning:DeleteMLModel
 

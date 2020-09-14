@@ -7,6 +7,7 @@ aws.rds-subnet-group
 
 RDS subnet group.
 
+
 Filters
 -------
 
@@ -70,6 +71,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.rds-subnet-group.filters.unused:
 
 unused
@@ -102,6 +108,11 @@ Filters all launch rds subnet groups that are not in use but exist
         - unused
     required:
     - type
+
+
+
+
+Permissions - rds:DescribeDBInstances
 
 
 
@@ -176,4 +187,9 @@ deletion of any rds subnet groups.
         - delete
     required:
     - type
+
+
+
+
+Permissions - rds:DeleteDBSubnetGroup
 

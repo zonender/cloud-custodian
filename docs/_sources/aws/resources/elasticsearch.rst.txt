@@ -7,6 +7,7 @@ aws.elasticsearch
 
 
 
+
 Filters
 -------
 
@@ -18,6 +19,8 @@ Filters
   - :ref:`finding <aws.common.filters.finding>`
   
   - :ref:`json-diff <aws.elasticsearch.filters.json-diff>`
+
+  - :ref:`kms-key <aws.elasticsearch.filters.kms-key>`
 
   - :ref:`marked-for-op <aws.common.filters.marked-for-op>`
   
@@ -74,6 +77,129 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
+
+
+.. _aws.elasticsearch.filters.kms-key:
+
+kms-key
++++++++
+Filter a resource by its associcated kms key and optionally the aliasname
+of the kms key by using 'c7n:AliasName'
+
+:example:
+
+.. code-block:: yaml
+
+    policies:
+      - name: elasticsearch-kms-key
+        resource: aws.elasticsearch
+        filters:
+          - type: kms-key
+            key: c7n:AliasName
+            value: "^(alias/aws/es)"
+            op: regex
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      default:
+        type: object
+      key:
+        type: string
+      match-resource:
+        type: boolean
+      op:
+        enum:
+        - eq
+        - equal
+        - ne
+        - not-equal
+        - gt
+        - greater-than
+        - ge
+        - gte
+        - le
+        - lte
+        - lt
+        - less-than
+        - glob
+        - regex
+        - regex-case
+        - in
+        - ni
+        - not-in
+        - contains
+        - difference
+        - intersect
+      operator:
+        enum:
+        - and
+        - or
+      type:
+        enum:
+        - kms-key
+      value:
+        oneOf:
+        - type: array
+        - type: string
+        - type: boolean
+        - type: number
+        - type: 'null'
+      value_from:
+        additionalProperties: 'False'
+        properties:
+          expr:
+            oneOf:
+            - type: integer
+            - type: string
+          format:
+            enum:
+            - csv
+            - json
+            - txt
+            - csv2dict
+          url:
+            type: string
+        required:
+        - url
+        type: object
+      value_regex:
+        type: string
+      value_type:
+        enum:
+        - age
+        - integer
+        - expiration
+        - normalize
+        - size
+        - cidr
+        - cidr_size
+        - swap
+        - resource_count
+        - expr
+        - unique_size
+        - date
+        - version
+    required:
+    - type
+
+
+
+
+Permissions - kms:ListKeys
 
 
 
@@ -136,4 +262,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - es:DeleteElasticsearchDomain
 

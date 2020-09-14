@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2867,6 +2880,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="default-vpc">
 <span id="aws-elb-filters-default-vpc"></span><h3>default-vpc<a class="headerlink" href="#default-vpc" title="Permalink to this headline">¶</a></h3>
@@ -2892,6 +2906,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeVpcs</p>
 </div>
 <div class="section" id="healthcheck-protocol-mismatch">
 <span id="aws-elb-filters-healthcheck-protocol-mismatch"></span><h3>healthcheck-protocol-mismatch<a class="headerlink" href="#healthcheck-protocol-mismatch" title="Permalink to this headline">¶</a></h3>
@@ -3015,6 +3030,7 @@ the associated instances allow to determine health status.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeInstances, ec2:DescribeTags</p>
 </div>
 <div class="section" id="is-logging">
 <span id="aws-elb-filters-is-logging"></span><h3>is-logging<a class="headerlink" href="#is-logging" title="Permalink to this headline">¶</a></h3>
@@ -3054,6 +3070,7 @@ the associated instances allow to determine health status.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="is-not-logging">
 <span id="aws-elb-filters-is-not-logging"></span><h3>is-not-logging<a class="headerlink" href="#is-not-logging" title="Permalink to this headline">¶</a></h3>
@@ -3093,6 +3110,7 @@ the associated instances allow to determine health status.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="is-ssl">
 <span id="aws-elb-filters-is-ssl"></span><h3>is-ssl<a class="headerlink" href="#is-ssl" title="Permalink to this headline">¶</a></h3>
@@ -3144,6 +3162,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="shield-enabled">
 <span id="aws-elb-filters-shield-enabled"></span><h3>shield-enabled<a class="headerlink" href="#shield-enabled" title="Permalink to this headline">¶</a></h3>
@@ -3160,6 +3179,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:ListProtections</p>
 </div>
 <div class="section" id="ssl-policy">
 <span id="aws-elb-filters-ssl-policy"></span><h3>ssl-policy<a class="headerlink" href="#ssl-policy" title="Permalink to this headline">¶</a></h3>
@@ -3219,6 +3239,7 @@ you can use the <cite>matching</cite> option with a regular expression:</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerPolicies</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3273,6 +3294,7 @@ deletion of any load balancers.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DeleteLoadBalancer</p>
 </div>
 <div class="section" id="disable-s3-logging">
 <span id="aws-elb-actions-disable-s3-logging"></span><h3>disable-s3-logging<a class="headerlink" href="#disable-s3-logging" title="Permalink to this headline">¶</a></h3>
@@ -3301,6 +3323,7 @@ deletion of any load balancers.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes</p>
 </div>
 <div class="section" id="enable-s3-logging">
 <span id="aws-elb-actions-enable-s3-logging"></span><h3>enable-s3-logging<a class="headerlink" href="#enable-s3-logging" title="Permalink to this headline">¶</a></h3>
@@ -3337,6 +3360,7 @@ deletion of any load balancers.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes</p>
 </div>
 <div class="section" id="set-shield">
 <span id="aws-elb-actions-set-shield"></span><h3>set-shield<a class="headerlink" href="#set-shield" title="Permalink to this headline">¶</a></h3>
@@ -3357,6 +3381,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:CreateProtection, shield:ListProtections</p>
 </div>
 <div class="section" id="set-ssl-listener-policy">
 <span id="aws-elb-actions-set-ssl-listener-policy"></span><h3>set-ssl-listener-policy<a class="headerlink" href="#set-ssl-listener-policy" title="Permalink to this headline">¶</a></h3>
@@ -3395,6 +3420,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:CreateLoadBalancerPolicy, elasticloadbalancing:SetLoadBalancerPoliciesOfListener</p>
 </div>
 </div>
 </div>

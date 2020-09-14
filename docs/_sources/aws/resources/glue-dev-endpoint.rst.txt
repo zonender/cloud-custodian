@@ -7,6 +7,7 @@ aws.glue-dev-endpoint
 
 
 
+
 Filters
 -------
 
@@ -146,6 +147,11 @@ To find resources missing any security configuration all set `missing: true` on 
 
 
 
+Permissions - glue:GetSecurityConfigurations
+
+
+
+
 Actions
 -------
 
@@ -213,4 +219,9 @@ Deletes public Glue Dev Endpoints
         - delete
     required:
     - type
+
+
+
+
+Permissions - glue:DeleteDevEndpoint
 

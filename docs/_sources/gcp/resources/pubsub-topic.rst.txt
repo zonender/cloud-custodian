@@ -8,6 +8,7 @@ gcp.pubsub-topic
 GCP resource: https://cloud.google.com/pubsub/docs/reference/rest/v1/projects.topics
     
 
+
 Filters
 -------
 
@@ -62,4 +63,9 @@ an encapsulation of the 80%.
         - delete
     required:
     - type
+
+
+
+
+Permissions - pubsub.topics.delete
 

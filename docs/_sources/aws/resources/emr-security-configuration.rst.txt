@@ -8,6 +8,7 @@ aws.emr-security-configuration
 Resource manager for EMR Security Configuration
     
 
+
 Filters
 -------
 
@@ -74,4 +75,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - elasticmapreduce:DeleteSecurityConfiguration
 

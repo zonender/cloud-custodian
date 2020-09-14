@@ -8,6 +8,7 @@ aws.rds-cluster-param-group
 Resource manager for RDS cluster parameter groups.
     
 
+
 Filters
 -------
 
@@ -111,6 +112,11 @@ Action to copy an RDS cluster parameter group.
     - type
 
 
+
+
+Permissions - rds:CopyDBClusterParameterGroup
+
+
 .. _aws.rds-cluster-param-group.actions.delete:
 
 delete
@@ -145,6 +151,11 @@ Action to delete an RDS cluster parameter group
         - delete
     required:
     - type
+
+
+
+
+Permissions - rds:DeleteDBClusterParameterGroup
 
 
 .. _aws.rds-cluster-param-group.actions.modify:
@@ -203,4 +214,9 @@ Action to modify an RDS cluster parameter group
     required:
     - params
     - type
+
+
+
+
+Permissions - rds:DescribeDBClusterParameters, rds:ModifyDBClusterParameterGroup
 

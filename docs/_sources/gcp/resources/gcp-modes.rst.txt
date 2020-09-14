@@ -33,6 +33,9 @@ Queries resources from cloud provider for filtering and actions.
 
 
 
+
+
+
 gcp-audit
 +++++++++
 Custodian policy execution on gcp api audit logs events.
@@ -101,6 +104,9 @@ Default region the function is deployed to is
 
 
 
+
+
+
 gcp-periodic
 ++++++++++++
 Deploy a policy as a Cloud Functions triggered by Cloud Scheduler
@@ -162,5 +168,8 @@ case you want to change that, use the cli ``--region`` flag.
     required:
     - schedule
     - type
+
+
+
 
 

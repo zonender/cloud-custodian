@@ -7,6 +7,7 @@ aws.sagemaker-notebook
 
 
 
+
 Filters
 -------
 
@@ -155,6 +156,11 @@ of the kms key by using 'c7n:AliasName'
 
 
 
+Permissions - kms:ListKeys
+
+
+
+
 Actions
 -------
 
@@ -228,6 +234,11 @@ Deletes sagemaker-notebook(s)
     - type
 
 
+
+
+Permissions - sagemaker:DeleteNotebookInstance
+
+
 .. _aws.sagemaker-notebook.actions.start:
 
 start
@@ -260,6 +271,11 @@ Start sagemaker-notebook(s)
         - start
     required:
     - type
+
+
+
+
+Permissions - sagemaker:StartNotebookInstance
 
 
 .. _aws.sagemaker-notebook.actions.stop:
@@ -296,4 +312,9 @@ Stop sagemaker-notebook(s)
         - stop
     required:
     - type
+
+
+
+
+Permissions - sagemaker:StopNotebookInstance
 

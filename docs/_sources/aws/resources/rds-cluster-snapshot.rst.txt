@@ -8,6 +8,7 @@ aws.rds-cluster-snapshot
 Resource manager for RDS cluster snapshots.
     
 
+
 Filters
 -------
 
@@ -93,6 +94,9 @@ Filters rds cluster snapshots based on age (in days)
         - age
     required:
     - type
+
+
+
 
 
 .. _aws.rds-cluster-snapshot.filters.cross-account:
@@ -218,6 +222,11 @@ Check a resource's embedded iam policy for cross account access.
     - type
 
 
+
+
+Permissions - rds:DescribeDBClusterSnapshotAttributes
+
+
 .. _aws.rds-cluster-snapshot.filters.json-diff:
 
 json-diff
@@ -255,6 +264,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 
@@ -331,4 +345,9 @@ to apply a filter to the rule
         - delete
     required:
     - type
+
+
+
+
+Permissions - rds:DeleteDBClusterSnapshot
 

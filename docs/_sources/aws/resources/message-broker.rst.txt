@@ -7,6 +7,7 @@ aws.message-broker
 
 
 
+
 Filters
 -------
 
@@ -91,4 +92,9 @@ Delete a set of message brokers
         - delete
     required:
     - type
+
+
+
+
+Permissions - mq:DeleteBroker
 

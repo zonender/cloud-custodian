@@ -7,6 +7,7 @@ aws.ecr
 
 
 
+
 Filters
 -------
 
@@ -166,6 +167,11 @@ Filters all EC2 Container Registries (ECR) with cross-account access
     - type
 
 
+
+
+Permissions - ecr:GetRepositoryPolicy
+
+
 .. _aws.ecr.filters.lifecycle-rule:
 
 lifecycle-rule
@@ -216,6 +222,11 @@ Lifecycle rule filtering
         - lifecycle-rule
     required:
     - type
+
+
+
+
+Permissions - ecr:GetLifecyclePolicy
 
 
 
@@ -305,6 +316,11 @@ Action to remove policy statements from ECR
     - type
 
 
+
+
+Permissions - ecr:SetRepositoryPolicy, ecr:GetRepositoryPolicy
+
+
 .. _aws.ecr.actions.set-immutability:
 
 set-immutability
@@ -331,6 +347,11 @@ Parent base class for filters and actions.
         - set-immutability
     required:
     - type
+
+
+
+
+Permissions - ecr:PutImageTagMutability
 
 
 .. _aws.ecr.actions.set-lifecycle:
@@ -413,6 +434,11 @@ lifecycle policies, not merge.
     - type
 
 
+
+
+Permissions - ecr:PutLifecyclePolicy, ecr:DeleteLifecyclePolicy
+
+
 .. _aws.ecr.actions.set-scanning:
 
 set-scanning
@@ -439,4 +465,9 @@ Parent base class for filters and actions.
         - set-scanning
     required:
     - type
+
+
+
+
+Permissions - ecr:PutImageScanningConfiguration
 

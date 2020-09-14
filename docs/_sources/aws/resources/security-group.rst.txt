@@ -7,6 +7,7 @@ aws.security-group
 
 
 
+
 Filters
 -------
 
@@ -79,6 +80,11 @@ Filter that returns any security group that exists within the default vpc
     - type
 
 
+
+
+Permissions - ec2:DescribeVpcs
+
+
 .. _aws.security-group.filters.diff:
 
 diff
@@ -116,6 +122,11 @@ against a locked version (requires use of is-locked filter).
         - diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.security-group.filters.egress:
@@ -197,13 +208,15 @@ RDP.
 
 .. code-block:: yaml
 
-  - type: ingress
-    Ports: [22, 3389]
-    Cidr:
-      value:
-        - "0.0.0.0/0"
-        - "::/0"
-      op: in
+  - or:
+    - type: ingress
+      Ports: [22, 3389]
+      Cidr:
+        value: "0.0.0.0/0"
+    - type: ingress
+      Ports: [22, 3389]
+      CidrV6:
+        value: "::/0"
 
 `SGReferences` can be used to filter out SG references in rules.
 In this example we want to block ingress rules that reference a SG
@@ -300,6 +313,9 @@ SGs that have a description of "default - DO NOT USE".
     - type
 
 
+
+
+
 .. _aws.security-group.filters.ingress:
 
 ingress
@@ -379,13 +395,15 @@ RDP.
 
 .. code-block:: yaml
 
-  - type: ingress
-    Ports: [22, 3389]
-    Cidr:
-      value:
-        - "0.0.0.0/0"
-        - "::/0"
-      op: in
+  - or:
+    - type: ingress
+      Ports: [22, 3389]
+      Cidr:
+        value: "0.0.0.0/0"
+    - type: ingress
+      Ports: [22, 3389]
+      CidrV6:
+        value: "::/0"
 
 `SGReferences` can be used to filter out SG references in rules.
 In this example we want to block ingress rules that reference a SG
@@ -482,6 +500,9 @@ SGs that have a description of "default - DO NOT USE".
     - type
 
 
+
+
+
 .. _aws.security-group.filters.json-diff:
 
 json-diff
@@ -519,6 +540,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.security-group.filters.stale:
@@ -559,6 +585,11 @@ AWS Docs:
         - stale
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeStaleSecurityGroups
 
 
 .. _aws.security-group.filters.unused:
@@ -607,6 +638,11 @@ Note this filter does not support classic security groups atm.
     - type
 
 
+
+
+Permissions - lambda:ListFunctions, ec2:DescribeNetworkInterfaces, autoscaling:DescribeLaunchConfigurations, ec2:DescribeSecurityGroups, events:ListTargetsByRule
+
+
 .. _aws.security-group.filters.used:
 
 used
@@ -642,6 +678,11 @@ workflows.
         - used
     required:
     - type
+
+
+
+
+Permissions - lambda:ListFunctions, ec2:DescribeNetworkInterfaces, autoscaling:DescribeLaunchConfigurations, ec2:DescribeSecurityGroups, events:ListTargetsByRule
 
 
 
@@ -730,6 +771,11 @@ deletion of all security groups returned.
     - type
 
 
+
+
+Permissions - ec2:DeleteSecurityGroup
+
+
 .. _aws.security-group.actions.patch:
 
 patch
@@ -753,6 +799,11 @@ Modify a resource via application of a reverse delta.
         - patch
     required:
     - type
+
+
+
+
+Permissions - ec2:AuthorizeSecurityGroupIngress, ec2:AuthorizeSecurityGroupEgress, ec2:RevokeSecurityGroupIngress, ec2:RevokeSecurityGroupEgress, ec2:CreateTags, ec2:DeleteTags
 
 
 .. _aws.security-group.actions.remove-permissions:
@@ -802,6 +853,11 @@ Action to remove ingress/egress rule(s) from a security group
         - remove-permissions
     required:
     - type
+
+
+
+
+Permissions - ec2:RevokeSecurityGroupIngress, ec2:RevokeSecurityGroupEgress
 
 
 .. _aws.security-group.actions.set-permissions:
@@ -895,4 +951,9 @@ Action to add/remove ingress/egress rule(s) to a security group
         - set-permissions
     required:
     - type
+
+
+
+
+Permissions - ec2:AuthorizeSecurityGroupEgress, ec2:AuthorizeSecurityGroupIngress
 

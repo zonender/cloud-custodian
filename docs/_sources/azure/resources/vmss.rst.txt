@@ -22,6 +22,7 @@ This policy will find all VM Scale Sets that are set to overprovision
             op: equal
             value: True
 
+
 Filters
 -------
 

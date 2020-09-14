@@ -8,6 +8,7 @@ aws.ops-item
 Resource for OpsItems in SSM OpsCenter
 https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html
 
+
 Filters
 -------
 
@@ -112,4 +113,9 @@ Close out open ops items older than 30 days for a given issue.
         - update
     required:
     - type
+
+
+
+
+Permissions - ssm:UpdateOpsItem
 

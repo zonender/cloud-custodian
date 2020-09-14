@@ -48,6 +48,7 @@ then it will open port 443
           - type: open
             ports: '443'
 
+
 Filters
 -------
 
@@ -124,6 +125,9 @@ Filter Network Security Groups using opened/closed ports configuration
     - type
 
 
+
+
+
 .. _azure.networksecuritygroup.filters.ingress:
 
 ingress
@@ -166,6 +170,9 @@ Filter Network Security Groups using opened/closed ports configuration
         - ingress
     required:
     - type
+
+
+
 
 
 
@@ -245,6 +252,9 @@ Deny access to Security Rule
     - type
 
 
+
+
+
 .. _azure.networksecuritygroup.actions.open:
 
 open
@@ -285,4 +295,7 @@ Allow access to Security Rule
         - open
     required:
     - type
+
+
+
 

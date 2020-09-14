@@ -7,6 +7,7 @@ aws.codecommit
 
 
 
+
 Filters
 -------
 
@@ -96,4 +97,9 @@ It is recommended to use a filter to avoid unwanted deletion of repos
         - delete
     required:
     - type
+
+
+
+
+Permissions - codecommit:DeleteRepository
 

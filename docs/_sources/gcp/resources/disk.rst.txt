@@ -7,6 +7,7 @@ gcp.disk
 
 
 
+
 Filters
 -------
 
@@ -93,6 +94,9 @@ in which to interpret the clock (default value is 'utc')
 
 
 
+
+
+
 Actions
 -------
 
@@ -141,6 +145,11 @@ an encapsulation of the 80%.
         - delete
     required:
     - type
+
+
+
+
+Permissions - compute.disks.delete
 
 
 .. _gcp.disk.actions.mark-for-op:
@@ -203,6 +212,11 @@ to marking the resource for action 4 days in the future.
         type: string
     required:
     - type
+
+
+
+
+Permissions - compute.disks.update
 
 
 .. _gcp.disk.actions.set-labels:
@@ -290,6 +304,11 @@ This policy will label all existing resource groups with a value such as environ
     - type
 
 
+
+
+Permissions - compute.disks.update
+
+
 .. _gcp.disk.actions.snapshot:
 
 snapshot
@@ -338,4 +357,9 @@ Default name format is `{disk.name}`
         - snapshot
     required:
     - type
+
+
+
+
+Permissions - compute.disks.createSnapshot
 

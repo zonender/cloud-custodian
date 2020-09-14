@@ -7,6 +7,7 @@ aws.ec2
 
 
 
+
 Filters
 -------
 
@@ -100,6 +101,11 @@ Matches if an ec2 database is in the default vpc
         - default-vpc
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeVpcs
 
 
 .. _aws.ec2.filters.ebs:
@@ -217,6 +223,11 @@ Filters EC2 instances with EBS backed storage devices (non ephemeral)
     - type
 
 
+
+
+Permissions - ec2:DescribeVolumes
+
+
 .. _aws.ec2.filters.ephemeral:
 
 ephemeral
@@ -254,6 +265,9 @@ http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/InstanceStorage.html
         - ephemeral
     required:
     - type
+
+
+
 
 
 .. _aws.ec2.filters.image:
@@ -349,6 +363,11 @@ image
     - type
 
 
+
+
+Permissions - ec2:DescribeImages
+
+
 .. _aws.ec2.filters.image-age:
 
 image-age
@@ -410,6 +429,11 @@ Filters EC2 instances based on the age of their AMI image (in days)
         - image-age
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeImages
 
 
 .. _aws.ec2.filters.instance-age:
@@ -475,6 +499,9 @@ Filters instances based on their age (in days)
         - instance-age
     required:
     - type
+
+
+
 
 
 .. _aws.ec2.filters.instance-attribute:
@@ -601,6 +628,11 @@ Filters EC2 Instances with the given instance attribute
     - attribute
 
 
+
+
+Permissions - ec2:DescribeInstanceAttribute
+
+
 .. _aws.ec2.filters.instance-uptime:
 
 instance-uptime
@@ -653,6 +685,9 @@ done on any attribute.
     - type
 
 
+
+
+
 .. _aws.ec2.filters.json-diff:
 
 json-diff
@@ -690,6 +725,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.ec2.filters.offhour:
@@ -803,6 +843,9 @@ Note: You can disable filtering of only running instances by setting
     - type
 
 
+
+
+
 .. _aws.ec2.filters.onhour:
 
 onhour
@@ -914,6 +957,9 @@ Note: You can disable filtering of only stopped instances by setting
     - type
 
 
+
+
+
 .. _aws.ec2.filters.singleton:
 
 singleton
@@ -955,6 +1001,11 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html
         - singleton
     required:
     - type
+
+
+
+
+Permissions - cloudwatch:DescribeAlarmsForMetric
 
 
 .. _aws.ec2.filters.ssm:
@@ -1070,6 +1121,11 @@ Find ubuntu 18.04 instances are active with ssm.
     - type
 
 
+
+
+Permissions - ssm:DescribeInstanceInformation
+
+
 .. _aws.ec2.filters.ssm-compliance:
 
 ssm-compliance
@@ -1150,6 +1206,11 @@ Find non-compliant ec2 instances.
     - type
 
 
+
+
+Permissions - ssm:ListResourceComplianceSummaries
+
+
 .. _aws.ec2.filters.state-age:
 
 state-age
@@ -1209,6 +1270,9 @@ Age an instance has been in the given state.
     - type
 
 
+
+
+
 .. _aws.ec2.filters.termination-protected:
 
 termination-protected
@@ -1254,6 +1318,11 @@ Filters EC2 instances with ``disableApiTermination`` attribute set to true.
         - termination-protected
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeInstanceAttribute
 
 
 .. _aws.ec2.filters.user-data:
@@ -1367,6 +1436,11 @@ uses re.match() and userdata spans multiple lines.
 
 
 
+Permissions - ec2:DescribeInstanceAttribute
+
+
+
+
 Actions
 -------
 
@@ -1471,6 +1545,11 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html
     - type
 
 
+
+
+Permissions - cloudwatch:PutMetricAlarm
+
+
 .. _aws.ec2.actions.propagate-spot-tags:
 
 propagate-spot-tags
@@ -1515,6 +1594,11 @@ Propagate Tags that are set at Spot Request level to EC2 instances.
     - type
 
 
+
+
+Permissions - ec2:DescribeInstances, ec2:DescribeSpotInstanceRequests, ec2:DescribeTags, ec2:CreateTags
+
+
 .. _aws.ec2.actions.reboot:
 
 reboot
@@ -1551,6 +1635,11 @@ http://docs.aws.amazon.com/cli/latest/reference/ec2/reboot-instances.html
         - reboot
     required:
     - type
+
+
+
+
+Permissions - ec2:RebootInstances
 
 
 .. _aws.ec2.actions.resize:
@@ -1592,6 +1681,11 @@ http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-resize.html
         type: object
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeInstances, ec2:ModifyInstanceAttribute
 
 
 .. _aws.ec2.actions.send-command:
@@ -1648,6 +1742,11 @@ Find ubuntu 18.04 instances are active with ssm.
     - command
 
 
+
+
+Permissions - ssm:SendCommand
+
+
 .. _aws.ec2.actions.set-instance-profile:
 
 set-instance-profile
@@ -1688,6 +1787,11 @@ https://docs.aws.amazon.com/cli/latest/reference/ec2/disassociate-iam-instance-p
         - set-instance-profile
     required:
     - type
+
+
+
+
+Permissions - ec2:AssociateIamInstanceProfile, ec2:DisassociateIamInstanceProfile, iam:PassRole
 
 
 .. _aws.ec2.actions.set-metadata-access:
@@ -1765,6 +1869,11 @@ Reference: https://amzn.to/2XOuxpQ
     - type
 
 
+
+
+Permissions - ec2:ModifyInstanceMetadataOptions
+
+
 .. _aws.ec2.actions.set-monitoring:
 
 set-monitoring
@@ -1812,6 +1921,11 @@ References
         - set-monitoring
     required:
     - type
+
+
+
+
+Permissions - ec2:MonitorInstances, ec2:UnmonitorInstances
 
 
 .. _aws.ec2.actions.snapshot:
@@ -1876,6 +1990,11 @@ The default behavior is `copy-volume-tags: true`.
     - type
 
 
+
+
+Permissions - ec2:CreateSnapshot, ec2:CreateTags
+
+
 .. _aws.ec2.actions.start:
 
 start
@@ -1912,6 +2031,11 @@ http://docs.aws.amazon.com/cli/latest/reference/ec2/start-instances.html
         - start
     required:
     - type
+
+
+
+
+Permissions - ec2:StartInstances
 
 
 .. _aws.ec2.actions.stop:
@@ -1966,6 +2090,11 @@ will just be stopped.
     - type
 
 
+
+
+Permissions - ec2:StopInstances
+
+
 .. _aws.ec2.actions.terminate:
 
 terminate
@@ -2009,4 +2138,9 @@ protection.
         - terminate
     required:
     - type
+
+
+
+
+Permissions - ec2:TerminateInstances
 

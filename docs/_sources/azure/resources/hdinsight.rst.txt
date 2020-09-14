@@ -38,6 +38,7 @@ Finds all HDInsight Clusters with 3 worker nodes
             value_type: integer
             value: 3
 
+
 Filters
 -------
 
@@ -142,4 +143,7 @@ This policy will resize the cluster to 4 nodes
     required:
     - count
     - type
+
+
+
 

@@ -7,6 +7,7 @@ aws.asg
 
 
 
+
 Filters
 -------
 
@@ -97,6 +98,9 @@ Filter returns ASG that have less instances than desired or required
     - type
 
 
+
+
+
 .. _aws.asg.filters.image-age:
 
 image-age
@@ -158,6 +162,11 @@ Filter asg by image age (in days).
     - type
 
 
+
+
+Permissions - ec2:DescribeImages, autoscaling:DescribeLaunchConfigurations
+
+
 .. _aws.asg.filters.invalid:
 
 invalid
@@ -205,6 +214,11 @@ cache utilization.
     - type
 
 
+
+
+Permissions - ec2:DescribeSubnets, ec2:DescribeSecurityGroups, ec2:DescribeKeyPairs, elasticloadbalancing:DescribeLoadBalancers, elasticloadbalancing:DescribeLoadBalancerAttributes, elasticloadbalancing:DescribeTags, elasticloadbalancing:DescribeTargetGroups, elasticloadbalancing:DescribeTags, ec2:DescribeSnapshots, ec2:DescribeImages
+
+
 .. _aws.asg.filters.json-diff:
 
 json-diff
@@ -242,6 +256,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.asg.filters.launch-config:
@@ -352,6 +371,11 @@ to launch configurations.
     - type
 
 
+
+
+Permissions - autoscaling:DescribeLaunchConfigurations
+
+
 .. _aws.asg.filters.not-encrypted:
 
 not-encrypted
@@ -389,6 +413,11 @@ Checks both the ami snapshots and the launch configuration.
         - not-encrypted
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeImages, ec2:DescribeSnapshots, autoscaling:DescribeLaunchConfigurations
 
 
 .. _aws.asg.filters.progagated-tags:
@@ -440,6 +469,11 @@ account for compliance.
         - propagated-tags
     required:
     - type
+
+
+
+
+Permissions - autoscaling:DescribeLaunchConfigurations, autoscaling:DescribeAutoScalingGroups
 
 
 .. _aws.asg.filters.user-data:
@@ -551,6 +585,11 @@ uses re.match() and userdata spans multiple lines.
     - type
 
 
+
+
+Permissions - autoscaling:DescribeAutoScalingGroups
+
+
 .. _aws.asg.filters.valid:
 
 valid
@@ -588,6 +627,11 @@ See details on the invalid filter for a list of checks made.
         - valid
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeSubnets, ec2:DescribeSecurityGroups, ec2:DescribeKeyPairs, elasticloadbalancing:DescribeLoadBalancers, elasticloadbalancing:DescribeLoadBalancerAttributes, elasticloadbalancing:DescribeTags, elasticloadbalancing:DescribeTargetGroups, elasticloadbalancing:DescribeTags, ec2:DescribeSnapshots, ec2:DescribeImages
 
 
 .. _aws.asg.filters.vpc-id:
@@ -697,6 +741,11 @@ associated to the results from describing the autoscaling groups.
 
 
 
+Permissions - ec2:DescribeSubnets
+
+
+
+
 Actions
 -------
 
@@ -785,6 +834,11 @@ attached to it.
     - type
 
 
+
+
+Permissions - autoscaling:DeleteAutoScalingGroup
+
+
 .. _aws.asg.actions.mark-for-op:
 
 mark-for-op
@@ -845,6 +899,11 @@ Action to create a delayed action for a later date
     - type
 
 
+
+
+Permissions - autoscaling:CreateOrUpdateTags
+
+
 .. _aws.asg.actions.propagate-tags:
 
 propagate-tags
@@ -895,6 +954,11 @@ not present on the asg anymore that are present on instances.
     - type
 
 
+
+
+Permissions - ec2:DeleteTags, ec2:CreateTags
+
+
 .. _aws.asg.actions.remove-tag:
 
 remove-tag
@@ -938,6 +1002,11 @@ Action to remove tag/tags from an ASG
         - unmark
     required:
     - type
+
+
+
+
+Permissions - autoscaling:DeleteTags
 
 
 .. _aws.asg.actions.rename-tag:
@@ -985,6 +1054,11 @@ Rename a tag on an AutoScaleGroup.
     - source
     - dest
     - type
+
+
+
+
+Permissions - autoscaling:CreateOrUpdateTags, autoscaling:DeleteTags, ec2:CreateTags, ec2:DeleteTags
 
 
 .. _aws.asg.actions.resize:
@@ -1081,6 +1155,11 @@ There are several ways to use this action:
     - type
 
 
+
+
+Permissions - autoscaling:UpdateAutoScalingGroup, autoscaling:CreateOrUpdateTags
+
+
 .. _aws.asg.actions.resume:
 
 resume
@@ -1123,6 +1202,11 @@ turn on within the ASG (default value: 30)
         - resume
     required:
     - type
+
+
+
+
+Permissions - autoscaling:ResumeProcesses, ec2:StartInstances
 
 
 .. _aws.asg.actions.suspend:
@@ -1175,6 +1259,11 @@ AWS ASG suspend/resume and process docs
         - suspend
     required:
     - type
+
+
+
+
+Permissions - autoscaling:SuspendProcesses, ec2:StopInstances
 
 
 .. _aws.asg.actions.tag:
@@ -1231,4 +1320,9 @@ to the ASG itself.
         type: string
     required:
     - type
+
+
+
+
+Permissions - autoscaling:CreateOrUpdateTags
 

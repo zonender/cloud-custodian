@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2856,6 +2869,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudfront:GetDistributionConfig</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-distribution-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2882,6 +2896,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="mismatch-s3-origin">
 <span id="aws-distribution-filters-mismatch-s3-origin"></span><h3>mismatch-s3-origin<a class="headerlink" href="#mismatch-s3-origin" title="Permalink to this headline">¶</a></h3>
@@ -2913,6 +2928,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:ListAllMyBuckets</p>
 </div>
 <div class="section" id="shield-enabled">
 <span id="aws-distribution-filters-shield-enabled"></span><h3>shield-enabled<a class="headerlink" href="#shield-enabled" title="Permalink to this headline">¶</a></h3>
@@ -2929,6 +2945,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:ListProtections</p>
 </div>
 <div class="section" id="waf-enabled">
 <span id="aws-distribution-filters-waf-enabled"></span><h3>waf-enabled<a class="headerlink" href="#waf-enabled" title="Permalink to this headline">¶</a></h3>
@@ -2947,6 +2964,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - waf:ListWebACLs</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3001,6 +3019,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudfront:GetDistributionConfig, cloudfront:UpdateDistribution</p>
 </div>
 <div class="section" id="set-attributes">
 <span id="aws-distribution-actions-set-attributes"></span><h3>set-attributes<a class="headerlink" href="#set-attributes" title="Permalink to this headline">¶</a></h3>
@@ -3040,6 +3059,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudfront:UpdateDistribution, cloudfront:GetDistributionConfig</p>
 </div>
 <div class="section" id="set-protocols">
 <span id="aws-distribution-actions-set-protocols"></span><h3>set-protocols<a class="headerlink" href="#set-protocols" title="Permalink to this headline">¶</a></h3>
@@ -3087,6 +3107,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudfront:GetDistributionConfig, cloudfront:UpdateDistribution</p>
 </div>
 <div class="section" id="set-shield">
 <span id="aws-distribution-actions-set-shield"></span><h3>set-shield<a class="headerlink" href="#set-shield" title="Permalink to this headline">¶</a></h3>
@@ -3107,6 +3128,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:CreateProtection, shield:ListProtections</p>
 </div>
 <div class="section" id="set-waf">
 <span id="aws-distribution-actions-set-waf"></span><h3>set-waf<a class="headerlink" href="#set-waf" title="Permalink to this headline">¶</a></h3>
@@ -3128,6 +3150,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudfront:UpdateDistribution, waf:ListWebACLs</p>
 </div>
 </div>
 </div>

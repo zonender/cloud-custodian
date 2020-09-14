@@ -7,6 +7,7 @@ aws.ami
 
 
 
+
 Filters
 -------
 
@@ -80,6 +81,11 @@ Check a resource's embedded iam policy for cross account access.
     - type
 
 
+
+
+Permissions - ec2:DescribeImageAttribute
+
+
 .. _aws.ami.filters.image-age:
 
 image-age
@@ -141,6 +147,9 @@ Filters images based on the age (in days)
     - type
 
 
+
+
+
 .. _aws.ami.filters.unused:
 
 unused
@@ -179,6 +188,11 @@ false: image has instances spawned from it
         type: boolean
     required:
     - type
+
+
+
+
+Permissions - autoscaling:DescribeAutoScalingGroups, autoscaling:DescribeLaunchConfigurations, ec2:DescribeInstances, ec2:DescribeTags
 
 
 
@@ -279,6 +293,11 @@ Note there is a max in flight of 5 per account/region.
         - copy
 
 
+
+
+Permissions - ec2:CopyImage
+
+
 .. _aws.ami.actions.deregister:
 
 deregister
@@ -321,6 +340,11 @@ a filter (such as image-age)
     - type
 
 
+
+
+Permissions - ec2:DeregisterImage
+
+
 .. _aws.ami.actions.remove-launch-permissions:
 
 remove-launch-permissions
@@ -360,4 +384,9 @@ launching it
         - remove-launch-permissions
     required:
     - type
+
+
+
+
+Permissions - ec2:ResetImageAttribute
 

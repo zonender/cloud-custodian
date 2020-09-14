@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2786,6 +2799,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeVpcs</p>
 </div>
 <div class="section" id="diff">
 <span id="aws-security-group-filters-diff"></span><h3>diff<a class="headerlink" href="#diff" title="Permalink to this headline">¶</a></h3>
@@ -2812,6 +2826,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="egress">
 <span id="aws-security-group-filters-egress"></span><h3>egress<a class="headerlink" href="#egress" title="Permalink to this headline">¶</a></h3>
@@ -2872,13 +2887,15 @@ a given set of ports, <em>note</em> OnlyPorts is an inverse match.</p>
 <p><cite>Cidr</cite> can match ipv4 rules and <cite>CidrV6</cite> can match ipv6 rules.  In
 this example we are blocking global inbound connections to SSH or
 RDP.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ingress</span>
-  <span class="nt">Ports</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">22</span><span class="p p-Indicator">,</span> <span class="nv">3389</span><span class="p p-Indicator">]</span>
-  <span class="nt">Cidr</span><span class="p">:</span>
-    <span class="nt">value</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;0.0.0.0/0&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;::/0&quot;</span>
-    <span class="nt">op</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">in</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">or</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ingress</span>
+    <span class="nt">Ports</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">22</span><span class="p p-Indicator">,</span> <span class="nv">3389</span><span class="p p-Indicator">]</span>
+    <span class="nt">Cidr</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="s">&quot;0.0.0.0/0&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ingress</span>
+    <span class="nt">Ports</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">22</span><span class="p p-Indicator">,</span> <span class="nv">3389</span><span class="p p-Indicator">]</span>
+    <span class="nt">CidrV6</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="s">&quot;::/0&quot;</span>
 </pre></div>
 </div>
 <p><cite>SGReferences</cite> can be used to filter out SG references in rules.
@@ -3022,13 +3039,15 @@ a given set of ports, <em>note</em> OnlyPorts is an inverse match.</p>
 <p><cite>Cidr</cite> can match ipv4 rules and <cite>CidrV6</cite> can match ipv6 rules.  In
 this example we are blocking global inbound connections to SSH or
 RDP.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ingress</span>
-  <span class="nt">Ports</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">22</span><span class="p p-Indicator">,</span> <span class="nv">3389</span><span class="p p-Indicator">]</span>
-  <span class="nt">Cidr</span><span class="p">:</span>
-    <span class="nt">value</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;0.0.0.0/0&quot;</span>
-      <span class="p p-Indicator">-</span> <span class="s">&quot;::/0&quot;</span>
-    <span class="nt">op</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">in</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="nt">or</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ingress</span>
+    <span class="nt">Ports</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">22</span><span class="p p-Indicator">,</span> <span class="nv">3389</span><span class="p p-Indicator">]</span>
+    <span class="nt">Cidr</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="s">&quot;0.0.0.0/0&quot;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ingress</span>
+    <span class="nt">Ports</span><span class="p">:</span> <span class="p p-Indicator">[</span><span class="nv">22</span><span class="p p-Indicator">,</span> <span class="nv">3389</span><span class="p p-Indicator">]</span>
+    <span class="nt">CidrV6</span><span class="p">:</span>
+      <span class="nt">value</span><span class="p">:</span> <span class="s">&quot;::/0&quot;</span>
 </pre></div>
 </div>
 <p><cite>SGReferences</cite> can be used to filter out SG references in rules.
@@ -3138,6 +3157,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="stale">
 <span id="aws-security-group-filters-stale"></span><h3>stale<a class="headerlink" href="#stale" title="Permalink to this headline">¶</a></h3>
@@ -3170,6 +3190,7 @@ Security groups only and will implicitly filter security groups.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeStaleSecurityGroups</p>
 </div>
 <div class="section" id="unused">
 <span id="aws-security-group-filters-unused"></span><h3>unused<a class="headerlink" href="#unused" title="Permalink to this headline">¶</a></h3>
@@ -3204,6 +3225,7 @@ targets.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - lambda:ListFunctions, ec2:DescribeNetworkInterfaces, autoscaling:DescribeLaunchConfigurations, ec2:DescribeSecurityGroups, events:ListTargetsByRule</p>
 </div>
 <div class="section" id="used">
 <span id="aws-security-group-filters-used"></span><h3>used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h3>
@@ -3231,6 +3253,7 @@ workflows.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - lambda:ListFunctions, ec2:DescribeNetworkInterfaces, autoscaling:DescribeLaunchConfigurations, ec2:DescribeSecurityGroups, events:ListTargetsByRule</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3286,6 +3309,7 @@ deletion of all security groups returned.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DeleteSecurityGroup</p>
 </div>
 <div class="section" id="patch">
 <span id="aws-security-group-actions-patch"></span><h3>patch<a class="headerlink" href="#patch" title="Permalink to this headline">¶</a></h3>
@@ -3300,6 +3324,7 @@ deletion of all security groups returned.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:AuthorizeSecurityGroupIngress, ec2:AuthorizeSecurityGroupEgress, ec2:RevokeSecurityGroupIngress, ec2:RevokeSecurityGroupEgress, ec2:CreateTags, ec2:DeleteTags</p>
 </div>
 <div class="section" id="remove-permissions">
 <span id="aws-security-group-actions-remove-permissions"></span><h3>remove-permissions<a class="headerlink" href="#remove-permissions" title="Permalink to this headline">¶</a></h3>
@@ -3340,6 +3365,7 @@ deletion of all security groups returned.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:RevokeSecurityGroupIngress, ec2:RevokeSecurityGroupEgress</p>
 </div>
 <div class="section" id="set-permissions">
 <span id="aws-security-group-actions-set-permissions"></span><h3>set-permissions<a class="headerlink" href="#set-permissions" title="Permalink to this headline">¶</a></h3>
@@ -3424,6 +3450,7 @@ deletion of all security groups returned.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:AuthorizeSecurityGroupEgress, ec2:AuthorizeSecurityGroupIngress</p>
 </div>
 </div>
 </div>

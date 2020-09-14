@@ -67,6 +67,7 @@ The built-in role with the necessary permissions is Owner.**
          actions:
             - type: delete
 
+
 Filters
 -------
 
@@ -191,6 +192,9 @@ type of azure resource.
     required:
     - relatedResource
     - type
+
+
+
 
 
 .. _azure.roleassignment.filters.role:
@@ -340,6 +344,9 @@ Return all assignments with the `Owner role` that have access to virtual machine
     - type
 
 
+
+
+
 .. _azure.roleassignment.filters.scope:
 
 scope
@@ -419,6 +426,9 @@ Return all service principal role assignments with the `Subscription` level scop
 
 
 
+
+
+
 Actions
 -------
 
@@ -457,4 +467,7 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
 

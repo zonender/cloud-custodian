@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2926,6 +2939,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - sns:GetTopicAttributes</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-sns-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2952,6 +2966,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="kms-key">
 <span id="aws-sns-filters-kms-key"></span><h3>kms-key<a class="headerlink" href="#kms-key" title="Permalink to this headline">¶</a></h3>
@@ -3055,6 +3070,7 @@ of the kms key by using ‘c7n:AliasName’</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - kms:ListKeys</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3105,6 +3121,7 @@ of the kms key by using ‘c7n:AliasName’</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - sns:DeleteTopic</p>
 </div>
 <div class="section" id="remove-statements">
 <span id="aws-sns-actions-remove-statements"></span><h3>remove-statements<a class="headerlink" href="#remove-statements" title="Permalink to this headline">¶</a></h3>
@@ -3142,6 +3159,7 @@ of the kms key by using ‘c7n:AliasName’</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - sns:SetTopicAttributes, sns:GetTopicAttributes</p>
 </div>
 <div class="section" id="set-encryption">
 <span id="aws-sns-actions-set-encryption"></span><h3>set-encryption<a class="headerlink" href="#set-encryption" title="Permalink to this headline">¶</a></h3>
@@ -3189,6 +3207,7 @@ of the kms key by using ‘c7n:AliasName’</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - sns:SetTopicAttributes, kms:DescribeKey</p>
 </div>
 </div>
 </div>

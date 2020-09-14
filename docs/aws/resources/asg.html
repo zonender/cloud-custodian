@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2847,6 +2860,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeImages, autoscaling:DescribeLaunchConfigurations</p>
 </div>
 <div class="section" id="invalid">
 <span id="aws-asg-filters-invalid"></span><h3>invalid<a class="headerlink" href="#invalid" title="Permalink to this headline">¶</a></h3>
@@ -2884,6 +2898,7 @@ cache utilization.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeSubnets, ec2:DescribeSecurityGroups, ec2:DescribeKeyPairs, elasticloadbalancing:DescribeLoadBalancers, elasticloadbalancing:DescribeLoadBalancerAttributes, elasticloadbalancing:DescribeTags, elasticloadbalancing:DescribeTargetGroups, elasticloadbalancing:DescribeTags, ec2:DescribeSnapshots, ec2:DescribeImages</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-asg-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2910,6 +2925,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="launch-config">
 <span id="aws-asg-filters-launch-config"></span><h3>launch-config<a class="headerlink" href="#launch-config" title="Permalink to this headline">¶</a></h3>
@@ -3008,6 +3024,7 @@ to launch configurations.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:DescribeLaunchConfigurations</p>
 </div>
 <div class="section" id="not-encrypted">
 <span id="aws-asg-filters-not-encrypted"></span><h3>not-encrypted<a class="headerlink" href="#not-encrypted" title="Permalink to this headline">¶</a></h3>
@@ -3037,6 +3054,7 @@ to launch configurations.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeImages, ec2:DescribeSnapshots, autoscaling:DescribeLaunchConfigurations</p>
 </div>
 <div class="section" id="progagated-tags">
 <span id="aws-asg-filters-progagated-tags"></span><h3>progagated-tags<a class="headerlink" href="#progagated-tags" title="Permalink to this headline">¶</a></h3>
@@ -3078,6 +3096,7 @@ account for compliance.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:DescribeLaunchConfigurations, autoscaling:DescribeAutoScalingGroups</p>
 </div>
 <div class="section" id="user-data">
 <span id="aws-asg-filters-user-data"></span><h3>user-data<a class="headerlink" href="#user-data" title="Permalink to this headline">¶</a></h3>
@@ -3178,6 +3197,7 @@ uses re.match() and userdata spans multiple lines.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:DescribeAutoScalingGroups</p>
 </div>
 <div class="section" id="valid">
 <span id="aws-asg-filters-valid"></span><h3>valid<a class="headerlink" href="#valid" title="Permalink to this headline">¶</a></h3>
@@ -3206,6 +3226,7 @@ workflows.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeSubnets, ec2:DescribeSecurityGroups, ec2:DescribeKeyPairs, elasticloadbalancing:DescribeLoadBalancers, elasticloadbalancing:DescribeLoadBalancerAttributes, elasticloadbalancing:DescribeTags, elasticloadbalancing:DescribeTargetGroups, elasticloadbalancing:DescribeTags, ec2:DescribeSnapshots, ec2:DescribeImages</p>
 </div>
 <div class="section" id="vpc-id">
 <span id="aws-asg-filters-vpc-id"></span><h3>vpc-id<a class="headerlink" href="#vpc-id" title="Permalink to this headline">¶</a></h3>
@@ -3301,6 +3322,7 @@ associated to the results from describing the autoscaling groups.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeSubnets</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3360,6 +3382,7 @@ attached to it.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:DeleteAutoScalingGroup</p>
 </div>
 <div class="section" id="mark-for-op">
 <span id="aws-asg-actions-mark-for-op"></span><h3>mark-for-op<a class="headerlink" href="#mark-for-op" title="Permalink to this headline">¶</a></h3>
@@ -3411,6 +3434,7 @@ attached to it.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:CreateOrUpdateTags</p>
 </div>
 <div class="section" id="propagate-tags">
 <span id="aws-asg-actions-propagate-tags"></span><h3>propagate-tags<a class="headerlink" href="#propagate-tags" title="Permalink to this headline">¶</a></h3>
@@ -3449,6 +3473,7 @@ not present on the asg anymore that are present on instances.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DeleteTags, ec2:CreateTags</p>
 </div>
 <div class="section" id="remove-tag">
 <span id="aws-asg-actions-remove-tag"></span><h3>remove-tag<a class="headerlink" href="#remove-tag" title="Permalink to this headline">¶</a></h3>
@@ -3485,6 +3510,7 @@ not present on the asg anymore that are present on instances.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:DeleteTags</p>
 </div>
 <div class="section" id="rename-tag">
 <span id="aws-asg-actions-rename-tag"></span><h3>rename-tag<a class="headerlink" href="#rename-tag" title="Permalink to this headline">¶</a></h3>
@@ -3523,6 +3549,7 @@ not present on the asg anymore that are present on instances.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:CreateOrUpdateTags, autoscaling:DeleteTags, ec2:CreateTags, ec2:DeleteTags</p>
 </div>
 <div class="section" id="resize">
 <span id="aws-asg-actions-resize"></span><h3>resize<a class="headerlink" href="#resize" title="Permalink to this headline">¶</a></h3>
@@ -3606,6 +3633,7 @@ previous values to a named tag (for restoring later):</p></li>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:UpdateAutoScalingGroup, autoscaling:CreateOrUpdateTags</p>
 </div>
 <div class="section" id="resume">
 <span id="aws-asg-actions-resume"></span><h3>resume<a class="headerlink" href="#resume" title="Permalink to this headline">¶</a></h3>
@@ -3640,6 +3668,7 @@ turn on within the ASG (default value: 30)</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:ResumeProcesses, ec2:StartInstances</p>
 </div>
 <div class="section" id="suspend">
 <span id="aws-asg-actions-suspend"></span><h3>suspend<a class="headerlink" href="#suspend" title="Permalink to this headline">¶</a></h3>
@@ -3684,6 +3713,7 @@ turn on within the ASG (default value: 30)</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:SuspendProcesses, ec2:StopInstances</p>
 </div>
 <div class="section" id="tag">
 <span id="aws-asg-actions-tag"></span><h3>tag<a class="headerlink" href="#tag" title="Permalink to this headline">¶</a></h3>
@@ -3730,6 +3760,7 @@ to the ASG itself.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - autoscaling:CreateOrUpdateTags</p>
 </div>
 </div>
 </div>

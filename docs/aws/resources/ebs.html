@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2787,6 +2800,7 @@ from a snapshot with (reasonable) data loss</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - support:RefreshTrustedAdvisorCheck, support:DescribeTrustedAdvisorCheckResult</p>
 </div>
 <div class="section" id="health-event">
 <span id="aws-ebs-filters-health-event"></span><h3>health-event<a class="headerlink" href="#health-event" title="Permalink to this headline">¶</a></h3>
@@ -2819,6 +2833,7 @@ from a snapshot with (reasonable) data loss</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - health:DescribeEvents, health:DescribeAffectedEntities, health:DescribeEventDetails, config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="instance">
 <span id="aws-ebs-filters-instance"></span><h3>instance<a class="headerlink" href="#instance" title="Permalink to this headline">¶</a></h3>
@@ -2915,6 +2930,7 @@ from a snapshot with (reasonable) data loss</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeInstances, ec2:DescribeTags</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-ebs-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2941,6 +2957,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="kms-alias">
 <span id="aws-ebs-filters-kms-alias"></span><h3>kms-alias<a class="headerlink" href="#kms-alias" title="Permalink to this headline">¶</a></h3>
@@ -3023,6 +3040,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - kms:ListAliases</p>
 </div>
 <div class="section" id="modifyable">
 <span id="aws-ebs-filters-modifyable"></span><h3>modifyable<a class="headerlink" href="#modifyable" title="Permalink to this headline">¶</a></h3>
@@ -3052,6 +3070,7 @@ Current Generation Instances (2017-2)
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeInstances</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3122,6 +3141,7 @@ was actually used.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeInstances, ec2:DescribeTags, ec2:CreateTags</p>
 </div>
 <div class="section" id="delete">
 <span id="aws-ebs-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
@@ -3155,6 +3175,7 @@ root volumes.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DetachVolume, ec2:DeleteVolume, ec2:DescribeVolumes</p>
 </div>
 <div class="section" id="detach">
 <span id="aws-ebs-actions-detach"></span><h3>detach<a class="headerlink" href="#detach" title="Permalink to this headline">¶</a></h3>
@@ -3188,6 +3209,7 @@ of the Volume. The default value for ‘Force’ is False.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DetachVolume</p>
 </div>
 <div class="section" id="encrypt-instance-volumes">
 <span id="aws-ebs-actions-encrypt-instance-volumes"></span><h3>encrypt-instance-volumes<a class="headerlink" href="#encrypt-instance-volumes" title="Permalink to this headline">¶</a></h3>
@@ -3262,6 +3284,7 @@ of the Volume. The default value for ‘Force’ is False.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:CopySnapshot, ec2:CreateSnapshot, ec2:CreateVolume, ec2:DescribeInstances, ec2:DescribeSnapshots, ec2:DescribeVolumes, ec2:StopInstances, ec2:StartInstances, ec2:ModifyInstanceAttribute, ec2:DeleteTags</p>
 </div>
 <div class="section" id="modify">
 <span id="aws-ebs-actions-modify"></span><h3>modify<a class="headerlink" href="#modify" title="Permalink to this headline">¶</a></h3>
@@ -3350,6 +3373,7 @@ setting <cite>shrink: true</cite> on the action.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:ModifyVolumeAttribute</p>
 </div>
 <div class="section" id="snapshot">
 <span id="aws-ebs-actions-snapshot"></span><h3>snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h3>
@@ -3402,6 +3426,7 @@ is added.</p></li>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:CreateSnapshot, ec2:CreateTags</p>
 </div>
 </div>
 </div>

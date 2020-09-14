@@ -33,6 +33,9 @@ Queries resources from cloud provider for filtering and actions.
 
 
 
+
+
+
 asg-instance-state
 ++++++++++++++++++
 a lambda policy that executes on an asg's ec2 instance state changes.
@@ -110,6 +113,9 @@ for more details.
         - asg-instance-state
     required:
     - type
+
+
+
 
 
 
@@ -203,6 +209,9 @@ A lambda policy using cloudwatch events rules on cloudtrail api logs.
 
 
 
+
+
+
 config-poll-rule
 ++++++++++++++++
 This mode represents a periodic/scheduled AWS config evaluation.
@@ -290,6 +299,9 @@ pushes resource evaluations to config.
 
 
 
+
+
+
 config-rule
 +++++++++++
 a lambda policy that executes as a config service rule.
@@ -359,6 +371,9 @@ See `AWS Config <https://aws.amazon.com/config/>`_ for more details.
         - config-rule
     required:
     - type
+
+
+
 
 
 
@@ -446,6 +461,9 @@ for more details.
 
 
 
+
+
+
 guard-duty
 ++++++++++
 Incident Response for AWS Guard Duty.
@@ -517,6 +535,9 @@ by AWS Guard Duty for automated incident response. See `Guard Duty
         - guard-duty
     required:
     - type
+
+
+
 
 
 
@@ -609,6 +630,9 @@ resource specific.
         - hub-action
     required:
     - type
+
+
+
 
 
 
@@ -712,6 +736,9 @@ https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cloudwatch-
 
 
 
+
+
+
 periodic
 ++++++++
 A policy that runs in pull mode within lambda.
@@ -781,6 +808,9 @@ Runs Custodian in AWS lambda at user defined cron interval.
         - periodic
     required:
     - type
+
+
+
 
 
 
@@ -879,6 +909,9 @@ for more details.
 
 
 
+
+
+
 pull
 ++++
 Pull mode execution of a policy.
@@ -901,5 +934,8 @@ Queries resources from cloud provider for filtering and actions.
         - pull
     required:
     - type
+
+
+
 
 

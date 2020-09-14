@@ -7,6 +7,7 @@ aws.ebs
 
 
 
+
 Filters
 -------
 
@@ -81,6 +82,11 @@ from a snapshot with (reasonable) data loss
     - type
 
 
+
+
+Permissions - support:RefreshTrustedAdvisorCheck, support:DescribeTrustedAdvisorCheckResult
+
+
 .. _aws.ebs.filters.health-event:
 
 health-event
@@ -124,6 +130,11 @@ Custodian also supports responding to phd events via a lambda execution mode.
         type: array
     required:
     - type
+
+
+
+
+Permissions - health:DescribeEvents, health:DescribeAffectedEntities, health:DescribeEventDetails, config:GetResourceConfigHistory
 
 
 .. _aws.ebs.filters.instance:
@@ -231,6 +242,11 @@ Filter volumes based on filtering on their attached instance
     - type
 
 
+
+
+Permissions - ec2:DescribeInstances, ec2:DescribeTags
+
+
 .. _aws.ebs.filters.json-diff:
 
 json-diff
@@ -268,6 +284,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.ebs.filters.kms-alias:
@@ -363,6 +384,11 @@ kms-alias
     - type
 
 
+
+
+Permissions - kms:ListAliases
+
+
 .. _aws.ebs.filters.modifyable:
 
 modifyable
@@ -400,6 +426,11 @@ See :ref:`modify action <aws.ebs.actions.modify>` for examples.
         - modifyable
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeInstances
 
 
 
@@ -506,6 +537,11 @@ was actually used.
     - type
 
 
+
+
+Permissions - ec2:DescribeInstances, ec2:DescribeTags, ec2:CreateTags
+
+
 .. _aws.ebs.actions.delete:
 
 delete
@@ -549,6 +585,11 @@ root volumes.
     - type
 
 
+
+
+Permissions - ec2:DetachVolume, ec2:DeleteVolume, ec2:DescribeVolumes
+
+
 .. _aws.ebs.actions.detach:
 
 detach
@@ -588,6 +629,11 @@ of the Volume. The default value for 'Force' is False.
         - detach
     required:
     - type
+
+
+
+
+Permissions - ec2:DetachVolume
 
 
 .. _aws.ebs.actions.encrypt-instance-volumes:
@@ -655,6 +701,11 @@ Multistep process:
     required:
     - key
     - type
+
+
+
+
+Permissions - ec2:CopySnapshot, ec2:CreateSnapshot, ec2:CreateVolume, ec2:DescribeInstances, ec2:DescribeSnapshots, ec2:DescribeVolumes, ec2:StopInstances, ec2:StartInstances, ec2:ModifyInstanceAttribute, ec2:DeleteTags
 
 
 .. _aws.ebs.actions.modify:
@@ -759,6 +810,11 @@ setting `shrink: true` on the action.
     - type
 
 
+
+
+Permissions - ec2:ModifyVolumeAttribute
+
+
 .. _aws.ebs.actions.snapshot:
 
 snapshot
@@ -819,4 +875,9 @@ The default behavior is `copy-volume-tags: true`.
         - snapshot
     required:
     - type
+
+
+
+
+Permissions - ec2:CreateSnapshot, ec2:CreateTags
 

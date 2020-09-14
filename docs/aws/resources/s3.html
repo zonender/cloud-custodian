@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2815,6 +2828,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetEncryptionConfiguration, kms:DescribeKey</p>
 </div>
 <div class="section" id="bucket-logging">
 <span id="aws-s3-filters-bucket-logging"></span><h3>bucket-logging<a class="headerlink" href="#bucket-logging" title="Permalink to this headline">¶</a></h3>
@@ -2871,6 +2885,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetBucketLogging, iam:ListAccountAliases</p>
 </div>
 <div class="section" id="bucket-notification">
 <span id="aws-s3-filters-bucket-notification"></span><h3>bucket-notification<a class="headerlink" href="#bucket-notification" title="Permalink to this headline">¶</a></h3>
@@ -2979,6 +2994,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetBucketNotification</p>
 </div>
 <div class="section" id="check-public-block">
 <span id="aws-s3-filters-check-public-block"></span><h3>check-public-block<a class="headerlink" href="#check-public-block" title="Permalink to this headline">¶</a></h3>
@@ -3017,6 +3033,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetBucketPublicAccessBlock</p>
 </div>
 <div class="section" id="cross-account">
 <span id="aws-s3-filters-cross-account"></span><h3>cross-account<a class="headerlink" href="#cross-account" title="Permalink to this headline">¶</a></h3>
@@ -3141,6 +3158,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetBucketPolicy</p>
 </div>
 <div class="section" id="data-events">
 <span id="aws-s3-filters-data-events"></span><h3>data-events<a class="headerlink" href="#data-events" title="Permalink to this headline">¶</a></h3>
@@ -3159,6 +3177,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudtrail:DescribeTrails, cloudtrail:GetEventSelectors</p>
 </div>
 <div class="section" id="global-grants">
 <span id="aws-s3-filters-global-grants"></span><h3>global-grants<a class="headerlink" href="#global-grants" title="Permalink to this headline">¶</a></h3>
@@ -3372,6 +3391,7 @@ can be disabled per the example below.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetInventoryConfiguration</p>
 </div>
 <div class="section" id="is-log-target">
 <span id="aws-s3-filters-is-log-target"></span><h3>is-log-target<a class="headerlink" href="#is-log-target" title="Permalink to this headline">¶</a></h3>
@@ -3419,6 +3439,7 @@ heavy process to detect scan all possible log sources.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancers, elasticloadbalancing:DescribeLoadBalancerAttributes, elasticloadbalancing:DescribeTags, elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-s3-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -3445,6 +3466,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="missing-policy-statement">
 <span id="aws-s3-filters-missing-policy-statement"></span><h3>missing-policy-statement<a class="headerlink" href="#missing-policy-statement" title="Permalink to this headline">¶</a></h3>
@@ -3502,6 +3524,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:ListAllMyBuckets, s3:GetBucketLocation, s3:GetBucketTagging, s3:GetBucketPolicy, s3:GetBucketAcl, s3:GetReplicationConfiguration, s3:GetBucketVersioning, s3:GetBucketWebsite, s3:GetBucketLogging, s3:GetBucketNotification, s3:GetLifecycleConfiguration</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3577,6 +3600,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketNotification, s3:GetBucketNotification, lambda:*</p>
 </div>
 <div class="section" id="configure-lifecycle">
 <span id="aws-s3-actions-configure-lifecycle"></span><h3>configure-lifecycle<a class="headerlink" href="#configure-lifecycle" title="Permalink to this headline">¶</a></h3>
@@ -3714,6 +3738,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetLifecycleConfiguration, s3:PutLifecycleConfiguration</p>
 </div>
 <div class="section" id="delete">
 <span id="aws-s3-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
@@ -3746,6 +3771,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:*</p>
 </div>
 <div class="section" id="delete-bucket-notification">
 <span id="aws-s3-actions-delete-bucket-notification"></span><h3>delete-bucket-notification<a class="headerlink" href="#delete-bucket-notification" title="Permalink to this headline">¶</a></h3>
@@ -3768,6 +3794,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketNotification</p>
 </div>
 <div class="section" id="delete-global-grants">
 <span id="aws-s3-actions-delete-global-grants"></span><h3>delete-global-grants<a class="headerlink" href="#delete-global-grants" title="Permalink to this headline">¶</a></h3>
@@ -3799,6 +3826,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketAcl</p>
 </div>
 <div class="section" id="encrypt-keys">
 <span id="aws-s3-actions-encrypt-keys"></span><h3>encrypt-keys<a class="headerlink" href="#encrypt-keys" title="Permalink to this headline">¶</a></h3>
@@ -3843,6 +3871,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetObject, s3:PutObject, s3:DeleteObjectVersion, s3:RestoreObject, s3:ListBucket</p>
 </div>
 <div class="section" id="encryption-policy">
 <span id="aws-s3-actions-encryption-policy"></span><h3>encryption-policy<a class="headerlink" href="#encryption-policy" title="Permalink to this headline">¶</a></h3>
@@ -3872,6 +3901,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetBucketPolicy, s3:PutBucketPolicy</p>
 </div>
 <div class="section" id="no-op">
 <span id="aws-s3-actions-no-op"></span><h3>no-op<a class="headerlink" href="#no-op" title="Permalink to this headline">¶</a></h3>
@@ -3886,6 +3916,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:ListAllMyBuckets</p>
 </div>
 <div class="section" id="remove-statements">
 <span id="aws-s3-actions-remove-statements"></span><h3>remove-statements<a class="headerlink" href="#remove-statements" title="Permalink to this headline">¶</a></h3>
@@ -3926,6 +3957,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketPolicy, s3:DeleteBucketPolicy</p>
 </div>
 <div class="section" id="remove-website-hosting">
 <span id="aws-s3-actions-remove-website-hosting"></span><h3>remove-website-hosting<a class="headerlink" href="#remove-website-hosting" title="Permalink to this headline">¶</a></h3>
@@ -3940,6 +3972,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:DeleteBucketWebsite</p>
 </div>
 <div class="section" id="set-bucket-encryption">
 <span id="aws-s3-actions-set-bucket-encryption"></span><h3>set-bucket-encryption<a class="headerlink" href="#set-bucket-encryption" title="Permalink to this headline">¶</a></h3>
@@ -4005,6 +4038,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutEncryptionConfiguration, s3:GetEncryptionConfiguration, kms:ListAliases, kms:DescribeKey</p>
 </div>
 <div class="section" id="set-inventory">
 <span id="aws-s3-actions-set-inventory"></span><h3>set-inventory<a class="headerlink" href="#set-inventory" title="Permalink to this headline">¶</a></h3>
@@ -4070,6 +4104,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutInventoryConfiguration, s3:GetInventoryConfiguration</p>
 </div>
 <div class="section" id="set-public-block">
 <span id="aws-s3-actions-set-public-block"></span><h3>set-public-block<a class="headerlink" href="#set-public-block" title="Permalink to this headline">¶</a></h3>
@@ -4133,6 +4168,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetBucketPublicAccessBlock, s3:PutBucketPublicAccessBlock</p>
 </div>
 <div class="section" id="set-replication">
 <span id="aws-s3-actions-set-replication"></span><h3>set-replication<a class="headerlink" href="#set-replication" title="Permalink to this headline">¶</a></h3>
@@ -4176,6 +4212,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetReplicationConfiguration, s3:PutReplicationConfiguration</p>
 </div>
 <div class="section" id="set-statements">
 <span id="aws-s3-actions-set-statements"></span><h3>set-statements<a class="headerlink" href="#set-statements" title="Permalink to this headline">¶</a></h3>
@@ -4286,6 +4323,7 @@ extant notification or create one matching the bucket name.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketPolicy</p>
 </div>
 <div class="section" id="toggle-logging">
 <span id="aws-s3-actions-toggle-logging"></span><h3>toggle-logging<a class="headerlink" href="#toggle-logging" title="Permalink to this headline">¶</a></h3>
@@ -4337,6 +4375,7 @@ Not specifying a target_prefix will default to the current bucket name.
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketLogging, iam:ListAccountAliases</p>
 </div>
 <div class="section" id="toggle-versioning">
 <span id="aws-s3-actions-toggle-versioning"></span><h3>toggle-versioning<a class="headerlink" href="#toggle-versioning" title="Permalink to this headline">¶</a></h3>
@@ -4374,6 +4413,7 @@ Not specifying a target_prefix will default to the current bucket name.
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutBucketVersioning</p>
 </div>
 </div>
 </div>

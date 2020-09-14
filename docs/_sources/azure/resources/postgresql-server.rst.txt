@@ -38,6 +38,7 @@ Finds all PostgreSQL Servers that cost more than 1000 in the last month
             op: gt
             value: 1000
 
+
 Filters
 -------
 

@@ -22,6 +22,7 @@ Returns all virtual machine images named my-test-vm-image
             op: eq
             value: my-test-vm-image
 
+
 Filters
 -------
 

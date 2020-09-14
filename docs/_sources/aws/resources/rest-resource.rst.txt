@@ -7,6 +7,7 @@ aws.rest-resource
 
 
 
+
 Filters
 -------
 
@@ -144,6 +145,11 @@ Filter rest resources based on a key value for the rest method integration of th
     - type
 
 
+
+
+Permissions - apigateway:GET
+
+
 .. _aws.rest-resource.filters.rest-method:
 
 rest-method
@@ -263,6 +269,11 @@ Filter rest resources based on a key value for the rest method of the api
 
 
 
+Permissions - apigateway:GET
+
+
+
+
 Actions
 -------
 
@@ -326,6 +337,11 @@ Delete an api integration. Useful if the integration type is a security risk.
         - delete-integration
     required:
     - type
+
+
+
+
+Permissions - apigateway:DELETE
 
 
 .. _aws.rest-resource.actions.update-integration:
@@ -394,6 +410,11 @@ Change or remove api integration properties based on key value
     - type
 
 
+
+
+Permissions - apigateway:PATCH
+
+
 .. _aws.rest-resource.actions.update-method:
 
 update-method
@@ -459,4 +480,9 @@ Change or remove api method behaviors based on key value
     required:
     - patch
     - type
+
+
+
+
+Permissions - apigateway:GET
 

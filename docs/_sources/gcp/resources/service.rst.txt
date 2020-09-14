@@ -8,6 +8,7 @@ gcp.service
 GCP Service Management
 https://cloud.google.com/service-infrastructure/docs/service-management/reference/rest/v1/services
 
+
 Filters
 -------
 
@@ -71,4 +72,9 @@ Example::
         - disable
     required:
     - type
+
+
+
+
+Permissions - servicemanagement.services.update
 

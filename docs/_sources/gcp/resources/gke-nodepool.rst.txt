@@ -8,6 +8,7 @@ gcp.gke-nodepool
 GCP resource:
 https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.zones.clusters.nodePools
 
+
 Filters
 -------
 

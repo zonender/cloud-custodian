@@ -7,6 +7,7 @@ aws.sns
 
 
 
+
 Filters
 -------
 
@@ -225,6 +226,11 @@ The whitelist parameter will omit the accounts that match from the return
     - type
 
 
+
+
+Permissions - sns:GetTopicAttributes
+
+
 .. _aws.sns.filters.json-diff:
 
 json-diff
@@ -262,6 +268,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.sns.filters.kms-key:
@@ -378,6 +389,11 @@ of the kms key by using 'c7n:AliasName'
 
 
 
+Permissions - kms:ListKeys
+
+
+
+
 Actions
 -------
 
@@ -453,6 +469,11 @@ Deletes a SNS Topic
     - type
 
 
+
+
+Permissions - sns:DeleteTopic
+
+
 .. _aws.sns.actions.remove-statements:
 
 remove-statements
@@ -497,6 +518,11 @@ Action to remove policy statements from SNS
     required:
     - statement_ids
     - type
+
+
+
+
+Permissions - sns:SetTopicAttributes, sns:GetTopicAttributes
 
 
 .. _aws.sns.actions.set-encryption:
@@ -555,4 +581,9 @@ key can either be a KMS key ARN, key id, or an alias
         - set-encryption
     required:
     - type
+
+
+
+
+Permissions - sns:SetTopicAttributes, kms:DescribeKey
 

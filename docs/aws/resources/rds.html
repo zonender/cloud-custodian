@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2861,6 +2874,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:DescribeDBInstances, rds:DescribeDBParameters</p>
 </div>
 <div class="section" id="default-vpc">
 <span id="aws-rds-filters-default-vpc"></span><h3>default-vpc<a class="headerlink" href="#default-vpc" title="Permalink to this headline">¶</a></h3>
@@ -2886,6 +2900,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeVpcs</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-rds-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2912,6 +2927,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="kms-alias">
 <span id="aws-rds-filters-kms-alias"></span><h3>kms-alias<a class="headerlink" href="#kms-alias" title="Permalink to this headline">¶</a></h3>
@@ -2994,6 +3010,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - kms:ListAliases</p>
 </div>
 <div class="section" id="upgrade-available">
 <span id="aws-rds-filters-upgrade-available"></span><h3>upgrade-available<a class="headerlink" href="#upgrade-available" title="Permalink to this headline">¶</a></h3>
@@ -3028,6 +3045,7 @@ the most recent version of the engine available</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:DescribeDBEngineVersions</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3097,6 +3115,7 @@ to each instance selected.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 <div class="section" id="delete">
 <span id="aws-rds-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
@@ -3131,6 +3150,7 @@ to avoid deleting all RDS instances in the account.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:DeleteDBInstance, rds:AddTagsToResource</p>
 </div>
 <div class="section" id="modify-db">
 <span id="aws-rds-actions-modify-db"></span><h3>modify-db<a class="headerlink" href="#modify-db" title="Permalink to this headline">¶</a></h3>
@@ -3221,6 +3241,7 @@ or not. If ‘immediate’ is not specified, default is false.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 <div class="section" id="resize">
 <span id="aws-rds-actions-resize"></span><h3>resize<a class="headerlink" href="#resize" title="Permalink to this headline">¶</a></h3>
@@ -3280,6 +3301,7 @@ is configured to be immediate.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 <div class="section" id="retention">
 <span id="aws-rds-actions-retention"></span><h3>retention<a class="headerlink" href="#retention" title="Permalink to this headline">¶</a></h3>
@@ -3321,6 +3343,7 @@ enforce (min, max, exact) sets retention days occordingly.
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 <div class="section" id="set-public-access">
 <span id="aws-rds-actions-set-public-access"></span><h3>set-public-access<a class="headerlink" href="#set-public-access" title="Permalink to this headline">¶</a></h3>
@@ -3352,6 +3375,7 @@ enforce (min, max, exact) sets retention days occordingly.
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 <div class="section" id="set-snapshot-copy-tags">
 <span id="aws-rds-actions-set-snapshot-copy-tags"></span><h3>set-snapshot-copy-tags<a class="headerlink" href="#set-snapshot-copy-tags" title="Permalink to this headline">¶</a></h3>
@@ -3386,6 +3410,7 @@ enforce (min, max, exact) sets retention days occordingly.
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 <div class="section" id="snapshot">
 <span id="aws-rds-actions-snapshot"></span><h3>snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h3>
@@ -3411,6 +3436,7 @@ enforce (min, max, exact) sets retention days occordingly.
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:CreateDBSnapshot</p>
 </div>
 <div class="section" id="start">
 <span id="aws-rds-actions-start"></span><h3>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
@@ -3425,6 +3451,7 @@ enforce (min, max, exact) sets retention days occordingly.
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:StartDBInstance</p>
 </div>
 <div class="section" id="stop">
 <span id="aws-rds-actions-stop"></span><h3>stop<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h3>
@@ -3440,6 +3467,7 @@ enforce (min, max, exact) sets retention days occordingly.
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:StopDBInstance</p>
 </div>
 <div class="section" id="upgrade">
 <span id="aws-rds-actions-upgrade"></span><h3>upgrade<a class="headerlink" href="#upgrade" title="Permalink to this headline">¶</a></h3>
@@ -3473,6 +3501,7 @@ the RDS engine disregarding the existing maintenance window.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - rds:ModifyDBInstance</p>
 </div>
 </div>
 </div>

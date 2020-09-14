@@ -17,6 +17,7 @@ Returns all cost exports for current subscription scope
       - name: get-cost-management-exports
         resource: azure.cost-management-export
 
+
 Filters
 -------
 
@@ -70,6 +71,9 @@ Returns all cost exports that didn't run in last 30 days.
     required:
     - age
     - type
+
+
+
 
 
 
@@ -133,4 +137,7 @@ trigger a manual export.
         - execute
     required:
     - type
+
+
+
 

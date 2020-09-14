@@ -22,6 +22,7 @@ Returns all Search services on the Basic SKU
             op: equal
             value: Basic
 
+
 Filters
 -------
 

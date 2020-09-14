@@ -33,6 +33,9 @@ Queries resources from cloud provider for filtering and actions.
 
 
 
+
+
+
 azure-event-grid
 ++++++++++++++++
 A policy that runs/executes in azure functions from an
@@ -143,6 +146,9 @@ azure event.
 
 
 
+
+
+
 azure-periodic
 ++++++++++++++
 A policy that runs/executes in azure functions at specified
@@ -242,6 +248,9 @@ time intervals.
 
 
 
+
+
+
 container-event
 +++++++++++++++
 A policy that runs at specified time intervals.
@@ -282,6 +291,9 @@ A policy that runs at specified time intervals.
 
 
 
+
+
+
 container-periodic
 ++++++++++++++++++
 A policy that runs at specified time intervals.
@@ -308,5 +320,8 @@ A policy that runs at specified time intervals.
         - container-periodic
     required:
     - type
+
+
+
 
 

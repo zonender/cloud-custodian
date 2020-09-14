@@ -7,6 +7,7 @@ gcp.autoscaler
 
 GCP resource: https://cloud.google.com/compute/docs/reference/rest/v1/autoscalers
 
+
 Filters
 -------
 
@@ -122,4 +123,9 @@ scale up to.
         - set
     required:
     - type
+
+
+
+
+Permissions - compute.autoscalers.update
 

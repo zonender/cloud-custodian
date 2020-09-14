@@ -7,6 +7,7 @@ aws.elb
 
 
 
+
 Filters
 -------
 
@@ -169,6 +170,11 @@ Value Filter that allows filtering on ELB attributes
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.elb.filters.default-vpc:
 
 default-vpc
@@ -201,6 +207,11 @@ Matches if an elb database is in the default vpc
         - default-vpc
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeVpcs
 
 
 .. _aws.elb.filters.healthcheck-protocol-mismatch:
@@ -238,6 +249,9 @@ the associated instances allow to determine health status.
         - healthcheck-protocol-mismatch
     required:
     - type
+
+
+
 
 
 .. _aws.elb.filters.instance:
@@ -345,6 +359,11 @@ Filter ELB by an associated instance value(s)
     - type
 
 
+
+
+Permissions - ec2:DescribeInstances, ec2:DescribeTags
+
+
 .. _aws.elb.filters.is-logging:
 
 is-logging
@@ -389,6 +408,11 @@ Matches ELBs that are logging to S3.
         - is-logging
     required:
     - type
+
+
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
 
 
 .. _aws.elb.filters.is-not-logging:
@@ -437,6 +461,11 @@ Matches ELBs that are NOT logging to S3.
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.elb.filters.is-ssl:
 
 is-ssl
@@ -469,6 +498,9 @@ Filters ELB that are using a SSL policy
         - is-ssl
     required:
     - type
+
+
+
 
 
 .. _aws.elb.filters.json-diff:
@@ -510,6 +542,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.elb.filters.shield-enabled:
 
 shield-enabled
@@ -535,6 +572,11 @@ Parent base class for filters and actions.
         - shield-enabled
     required:
     - type
+
+
+
+
+Permissions - shield:ListProtections
 
 
 .. _aws.elb.filters.ssl-policy:
@@ -606,6 +648,11 @@ you can use the `matching` option with a regular expression:
         items:
           type: string
         type: array
+
+
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancerPolicies
 
 
 
@@ -692,6 +739,11 @@ deletion of any load balancers.
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DeleteLoadBalancer
+
+
 .. _aws.elb.actions.disable-s3-logging:
 
 disable-s3-logging
@@ -727,6 +779,11 @@ Disable s3 logging for ElasticLoadBalancers.
         - disable-s3-logging
     required:
     - type
+
+
+
+
+Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes
 
 
 .. _aws.elb.actions.enable-s3-logging:
@@ -774,6 +831,11 @@ Action to enable S3 logging for Elastic Load Balancers.
     - type
 
 
+
+
+Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes
+
+
 .. _aws.elb.actions.set-shield:
 
 set-shield
@@ -803,6 +865,11 @@ for resources that no longer exist.
         - set-shield
     required:
     - type
+
+
+
+
+Permissions - shield:CreateProtection, shield:ListProtections
 
 
 .. _aws.elb.actions.set-ssl-listener-policy:
@@ -850,4 +917,9 @@ Action to set the ELB SSL listener policy
     - name
     - attributes
     - type
+
+
+
+
+Permissions - elasticloadbalancing:CreateLoadBalancerPolicy, elasticloadbalancing:SetLoadBalancerPoliciesOfListener
 

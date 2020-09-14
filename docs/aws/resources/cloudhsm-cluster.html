@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2746,8 +2759,10 @@
 <div><ul class="simple">
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-event"><span class="std std-ref">event</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-finding"><span class="std std-ref">finding</span></a></p></li>
+<li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-marked-for-op"><span class="std std-ref">marked-for-op</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-ops-item"><span class="std std-ref">ops-item</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-reduce"><span class="std std-ref">reduce</span></a></p></li>
+<li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-subnet"><span class="std std-ref">subnet</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-value"><span class="std std-ref">value</span></a></p></li>
 </ul>
 </div></blockquote>
@@ -2758,8 +2773,10 @@
 <div><ul class="simple">
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-auto-tag-user"><span class="std std-ref">auto-tag-user</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-copy-related-tag"><span class="std std-ref">copy-related-tag</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-cloudhsm-cluster-actions-delete"><span class="std std-ref">delete</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-invoke-lambda"><span class="std std-ref">invoke-lambda</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-invoke-sfn"><span class="std std-ref">invoke-sfn</span></a></p></li>
+<li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-mark-for-op"><span class="std std-ref">mark-for-op</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-notify"><span class="std std-ref">notify</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-post-finding"><span class="std std-ref">post-finding</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-post-item"><span class="std std-ref">post-item</span></a></p></li>
@@ -2769,6 +2786,21 @@
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
 </ul>
 </div></blockquote>
+<div class="section" id="delete">
+<span id="aws-cloudhsm-cluster-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
+<p>Parent base class for filters and actions.</p>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">delete</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - cloudhsm:DeleteCluster</p>
+</div>
 </div>
 </div>
 

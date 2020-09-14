@@ -7,6 +7,7 @@ aws.event-rule-target
 
 
 
+
 Filters
 -------
 
@@ -72,6 +73,11 @@ Check a resource's embedded iam policy for cross account access.
 
 
 
+Permissions - events:ListTargetsByRule
+
+
+
+
 Actions
 -------
 
@@ -118,4 +124,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - events:RemoveTargets
 

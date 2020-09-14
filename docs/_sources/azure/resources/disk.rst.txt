@@ -21,6 +21,7 @@ This policy will find all data disks that are not being managed by a VM.
             key: managedBy
             value: null
 
+
 Filters
 -------
 

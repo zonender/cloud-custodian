@@ -25,6 +25,7 @@ This policy will find all policy assignments named 'test-assignment' and delete 
       actions:
         - type: delete
 
+
 Filters
 -------
 

@@ -7,6 +7,7 @@ aws.kms-key
 
 
 
+
 Filters
 -------
 
@@ -169,6 +170,11 @@ Filter KMS keys which have cross account permissions
     - type
 
 
+
+
+Permissions - kms:GetKeyPolicy
+
+
 .. _aws.kms-key.filters.json-diff:
 
 json-diff
@@ -206,6 +212,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.kms-key.filters.key-rotation-status:
@@ -315,6 +326,11 @@ Filters KMS keys by the rotation status
 
 
 
+Permissions - kms:GetKeyRotationStatus
+
+
+
+
 Actions
 -------
 
@@ -396,6 +412,11 @@ Action to remove policy statements from KMS
     - type
 
 
+
+
+Permissions - kms:GetKeyPolicy, kms:PutKeyPolicy
+
+
 .. _aws.kms-key.actions.set-rotation:
 
 set-rotation
@@ -435,4 +456,9 @@ Toggle KMS key rotation
         - set-rotation
     required:
     - type
+
+
+
+
+Permissions - kms:EnableKeyRotation
 

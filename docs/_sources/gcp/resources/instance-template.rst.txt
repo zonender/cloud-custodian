@@ -7,6 +7,7 @@ gcp.instance-template
 
 GCP resource: https://cloud.google.com/compute/docs/reference/rest/v1/instanceTemplates
 
+
 Filters
 -------
 
@@ -73,4 +74,9 @@ an Instance Template. The action does not specify any parameters.
         - delete
     required:
     - type
+
+
+
+
+Permissions - compute.instanceTemplates.delete
 

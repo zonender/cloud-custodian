@@ -17,6 +17,7 @@ Finds all DNS Zones in the subscription
         - name: find-all-dns-zones
           resource: azure.dnszone
 
+
 Filters
 -------
 

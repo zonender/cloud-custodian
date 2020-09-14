@@ -7,6 +7,7 @@ aws.distribution
 
 
 
+
 Filters
 -------
 
@@ -148,6 +149,11 @@ Check for Cloudfront distribution config values
     - type
 
 
+
+
+Permissions - cloudfront:GetDistributionConfig
+
+
 .. _aws.distribution.filters.json-diff:
 
 json-diff
@@ -185,6 +191,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.distribution.filters.mismatch-s3-origin:
@@ -225,6 +236,11 @@ Check for existence of S3 bucket referenced by Cloudfront,
     - type
 
 
+
+
+Permissions - s3:ListAllMyBuckets
+
+
 .. _aws.distribution.filters.shield-enabled:
 
 shield-enabled
@@ -250,6 +266,11 @@ Parent base class for filters and actions.
         - shield-enabled
     required:
     - type
+
+
+
+
+Permissions - shield:ListProtections
 
 
 .. _aws.distribution.filters.waf-enabled:
@@ -279,6 +300,11 @@ Parent base class for filters and actions.
         type: string
     required:
     - type
+
+
+
+
+Permissions - waf:ListWebACLs
 
 
 
@@ -363,6 +389,11 @@ Action to disable a Distribution
     - type
 
 
+
+
+Permissions - cloudfront:GetDistributionConfig, cloudfront:UpdateDistribution
+
+
 .. _aws.distribution.actions.set-attributes:
 
 set-attributes
@@ -409,6 +440,11 @@ Action to update the attributes of a distribution
         - set-attributes
     required:
     - attributes
+
+
+
+
+Permissions - cloudfront:UpdateDistribution, cloudfront:GetDistributionConfig
 
 
 .. _aws.distribution.actions.set-protocols:
@@ -467,6 +503,11 @@ Action to set mandatory https-only on a Distribution
         - set-protocols
 
 
+
+
+Permissions - cloudfront:GetDistributionConfig, cloudfront:UpdateDistribution
+
+
 .. _aws.distribution.actions.set-shield:
 
 set-shield
@@ -496,6 +537,11 @@ for resources that no longer exist.
         - set-shield
     required:
     - type
+
+
+
+
+Permissions - shield:CreateProtection, shield:ListProtections
 
 
 .. _aws.distribution.actions.set-waf:
@@ -528,4 +574,9 @@ Parent base class for filters and actions.
     required:
     - web-acl
     - type
+
+
+
+
+Permissions - cloudfront:UpdateDistribution, waf:ListWebACLs
 

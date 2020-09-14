@@ -25,6 +25,7 @@ assignments, role definitions, etc). If a role definition inherits permissions
               value: Microsoft.Authorization/*/read
               op: contains
 
+
 Filters
 -------
 

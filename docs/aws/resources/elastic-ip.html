@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2781,6 +2794,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="shield-enabled">
 <span id="aws-elastic-ip-filters-shield-enabled"></span><h3>shield-enabled<a class="headerlink" href="#shield-enabled" title="Permalink to this headline">¶</a></h3>
@@ -2797,6 +2811,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:ListProtections</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -2854,6 +2869,7 @@ will be released.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:ReleaseAddress, ec2:DisassociateAddress</p>
 </div>
 <div class="section" id="set-shield">
 <span id="aws-elastic-ip-actions-set-shield"></span><h3>set-shield<a class="headerlink" href="#set-shield" title="Permalink to this headline">¶</a></h3>
@@ -2874,6 +2890,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:CreateProtection, shield:ListProtections</p>
 </div>
 </div>
 </div>

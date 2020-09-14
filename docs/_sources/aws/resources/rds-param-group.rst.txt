@@ -8,6 +8,7 @@ aws.rds-param-group
 Resource manager for RDS parameter groups.
     
 
+
 Filters
 -------
 
@@ -111,6 +112,11 @@ Action to copy an RDS parameter group.
     - type
 
 
+
+
+Permissions - rds:CopyDBParameterGroup
+
+
 .. _aws.rds-param-group.actions.delete:
 
 delete
@@ -145,6 +151,11 @@ Action to delete an RDS parameter group
         - delete
     required:
     - type
+
+
+
+
+Permissions - rds:DeleteDBParameterGroup
 
 
 .. _aws.rds-param-group.actions.modify:
@@ -203,4 +214,9 @@ Action to modify an RDS parameter group
     required:
     - params
     - type
+
+
+
+
+Permissions - rds:DescribeDBParameters, rds:ModifyDBParameterGroup
 

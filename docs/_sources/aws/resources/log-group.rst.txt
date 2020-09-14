@@ -7,6 +7,7 @@ aws.log-group
 
 
 
+
 Filters
 -------
 
@@ -82,6 +83,11 @@ Check a resource's embedded iam policy for cross account access.
     - type
 
 
+
+
+Permissions - logs:DescribeSubscriptionFilters
+
+
 .. _aws.log-group.filters.last-write:
 
 last-write
@@ -117,6 +123,11 @@ Filters CloudWatch log groups by last write
         - last-write
     required:
     - type
+
+
+
+
+Permissions - logs:DescribeLogStreams
 
 
 
@@ -193,6 +204,11 @@ delete
     - type
 
 
+
+
+Permissions - logs:DeleteLogGroup
+
+
 .. _aws.log-group.actions.retention:
 
 retention
@@ -228,6 +244,11 @@ Action to set the retention period (in days) for CloudWatch log groups
         - retention
     required:
     - type
+
+
+
+
+Permissions - logs:PutRetentionPolicy
 
 
 .. _aws.log-group.actions.set-encryption:
@@ -278,4 +299,9 @@ Encrypt/Decrypt a log group
         - set-encryption
     required:
     - type
+
+
+
+
+Permissions - logs:AssociateKmsKey, logs:DisassociateKmsKey, kms:DescribeKey
 

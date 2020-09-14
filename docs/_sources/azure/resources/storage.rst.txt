@@ -17,6 +17,7 @@ Finds all Storage Accounts in the subscription.
         - name: find-all-storage-accounts
           resource: azure.storage
 
+
 Filters
 -------
 
@@ -108,6 +109,9 @@ bypass rules
 
 
 
+
+
+
 Actions
 -------
 
@@ -183,6 +187,9 @@ Programmatically, this will be seen by updating the EnableHttpsTrafficOnly setti
         type: boolean
     required:
     - type
+
+
+
 
 
 .. _azure.storage.actions.set-firewall-rules:
@@ -292,6 +299,9 @@ Configure default-action to ``Deny`` and then allow:
     - type
 
 
+
+
+
 .. _azure.storage.actions.set-log-settings:
 
 set-log-settings
@@ -355,4 +365,7 @@ action will disable read).
     - log
     - retention
     - type
+
+
+
 

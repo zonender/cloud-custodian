@@ -8,6 +8,7 @@ gcp.dns-policy
 GCP resource: https://cloud.google.com/dns/docs/reference/v1beta2/policies
     
 
+
 Filters
 -------
 

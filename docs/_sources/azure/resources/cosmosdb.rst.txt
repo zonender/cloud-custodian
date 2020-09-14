@@ -24,6 +24,7 @@ This policy will find all CosmosDB with 1000 or less total requests over the las
             threshold: 1000
             timeframe: 72
 
+
 Filters
 -------
 
@@ -108,6 +109,9 @@ This policy will find all CosmosDB with enabled Azure Portal and Azure AzureClou
     - mode
     - list
     - type
+
+
+
 
 
 
@@ -255,4 +259,7 @@ We can do this by passing an empty array with ``append: False``
         type: array
     required:
     - type
+
+
+
 

@@ -7,6 +7,7 @@ aws.ecs-container-instance
 
 
 
+
 Filters
 -------
 
@@ -62,6 +63,11 @@ https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs-resource-ids.html
         - taggable
     required:
     - type
+
+
+
+
+Permissions - ecs:ListContainerInstances
 
 
 
@@ -141,6 +147,11 @@ Updates a container instance to either ACTIVE or DRAINING
     - type
 
 
+
+
+Permissions - ecs:UpdateContainerInstancesState
+
+
 .. _aws.ecs-container-instance.actions.update-agent:
 
 update-agent
@@ -164,4 +175,9 @@ Updates the agent on a container instance
         - update-agent
     required:
     - type
+
+
+
+
+Permissions - ecs:UpdateContainerAgent
 

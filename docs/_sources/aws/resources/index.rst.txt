@@ -48,6 +48,8 @@ be applies for all resources.
 
    group-cloudwatch.rst
 
+   group-codeartifact.rst
+
    group-codebuild.rst
 
    group-codecommit.rst

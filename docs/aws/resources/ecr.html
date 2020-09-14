@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2880,6 +2893,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ecr:GetRepositoryPolicy</p>
 </div>
 <div class="section" id="lifecycle-rule">
 <span id="aws-ecr-filters-lifecycle-rule"></span><h3>lifecycle-rule<a class="headerlink" href="#lifecycle-rule" title="Permalink to this headline">¶</a></h3>
@@ -2923,6 +2937,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ecr:GetLifecyclePolicy</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -2983,6 +2998,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ecr:SetRepositoryPolicy, ecr:GetRepositoryPolicy</p>
 </div>
 <div class="section" id="set-immutability">
 <span id="aws-ecr-actions-set-immutability"></span><h3>set-immutability<a class="headerlink" href="#set-immutability" title="Permalink to this headline">¶</a></h3>
@@ -3000,6 +3016,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ecr:PutImageTagMutability</p>
 </div>
 <div class="section" id="set-lifecycle">
 <span id="aws-ecr-actions-set-lifecycle"></span><h3>set-lifecycle<a class="headerlink" href="#set-lifecycle" title="Permalink to this headline">¶</a></h3>
@@ -3068,6 +3085,7 @@ lifecycle policies, not merge.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ecr:PutLifecyclePolicy, ecr:DeleteLifecyclePolicy</p>
 </div>
 <div class="section" id="set-scanning">
 <span id="aws-ecr-actions-set-scanning"></span><h3>set-scanning<a class="headerlink" href="#set-scanning" title="Permalink to this headline">¶</a></h3>
@@ -3085,6 +3103,7 @@ lifecycle policies, not merge.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ecr:PutImageScanningConfiguration</p>
 </div>
 </div>
 </div>

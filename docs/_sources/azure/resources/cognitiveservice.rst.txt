@@ -25,6 +25,7 @@ total errors over the 72 hours
             threshold: 1000
             timeframe: 72
 
+
 Filters
 -------
 

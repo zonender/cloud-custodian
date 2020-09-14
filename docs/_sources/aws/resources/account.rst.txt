@@ -7,9 +7,12 @@ aws.account
 
 
 
+
 Filters
 -------
 
+
+  - :ref:`access-analyzer <aws.account.filters.access-analyzer>`
 
   - :ref:`check-cloudtrail <aws.account.filters.check-cloudtrail>`
 
@@ -53,6 +56,117 @@ Filters
   
   - :ref:`xray-encrypt-key <aws.account.filters.xray-encrypt-key>`
 
+
+
+.. _aws.account.filters.access-analyzer:
+
+access-analyzer
++++++++++++++++
+Check for access analyzers in an account
+
+:example:
+
+.. code-block:: yaml
+
+  policies:
+    - name: account-access-analyzer
+      resource: account
+      filters:
+        - type: access-analyzer
+          key: 'status'
+          value: ACTIVE
+          op: eq
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      default:
+        type: object
+      key:
+        type: string
+      op:
+        enum:
+        - eq
+        - equal
+        - ne
+        - not-equal
+        - gt
+        - greater-than
+        - ge
+        - gte
+        - le
+        - lte
+        - lt
+        - less-than
+        - glob
+        - regex
+        - regex-case
+        - in
+        - ni
+        - not-in
+        - contains
+        - difference
+        - intersect
+      type:
+        enum:
+        - access-analyzer
+      value:
+        oneOf:
+        - type: array
+        - type: string
+        - type: boolean
+        - type: number
+        - type: 'null'
+      value_from:
+        additionalProperties: 'False'
+        properties:
+          expr:
+            oneOf:
+            - type: integer
+            - type: string
+          format:
+            enum:
+            - csv
+            - json
+            - txt
+            - csv2dict
+          url:
+            type: string
+        required:
+        - url
+        type: object
+      value_regex:
+        type: string
+      value_type:
+        enum:
+        - age
+        - integer
+        - expiration
+        - normalize
+        - size
+        - cidr
+        - cidr_size
+        - swap
+        - resource_count
+        - expr
+        - unique_size
+        - date
+        - version
+    required:
+    - type
+
+
+
+
+Permissions - access-analyzer:ListAnalyzers
 
 
 .. _aws.account.filters.check-cloudtrail:
@@ -114,6 +228,11 @@ in the current region, either as a multi region trail or as a trail with it as t
     - type
 
 
+
+
+Permissions - cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus
+
+
 .. _aws.account.filters.check-config:
 
 check-config
@@ -156,6 +275,11 @@ Is config service enabled for this account
         - check-config
     required:
     - type
+
+
+
+
+Permissions - config:DescribeDeliveryChannels, config:DescribeConfigurationRecorders, config:DescribeConfigurationRecorderStatus
 
 
 .. _aws.account.filters.credential:
@@ -297,6 +421,11 @@ into boolean values.
     - type
 
 
+
+
+Permissions - iam:GenerateCredentialReport, iam:GetCredentialReport
+
+
 .. _aws.account.filters.default-ebs-encryption:
 
 default-ebs-encryption
@@ -356,6 +485,11 @@ It is also possible to match on specific key attributes (tags, origin)
         - default-ebs-encryption
     required:
     - type
+
+
+
+
+Permissions - ec2:GetEbsEncryptionByDefault
 
 
 .. _aws.account.filters.emr-block-public-access:
@@ -461,6 +595,11 @@ Check for EMR block public access configuration on an account
     - type
 
 
+
+
+Permissions - elasticmapreduce:GetBlockPublicAccessConfiguration
+
+
 .. _aws.account.filters.glue-security-config:
 
 glue-security-config
@@ -502,6 +641,11 @@ Filter aws account by its glue encryption status and KMS key
       type:
         enum:
         - glue-security-config
+
+
+
+
+Permissions - glue:GetDataCatalogEncryptionSettings
 
 
 .. _aws.account.filters.guard-duty:
@@ -557,6 +701,11 @@ master if any.
         - guard-duty
 
 
+
+
+Permissions - guardduty:GetMasterAccount, guardduty:ListDetectors, guardduty:GetDetector
+
+
 .. _aws.account.filters.has-virtual-mfa:
 
 has-virtual-mfa
@@ -593,6 +742,11 @@ Is the account configured with a virtual MFA device?
         type: boolean
     required:
     - type
+
+
+
+
+Permissions - iam:ListVirtualMFADevices
 
 
 .. _aws.account.filters.iam-summary:
@@ -742,6 +896,11 @@ enabled with root mfa or has root api keys.
     - type
 
 
+
+
+Permissions - iam:GetAccountSummary
+
+
 .. _aws.account.filters.missing:
 
 missing
@@ -776,6 +935,9 @@ This works as an effectively an embedded policy thats evaluated.
     required:
     - policy
     - type
+
+
+
 
 
 .. _aws.account.filters.password-policy:
@@ -892,6 +1054,11 @@ account has attempted to set a policy at all.
     - type
 
 
+
+
+Permissions - iam:GetAccountPasswordPolicy
+
+
 .. _aws.account.filters.s3-public-block:
 
 s3-public-block
@@ -987,6 +1154,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-acce
     - type
 
 
+
+
+Permissions - s3:GetAccountPublicAccessBlock
+
+
 .. _aws.account.filters.securityhub:
 
 securityhub
@@ -1022,6 +1194,11 @@ Filter an account depending on whether security hub is enabled or not.
         - securityhub
     required:
     - type
+
+
+
+
+Permissions - securityhub:DescribeHub
 
 
 .. _aws.account.filters.service-limit:
@@ -1161,6 +1338,11 @@ advisor.  In this case, some of these checks have no results.
     - type
 
 
+
+
+Permissions - support:DescribeTrustedAdvisorCheckRefreshStatuses, support:DescribeTrustedAdvisorCheckResult, support:DescribeTrustedAdvisorChecks, support:RefreshTrustedAdvisorCheck
+
+
 .. _aws.account.filters.shield-enabled:
 
 shield-enabled
@@ -1186,6 +1368,11 @@ Parent base class for filters and actions.
         - shield-enabled
     required:
     - type
+
+
+
+
+Permissions - shield:DescribeSubscription
 
 
 .. _aws.account.filters.xray-encrypt-key:
@@ -1234,6 +1421,11 @@ Determine if xray is encrypted.
     required:
     - key
     - type
+
+
+
+
+Permissions - xray:GetEncryptionConfig
 
 
 
@@ -1332,6 +1524,11 @@ Enables logging on the trail(s) named in the policy
     - bucket
 
 
+
+
+Permissions - cloudtrail:CreateTrail, cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus, cloudtrail:StartLogging, cloudtrail:UpdateTrail, s3:CreateBucket, s3:GetBucketPolicy, s3:PutBucketPolicy
+
+
 .. _aws.account.actions.enable-data-events:
 
 enable-data-events
@@ -1408,6 +1605,11 @@ a trail this will do so without management events.
     - type
 
 
+
+
+Permissions - cloudtrail:DescribeTrails, cloudtrail:GetEventSelectors, cloudtrail:PutEventSelectors
+
+
 .. _aws.account.actions.request-limit-increase:
 
 request-limit-increase
@@ -1482,6 +1684,11 @@ File support ticket to raise limit.
         - request-limit-increase
 
 
+
+
+Permissions - support:CreateCase
+
+
 .. _aws.account.actions.set-ebs-encryption:
 
 set-ebs-encryption
@@ -1523,6 +1730,11 @@ Set AWS EBS default encryption on an account
         - set-ebs-encryption
     required:
     - type
+
+
+
+
+Permissions - ec2:EnableEbsEncryptionByDefault, ec2:DisableEbsEncryptionByDefault
 
 
 .. _aws.account.actions.set-emr-block-public-access:
@@ -1591,6 +1803,11 @@ Action to put/update the EMR block public access configuration for your
     - config
 
 
+
+
+Permissions - elasticmapreduce:PutBlockPublicAccessConfiguration
+
+
 .. _aws.account.actions.set-password-policy:
 
 set-password-policy
@@ -1637,6 +1854,11 @@ set to the defaults defined in the boto docs for IAM.Client.update_account_passw
         - set-password-policy
     required:
     - type
+
+
+
+
+Permissions - iam:GetAccountPasswordPolicy, iam:UpdateAccountPasswordPolicy
 
 
 .. _aws.account.actions.set-s3-public-block:
@@ -1695,6 +1917,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-acce
     - type
 
 
+
+
+Permissions - s3:PutAccountPublicAccessBlock, s3:GetAccountPublicAccessBlock
+
+
 .. _aws.account.actions.set-shield-advanced:
 
 set-shield-advanced
@@ -1719,6 +1946,11 @@ Enable/disable Shield Advanced on an account.
         - set-shield-advanced
     required:
     - type
+
+
+
+
+Permissions - shield:CreateSubscription, shield:DeleteSubscription
 
 
 .. _aws.account.actions.set-xray-encrypt:
@@ -1762,4 +1994,9 @@ Enable specific xray encryption.
     required:
     - key
     - type
+
+
+
+
+Permissions - xray:PutEncryptionConfig
 

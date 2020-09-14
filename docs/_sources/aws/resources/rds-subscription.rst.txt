@@ -7,6 +7,7 @@ aws.rds-subscription
 
 
 
+
 Filters
 -------
 
@@ -98,4 +99,9 @@ Deletes a RDS snapshot resource
         - delete
     required:
     - type
+
+
+
+
+Permissions - rds:DeleteEventSubscription
 

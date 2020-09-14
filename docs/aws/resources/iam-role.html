@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2798,6 +2811,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListRoles</p>
 </div>
 <div class="section" id="has-inline-policy">
 <span id="aws-iam-role-filters-has-inline-policy"></span><h3>has-inline-policy<a class="headerlink" href="#has-inline-policy" title="Permalink to this headline">¶</a></h3>
@@ -2828,6 +2842,7 @@ False: Filter roles that do not have an inline-policy</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListRolePolicies</p>
 </div>
 <div class="section" id="has-specific-managed-policy">
 <span id="aws-iam-role-filters-has-specific-managed-policy"></span><h3>has-specific-managed-policy<a class="headerlink" href="#has-specific-managed-policy" title="Permalink to this headline">¶</a></h3>
@@ -2857,6 +2872,7 @@ False: Filter roles that do not have an inline-policy</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListAttachedRolePolicies</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-iam-role-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2883,6 +2899,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="no-specific-managed-policy">
 <span id="aws-iam-role-filters-no-specific-managed-policy"></span><h3>no-specific-managed-policy<a class="headerlink" href="#no-specific-managed-policy" title="Permalink to this headline">¶</a></h3>
@@ -2912,6 +2929,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListAttachedRolePolicies</p>
 </div>
 <div class="section" id="unused">
 <span id="aws-iam-role-filters-unused"></span><h3>unused<a class="headerlink" href="#unused" title="Permalink to this headline">¶</a></h3>
@@ -2941,6 +2959,7 @@ with the ‘state’ attribute to get unused iam roles</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - lambda:ListFunctions, autoscaling:DescribeLaunchConfigurations, ec2:DescribeInstances, ec2:DescribeTags, ecs:DescribeClusters, ecs:DescribeServices</p>
 </div>
 <div class="section" id="used">
 <span id="aws-iam-role-filters-used"></span><h3>used<a class="headerlink" href="#used" title="Permalink to this headline">¶</a></h3>
@@ -2970,6 +2989,7 @@ with the ‘state’ attribute to get unused iam roles</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - lambda:ListFunctions, autoscaling:DescribeLaunchConfigurations, ec2:DescribeInstances, ec2:DescribeTags, ecs:DescribeClusters, ecs:DescribeServices</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3024,6 +3044,7 @@ with the ‘state’ attribute to get unused iam roles</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:DeleteRole</p>
 </div>
 <div class="section" id="set-boundary">
 <span id="aws-iam-role-actions-set-boundary"></span><h3>set-boundary<a class="headerlink" href="#set-boundary" title="Permalink to this headline">¶</a></h3>
@@ -3045,6 +3066,7 @@ with the ‘state’ attribute to get unused iam roles</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:PutRolePermissionsBoundary</p>
 </div>
 <div class="section" id="set-policy">
 <span id="aws-iam-role-actions-set-policy"></span><h3>set-policy<a class="headerlink" href="#set-policy" title="Permalink to this headline">¶</a></h3>
@@ -3088,6 +3110,7 @@ with the ‘state’ attribute to get unused iam roles</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:AttachRolePolicy, iam:DetachRolePolicy</p>
 </div>
 </div>
 </div>

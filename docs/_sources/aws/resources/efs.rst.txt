@@ -7,6 +7,7 @@ aws.efs
 
 
 
+
 Filters
 -------
 
@@ -150,6 +151,11 @@ of the kms key by using 'c7n:AliasName'
     - type
 
 
+
+
+Permissions - kms:ListKeys
+
+
 .. _aws.efs.filters.lifecycle-policy:
 
 lifecycle-policy
@@ -191,6 +197,11 @@ Filters efs based on the state of lifecycle policies
     required:
     - state
     - type
+
+
+
+
+Permissions - elasticfilesystem:DescribeLifecycleConfiguration
 
 
 
@@ -276,6 +287,11 @@ Enable/disable lifecycle policy for efs.
     - type
 
 
+
+
+Permissions - elasticfilesystem:PutLifecycleConfiguration
+
+
 .. _aws.efs.actions.delete:
 
 delete
@@ -299,4 +315,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - elasticfilesystem:DescribeMountTargets, elasticfilesystem:DeleteMountTarget, elasticfilesystem:DeleteFileSystem
 

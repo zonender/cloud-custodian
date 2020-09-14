@@ -73,6 +73,7 @@ This policy will find all KeyVaults and add get and list permissions for keys.
                       - get
                       - list
 
+
 Filters
 -------
 
@@ -159,6 +160,9 @@ This policy will find all KeyVaults with enabled Azure Services bypass rules
     - type
 
 
+
+
+
 .. _azure.keyvault.filters.whitelist:
 
 whitelist
@@ -194,6 +198,9 @@ Parent base class for filters and actions.
     required:
     - key
     - type
+
+
+
 
 
 
@@ -298,4 +305,7 @@ Adds Get and List key access policy to all keyvaults
     - operation
     - access-policies
     - type
+
+
+
 

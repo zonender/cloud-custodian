@@ -7,6 +7,7 @@ aws.glue-catalog
 
 
 
+
 Filters
 -------
 
@@ -161,6 +162,11 @@ Filter glue catalog if it has cross account permissions
     - type
 
 
+
+
+Permissions - glue:GetResourcePolicy
+
+
 .. _aws.glue-catalog.filters.glue-security-config:
 
 glue-security-config
@@ -202,6 +208,11 @@ Filter glue catalog by its glue encryption status and KMS key
       type:
         enum:
         - glue-security-config
+
+
+
+
+Permissions - glue:GetDataCatalogEncryptionSettings
 
 
 
@@ -277,6 +288,11 @@ Action to remove policy statements from Glue Data Catalog
     - type
 
 
+
+
+Permissions - glue:PutResourcePolicy
+
+
 .. _aws.glue-catalog.actions.set-encryption:
 
 set-encryption
@@ -347,4 +363,9 @@ not both
     required:
     - attributes
     - type
+
+
+
+
+Permissions - glue:PutDataCatalogEncryptionSettings
 

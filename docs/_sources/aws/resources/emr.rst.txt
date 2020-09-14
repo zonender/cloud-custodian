@@ -8,6 +8,7 @@ aws.emr
 Resource manager for Elastic MapReduce clusters
     
 
+
 Filters
 -------
 
@@ -112,4 +113,9 @@ termination of all EMR clusters
         - terminate
     required:
     - type
+
+
+
+
+Permissions - elasticmapreduce:TerminateJobFlows
 

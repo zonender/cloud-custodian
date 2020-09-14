@@ -8,6 +8,7 @@ gcp.loadbalancer-backend-bucket
 GCP resource: https://cloud.google.com/compute/docs/reference/rest/v1/backendBuckets
     
 
+
 Filters
 -------
 
@@ -75,4 +76,9 @@ Example:
         - delete
     required:
     - type
+
+
+
+
+Permissions - compute.backendBuckets.delete
 

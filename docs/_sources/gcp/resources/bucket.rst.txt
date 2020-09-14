@@ -7,6 +7,7 @@ gcp.bucket
 
 
 
+
 Filters
 -------
 
@@ -80,4 +81,9 @@ Example Policy:
         - set-uniform-access
     required:
     - type
+
+
+
+
+Permissions - storage.buckets.update
 

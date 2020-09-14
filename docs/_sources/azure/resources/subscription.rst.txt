@@ -32,6 +32,7 @@ This policy creates Azure Policy scoped to the current subscription if doesn't e
             display_name: dn_sample_policy
             definition_name: "Audit use of classic storage accounts"
 
+
 Filters
 -------
 
@@ -80,6 +81,9 @@ This works as an effectively an embedded policy thats evaluated.
     required:
     - policy
     - type
+
+
+
 
 
 
@@ -133,4 +137,7 @@ Parent base class for filters and actions.
     - display_name
     - definition_name
     - type
+
+
+
 

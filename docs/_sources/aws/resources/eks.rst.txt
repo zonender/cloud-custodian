@@ -7,6 +7,7 @@ aws.eks
 
 
 
+
 Filters
 -------
 
@@ -95,6 +96,11 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+Permissions - eks:DeleteCluster
+
+
 .. _aws.eks.actions.update-config:
 
 update-config
@@ -131,4 +137,9 @@ Parent base class for filters and actions.
       type:
         enum:
         - update-config
+
+
+
+
+Permissions - eks:UpdateClusterConfig
 

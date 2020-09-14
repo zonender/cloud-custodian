@@ -7,6 +7,7 @@ aws.iam-role
 
 
 
+
 Filters
 -------
 
@@ -94,6 +95,11 @@ Check a resource's embedded iam policy for cross account access.
     - type
 
 
+
+
+Permissions - iam:ListRoles
+
+
 .. _aws.iam-role.filters.has-inline-policy:
 
 has-inline-policy
@@ -131,6 +137,11 @@ False: Filter roles that do not have an inline-policy
         type: boolean
     required:
     - type
+
+
+
+
+Permissions - iam:ListRolePolicies
 
 
 .. _aws.iam-role.filters.has-specific-managed-policy:
@@ -172,6 +183,11 @@ For example, if the user wants to check all roles with 'admin-policy':
     - type
 
 
+
+
+Permissions - iam:ListAttachedRolePolicies
+
+
 .. _aws.iam-role.filters.json-diff:
 
 json-diff
@@ -211,6 +227,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.iam-role.filters.no-specific-managed-policy:
 
 no-specific-managed-policy
@@ -248,6 +269,11 @@ For example, if the user wants to check all roles without 'ip-restriction':
         type: string
     required:
     - type
+
+
+
+
+Permissions - iam:ListAttachedRolePolicies
 
 
 .. _aws.iam-role.filters.unused:
@@ -290,6 +316,11 @@ Checks for usage on EC2, Lambda, ECS only
     - type
 
 
+
+
+Permissions - lambda:ListFunctions, autoscaling:DescribeLaunchConfigurations, ec2:DescribeInstances, ec2:DescribeTags, ecs:DescribeClusters, ecs:DescribeServices
+
+
 .. _aws.iam-role.filters.used:
 
 used
@@ -327,6 +358,11 @@ Checks for usage on EC2, Lambda, ECS only
         - used
     required:
     - type
+
+
+
+
+Permissions - lambda:ListFunctions, autoscaling:DescribeLaunchConfigurations, ec2:DescribeInstances, ec2:DescribeTags, ecs:DescribeClusters, ecs:DescribeServices
 
 
 
@@ -410,6 +446,11 @@ For example, if you want to automatically delete an unused IAM role.
     - type
 
 
+
+
+Permissions - iam:DeleteRole
+
+
 .. _aws.iam-role.actions.set-boundary:
 
 set-boundary
@@ -440,6 +481,11 @@ A role or user can only have a single permission boundary set.
         - set-boundary
     required:
     - type
+
+
+
+
+Permissions - iam:PutRolePermissionsBoundary
 
 
 .. _aws.iam-role.actions.set-policy:
@@ -495,4 +541,9 @@ For example, if you want to automatically attach a policy to all roles which don
     - state
     - arn
     - type
+
+
+
+
+Permissions - iam:AttachRolePolicy, iam:DetachRolePolicy
 

@@ -7,6 +7,7 @@ aws.s3
 
 
 
+
 Filters
 -------
 
@@ -117,6 +118,11 @@ Filters for S3 buckets that have bucket-encryption
     - type
 
 
+
+
+Permissions - s3:GetEncryptionConfiguration, kms:DescribeKey
+
+
 .. _aws.s3.filters.bucket-logging:
 
 bucket-logging
@@ -180,6 +186,11 @@ Filter based on bucket logging configuration.
     required:
     - op
     - type
+
+
+
+
+Permissions - s3:GetBucketLogging, iam:ListAccountAliases
 
 
 .. _aws.s3.filters.bucket-notification:
@@ -299,6 +310,11 @@ Filter based on bucket notification configuration.
     - type
 
 
+
+
+Permissions - s3:GetBucketNotification
+
+
 .. _aws.s3.filters.check-public-block:
 
 check-public-block
@@ -346,6 +362,11 @@ If parameters are provided only the provided ones are checked.
         - check-public-block
     required:
     - type
+
+
+
+
+Permissions - s3:GetBucketPublicAccessBlock
 
 
 .. _aws.s3.filters.cross-account:
@@ -481,6 +502,11 @@ Filters cross-account access to S3 buckets
     - type
 
 
+
+
+Permissions - s3:GetBucketPolicy
+
+
 .. _aws.s3.filters.data-events:
 
 data-events
@@ -508,6 +534,11 @@ Parent base class for filters and actions.
         - data-events
     required:
     - type
+
+
+
+
+Permissions - cloudtrail:DescribeTrails, cloudtrail:GetEventSelectors
 
 
 .. _aws.s3.filters.global-grants:
@@ -566,6 +597,9 @@ can be disabled per the example below.
         - global-grants
     required:
     - type
+
+
+
 
 
 .. _aws.s3.filters.has-statement:
@@ -658,6 +692,9 @@ Find buckets with set of policy statements.
         - has-statement
     required:
     - type
+
+
+
 
 
 .. _aws.s3.filters.inventory:
@@ -753,6 +790,11 @@ Filter inventories for a bucket
     - type
 
 
+
+
+Permissions - s3:GetInventoryConfiguration
+
+
 .. _aws.s3.filters.is-log-target:
 
 is-log-target
@@ -807,6 +849,11 @@ Sources:
     - type
 
 
+
+
+Permissions - elasticloadbalancing:DescribeLoadBalancers, elasticloadbalancing:DescribeLoadBalancerAttributes, elasticloadbalancing:DescribeTags, elasticloadbalancing:DescribeLoadBalancerAttributes
+
+
 .. _aws.s3.filters.json-diff:
 
 json-diff
@@ -844,6 +891,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.s3.filters.missing-policy-statement:
@@ -887,6 +939,9 @@ Find buckets missing a set of named policy statements.
     - type
 
 
+
+
+
 .. _aws.s3.filters.no-encryption-statement:
 
 no-encryption-statement
@@ -919,6 +974,11 @@ Find buckets with missing encryption policy statements.
         - no-encryption-statement
     required:
     - type
+
+
+
+
+Permissions - s3:ListAllMyBuckets, s3:GetBucketLocation, s3:GetBucketTagging, s3:GetBucketPolicy, s3:GetBucketAcl, s3:GetReplicationConfiguration, s3:GetBucketVersioning, s3:GetBucketWebsite, s3:GetBucketLogging, s3:GetBucketNotification, s3:GetLifecycleConfiguration
 
 
 
@@ -1034,6 +1094,11 @@ Action attaches lambda encryption policy to S3 bucket
         - attach-encrypt
     required:
     - type
+
+
+
+
+Permissions - s3:PutBucketNotification, s3:GetBucketNotification, lambda:*
 
 
 .. _aws.s3.actions.configure-lifecycle:
@@ -1182,6 +1247,11 @@ To delete a lifecycle rule, supply Status=absent
     - type
 
 
+
+
+Permissions - s3:GetLifecycleConfiguration, s3:PutLifecycleConfiguration
+
+
 .. _aws.s3.actions.delete:
 
 delete
@@ -1223,6 +1293,11 @@ Action deletes a S3 bucket
     - type
 
 
+
+
+Permissions - s3:*
+
+
 .. _aws.s3.actions.delete-bucket-notification:
 
 delete-bucket-notification
@@ -1253,6 +1328,11 @@ Action to delete S3 bucket notification configurations
     required:
     - statement_ids
     - type
+
+
+
+
+Permissions - s3:PutBucketNotification
 
 
 .. _aws.s3.actions.delete-global-grants:
@@ -1293,6 +1373,11 @@ Deletes global grants associated to a S3 bucket
         - delete-global-grants
     required:
     - type
+
+
+
+
+Permissions - s3:PutBucketAcl
 
 
 .. _aws.s3.actions.encrypt-keys:
@@ -1348,6 +1433,11 @@ Action to encrypt unencrypted S3 objects
         - encrypt-keys
 
 
+
+
+Permissions - s3:GetObject, s3:PutObject, s3:DeleteObjectVersion, s3:RestoreObject, s3:ListBucket
+
+
 .. _aws.s3.actions.encryption-policy:
 
 encryption-policy
@@ -1387,6 +1477,11 @@ Action to apply an encryption policy to S3 buckets
     - type
 
 
+
+
+Permissions - s3:GetBucketPolicy, s3:PutBucketPolicy
+
+
 .. _aws.s3.actions.no-op:
 
 no-op
@@ -1410,6 +1505,11 @@ Parent base class for filters and actions.
         - no-op
     required:
     - type
+
+
+
+
+Permissions - s3:ListAllMyBuckets
 
 
 .. _aws.s3.actions.remove-statements:
@@ -1461,6 +1561,11 @@ Action to remove policy statements from S3 buckets
     - type
 
 
+
+
+Permissions - s3:PutBucketPolicy, s3:DeleteBucketPolicy
+
+
 .. _aws.s3.actions.remove-website-hosting:
 
 remove-website-hosting
@@ -1483,6 +1588,11 @@ Action that removes website hosting configuration.
         - remove-website-hosting
     required:
     - type
+
+
+
+
+Permissions - s3:DeleteBucketWebsite
 
 
 .. _aws.s3.actions.set-bucket-encryption:
@@ -1558,6 +1668,11 @@ Action enables default encryption on S3 buckets
       type:
         enum:
         - set-bucket-encryption
+
+
+
+
+Permissions - s3:PutEncryptionConfiguration, s3:GetEncryptionConfiguration, kms:ListAliases, kms:DescribeKey
 
 
 .. _aws.s3.actions.set-inventory:
@@ -1636,6 +1751,11 @@ Configure bucket inventories for an s3 bucket.
     - type
 
 
+
+
+Permissions - s3:PutInventoryConfiguration, s3:GetInventoryConfiguration
+
+
 .. _aws.s3.actions.set-public-block:
 
 set-public-block
@@ -1710,6 +1830,11 @@ If action parameters are provided, those will be set and other extant values pre
     - type
 
 
+
+
+Permissions - s3:GetBucketPublicAccessBlock, s3:PutBucketPublicAccessBlock
+
+
 .. _aws.s3.actions.set-replication:
 
 set-replication
@@ -1760,6 +1885,11 @@ Action to add or remove replication configuration statement from S3 buckets
         - set-replication
     required:
     - type
+
+
+
+
+Permissions - s3:GetReplicationConfiguration, s3:PutReplicationConfiguration
 
 
 .. _aws.s3.actions.set-statements:
@@ -1881,6 +2011,11 @@ Action to add or update policy statements to S3 buckets
     - type
 
 
+
+
+Permissions - s3:PutBucketPolicy
+
+
 .. _aws.s3.actions.toggle-logging:
 
 toggle-logging
@@ -1942,6 +2077,11 @@ https://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-programming.html
     - type
 
 
+
+
+Permissions - s3:PutBucketLogging, iam:ListAccountAliases
+
+
 .. _aws.s3.actions.toggle-versioning:
 
 toggle-versioning
@@ -1987,4 +2127,9 @@ Note versioning can never be disabled only suspended.
         - toggle-versioning
     required:
     - type
+
+
+
+
+Permissions - s3:PutBucketVersioning
 

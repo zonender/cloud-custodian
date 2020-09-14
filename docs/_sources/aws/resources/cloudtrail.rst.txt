@@ -7,6 +7,7 @@ aws.cloudtrail
 
 
 
+
 Filters
 -------
 
@@ -63,6 +64,11 @@ organizational trails.
     - type
 
 
+
+
+Permissions - cloudtrail:DescribeTrails
+
+
 .. _aws.cloudtrail.filters.json-diff:
 
 json-diff
@@ -100,6 +106,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.cloudtrail.filters.status:
@@ -209,6 +220,11 @@ Filter a cloudtrail by its status.
 
 
 
+Permissions - cloudtrail:GetTrailStatus
+
+
+
+
 Actions
 -------
 
@@ -285,6 +301,11 @@ Delete a cloud trail
     - type
 
 
+
+
+Permissions - cloudtrail:DeleteTrail
+
+
 .. _aws.cloudtrail.actions.set-logging:
 
 set-logging
@@ -324,6 +345,11 @@ Set the logging state of a trail
         - set-logging
     required:
     - type
+
+
+
+
+Permissions - cloudtrail:StartLogging
 
 
 .. _aws.cloudtrail.actions.update-trail:
@@ -367,4 +393,9 @@ Update trail attributes.
         - update-trail
     required:
     - attributes
+
+
+
+
+Permissions - cloudtrail:UpdateTrail
 

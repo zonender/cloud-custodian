@@ -7,6 +7,7 @@ aws.iam-group
 
 
 
+
 Filters
 -------
 
@@ -73,6 +74,11 @@ False: Filter all groups that do not have an inline-policy attached
     - type
 
 
+
+
+Permissions - iam:ListGroupPolicies
+
+
 .. _aws.iam-group.filters.has-users:
 
 has-users
@@ -109,6 +115,11 @@ False: Filter all IAM groups without any users assigned to it
         type: boolean
     required:
     - type
+
+
+
+
+Permissions - iam:GetGroup
 
 
 .. _aws.iam-group.filters.json-diff:
@@ -152,9 +163,16 @@ against a locked version (requires use of is-locked filter).
 
 
 
+Permissions - config:GetResourceConfigHistory
+
+
+
+
 Actions
 -------
 
+
+  - :ref:`delete <aws.iam-group.actions.delete>`
 
   - :ref:`invoke-lambda <aws.common.actions.invoke-lambda>`
   
@@ -171,4 +189,51 @@ Actions
   - :ref:`webhook <aws.common.actions.webhook>`
   
 
+
+
+.. _aws.iam-group.actions.delete:
+
+delete
+++++++
+Delete an IAM User Group.
+
+For example, if you want to delete a group named 'test'.
+
+:example:
+
+  .. code-block:: yaml
+
+    - name: iam-delete-user-group
+      resource: aws.iam-group
+      filters:
+        - type: value
+          key: GroupName
+          value: test
+      actions:
+        - type: delete
+          force: True
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      force:
+        type: boolean
+      type:
+        enum:
+        - delete
+    required:
+    - type
+
+
+
+
+Permissions - iam:DeleteGroup, iam:RemoveUserFromGroup
 

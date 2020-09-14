@@ -7,6 +7,7 @@ aws.serverless-app
 
 
 
+
 Filters
 -------
 
@@ -152,6 +153,11 @@ Check a resource's embedded iam policy for cross account access.
 
 
 
+Permissions - serverlessrepo:GetApplicationPolicy
+
+
+
+
 Actions
 -------
 
@@ -198,4 +204,9 @@ Parent base class for filters and actions.
         - delete
     required:
     - type
+
+
+
+
+Permissions - serverlessrepo:DeleteApplication
 

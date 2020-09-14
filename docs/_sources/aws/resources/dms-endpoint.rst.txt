@@ -7,6 +7,7 @@ aws.dms-endpoint
 
 
 
+
 Filters
 -------
 
@@ -99,6 +100,11 @@ Delete a DMS endpoint
         - delete
     required:
     - type
+
+
+
+
+Permissions - dms:DeleteEndpoint
 
 
 .. _aws.dms-endpoint.actions.modify-endpoint:
@@ -241,4 +247,9 @@ https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyEndpoint.html
       type:
         enum:
         - modify-endpoint
+
+
+
+
+Permissions - dms:ModifyEndpoint
 

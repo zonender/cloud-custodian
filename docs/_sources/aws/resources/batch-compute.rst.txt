@@ -7,6 +7,7 @@ aws.batch-compute
 
 
 
+
 Filters
 -------
 
@@ -92,6 +93,11 @@ Delete an AWS batch compute environment
     - type
 
 
+
+
+Permissions - batch:DeleteComputeEnvironment
+
+
 .. _aws.batch-compute.actions.update-environment:
 
 update-environment
@@ -145,4 +151,9 @@ Updates an AWS batch compute environment
       type:
         enum:
         - update-environment
+
+
+
+
+Permissions - batch:UpdateComputeEnvironment
 

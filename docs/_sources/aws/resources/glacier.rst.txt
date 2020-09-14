@@ -7,6 +7,7 @@ aws.glacier
 
 
 
+
 Filters
 -------
 
@@ -168,6 +169,11 @@ The whitelist parameter will omit the accounts that match from the return
 
 
 
+Permissions - glacier:GetVaultAccessPolicy
+
+
+
+
 Actions
 -------
 
@@ -239,6 +245,11 @@ Action to delete glacier vaults
     - type
 
 
+
+
+Permissions - glacier:DeleteVault
+
+
 .. _aws.glacier.actions.remove-statements:
 
 remove-statements
@@ -283,4 +294,9 @@ Action to remove policy statements from Glacier
     required:
     - statement_ids
     - type
+
+
+
+
+Permissions - glacier:SetVaultAccessPolicy, glacier:GetVaultAccessPolicy
 

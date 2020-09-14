@@ -7,6 +7,7 @@ aws.rest-account
 
 
 
+
 Filters
 -------
 
@@ -108,4 +109,9 @@ Update the cloudwatch role associated to a rest account
     required:
     - patch
     - type
+
+
+
+
+Permissions - apigateway:PATCH
 

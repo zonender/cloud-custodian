@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2870,6 +2883,7 @@ use <cite>match-operator: and</cite></p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListAccessKeys</p>
 </div>
 <div class="section" id="credential">
 <span id="aws-iam-user-filters-credential"></span><h3>credential<a class="headerlink" href="#credential" title="Permalink to this headline">¶</a></h3>
@@ -2993,6 +3007,7 @@ into boolean values.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:GenerateCredentialReport, iam:GetCredentialReport</p>
 </div>
 <div class="section" id="group">
 <span id="aws-iam-user-filters-group"></span><h3>group<a class="headerlink" href="#group" title="Permalink to this headline">¶</a></h3>
@@ -3089,6 +3104,7 @@ into boolean values.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListGroupsForUser</p>
 </div>
 <div class="section" id="has-inline-policy">
 <span id="aws-iam-user-filters-has-inline-policy"></span><h3>has-inline-policy<a class="headerlink" href="#has-inline-policy" title="Permalink to this headline">¶</a></h3>
@@ -3107,6 +3123,7 @@ False: Filter users that do not have an inline-policy</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListUserPolicies</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-iam-user-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -3133,6 +3150,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="mfa-device">
 <span id="aws-iam-user-filters-mfa-device"></span><h3>mfa-device<a class="headerlink" href="#mfa-device" title="Permalink to this headline">¶</a></h3>
@@ -3229,6 +3247,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListMFADevices</p>
 </div>
 <div class="section" id="policy">
 <span id="aws-iam-user-filters-policy"></span><h3>policy<a class="headerlink" href="#policy" title="Permalink to this headline">¶</a></h3>
@@ -3325,6 +3344,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListAttachedUserPolicies</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3473,6 +3493,7 @@ completely, use the <code class="docutils literal notranslate"><span class="pre"
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListAttachedUserPolicies, iam:ListAccessKeys, iam:ListGroupsForUser, iam:ListMFADevices, iam:ListServiceSpecificCredentials, iam:ListSigningCertificates, iam:ListSSHPublicKeys, iam:DeactivateMFADevice, iam:DeleteAccessKey, iam:DeleteLoginProfile, iam:DeleteSigningCertificate, iam:DeleteSSHPublicKey, iam:DeleteUser, iam:DeleteUserPolicy, iam:DetachUserPolicy, iam:RemoveUserFromGroup</p>
 </div>
 <div class="section" id="remove-keys">
 <span id="aws-iam-user-actions-remove-keys"></span><h3>remove-keys<a class="headerlink" href="#remove-keys" title="Permalink to this headline">¶</a></h3>
@@ -3509,6 +3530,7 @@ delete them after 180 days of nonuse:</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListAccessKeys, iam:UpdateAccessKey, iam:DeleteAccessKey</p>
 </div>
 <div class="section" id="set-boundary">
 <span id="aws-iam-user-actions-set-boundary"></span><h3>set-boundary<a class="headerlink" href="#set-boundary" title="Permalink to this headline">¶</a></h3>
@@ -3530,6 +3552,7 @@ delete them after 180 days of nonuse:</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:PutUserPermissionsBoundary</p>
 </div>
 <div class="section" id="set-groups">
 <span id="aws-iam-user-actions-set-groups"></span><h3>set-groups<a class="headerlink" href="#set-groups" title="Permalink to this headline">¶</a></h3>
@@ -3568,6 +3591,7 @@ delete them after 180 days of nonuse:</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:AddUserToGroup, iam:RemoveUserFromGroup</p>
 </div>
 </div>
 </div>

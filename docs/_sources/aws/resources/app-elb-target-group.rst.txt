@@ -8,6 +8,7 @@ aws.app-elb-target-group
 Resource manager for v2 ELB target groups.
     
 
+
 Filters
 -------
 
@@ -64,6 +65,11 @@ Filter all application elb target groups within the default vpc
         - default-vpc
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribeVpcs
 
 
 
@@ -138,4 +144,9 @@ deletion of any app elb target groups.
         - delete
     required:
     - type
+
+
+
+
+Permissions - elasticloadbalancing:DeleteTargetGroup
 

@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2861,6 +2874,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - dynamodb:DescribeContinuousBackups</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-dynamodb-table-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -2887,6 +2901,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="kms-key">
 <span id="aws-dynamodb-table-filters-kms-key"></span><h3>kms-key<a class="headerlink" href="#kms-key" title="Permalink to this headline">¶</a></h3>
@@ -2991,6 +3006,7 @@ of the kms key by using ‘c7n:AliasName’</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - kms:ListKeys</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3046,6 +3062,7 @@ the backup prefix will default to ‘Backup’.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - dynamodb:CreateBackup</p>
 </div>
 <div class="section" id="delete">
 <span id="aws-dynamodb-table-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
@@ -3073,6 +3090,7 @@ the backup prefix will default to ‘Backup’.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - dynamodb:DeleteTable</p>
 </div>
 <div class="section" id="set-continuous-backup">
 <span id="aws-dynamodb-table-actions-set-continuous-backup"></span><h3>set-continuous-backup<a class="headerlink" href="#set-continuous-backup" title="Permalink to this headline">¶</a></h3>
@@ -3106,6 +3124,7 @@ the backup prefix will default to ‘Backup’.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - dynamodb:UpdateContinuousBackups</p>
 </div>
 <div class="section" id="set-stream">
 <span id="aws-dynamodb-table-actions-set-stream"></span><h3>set-stream<a class="headerlink" href="#set-stream" title="Permalink to this headline">¶</a></h3>
@@ -3140,6 +3159,7 @@ the backup prefix will default to ‘Backup’.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - dynamodb:UpdateTable</p>
 </div>
 </div>
 </div>

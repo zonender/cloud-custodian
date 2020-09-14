@@ -20,6 +20,7 @@ Finds all SQL Servers Database in the subscription.
         - name: find-all-sql-databases
           resource: azure.sqldatabase
 
+
 Filters
 -------
 
@@ -131,6 +132,9 @@ Find all SQL Databases with weekly backup retentions longer than 1 month.
     - type
 
 
+
+
+
 .. _azure.sql-database.filters.short-term-backup-retention-policy:
 
 short-term-backup-retention-policy
@@ -188,6 +192,9 @@ Find all SQL Databases with a short term retention policy shorter than 2 weeks.
     required:
     - retention-period-days
     - type
+
+
+
 
 
 
@@ -271,6 +278,9 @@ This policy will resize database to Premium tier with 500 DTU and set max data s
     - type
 
 
+
+
+
 .. _azure.sql-database.actions.update-long-term-backup-retention-policy:
 
 update-long-term-backup-retention-policy
@@ -339,6 +349,9 @@ Enforce a 1 month maximum retention for weekly backups on all SQL Databases
     - type
 
 
+
+
+
 .. _azure.sql-database.actions.update-short-term-backup-retention-policy:
 
 update-short-term-backup-retention-policy
@@ -382,4 +395,7 @@ Update any SQL Database short term retentions to at least 7 days.
         - update-short-term-backup-retention
     required:
     - type
+
+
+
 

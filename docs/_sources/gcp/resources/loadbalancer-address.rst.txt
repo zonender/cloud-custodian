@@ -8,6 +8,7 @@ gcp.loadbalancer-address
 GCP resource: https://cloud.google.com/compute/docs/reference/rest/v1/addresses
     
 
+
 Filters
 -------
 
@@ -64,4 +65,9 @@ an encapsulation of the 80%.
         - delete
     required:
     - type
+
+
+
+
+Permissions - compute.addresses.delete
 

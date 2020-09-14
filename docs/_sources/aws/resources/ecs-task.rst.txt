@@ -7,6 +7,7 @@ aws.ecs-task
 
 
 
+
 Filters
 -------
 
@@ -66,6 +67,11 @@ https://docs.aws.amazon.com/AmazonECS/latest/userguide/ecs-resource-ids.html
         - taggable
     required:
     - type
+
+
+
+
+Permissions - ecs:ListTasks
 
 
 .. _aws.ecs-task.filters.task-definition:
@@ -183,6 +189,11 @@ Filter tasks by their task definition.
 
 
 
+Permissions - ecs:DescribeTaskDefinition, ecs:ListTaskDefinitions
+
+
+
+
 Actions
 -------
 
@@ -240,4 +251,9 @@ Stop/Delete a currently running task.
         - stop
     required:
     - type
+
+
+
+
+Permissions - ecs:StopTask
 

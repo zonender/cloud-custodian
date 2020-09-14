@@ -7,6 +7,7 @@ aws.cfn
 
 
 
+
 Filters
 -------
 
@@ -64,6 +65,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 
@@ -149,6 +155,11 @@ stack name or id.
     - type
 
 
+
+
+Permissions - cloudformation:DeleteStack, cloudformation:UpdateStack
+
+
 .. _aws.cfn.actions.set-protection:
 
 set-protection
@@ -189,4 +200,9 @@ It is recommended to use a filter to avoid unwanted deletion of stacks
         - set-protection
     required:
     - type
+
+
+
+
+Permissions - cloudformation:UpdateStack
 

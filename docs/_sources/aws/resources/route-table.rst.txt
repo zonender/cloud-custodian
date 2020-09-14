@@ -7,6 +7,7 @@ aws.route-table
 
 
 
+
 Filters
 -------
 
@@ -74,6 +75,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 .. _aws.route-table.filters.route:
@@ -167,6 +173,9 @@ Filter a route table by its routes' attributes.
         - version
     required:
     - type
+
+
+
 
 
 

@@ -7,6 +7,7 @@ aws.kms
 
 
 
+
 Filters
 -------
 
@@ -161,6 +162,11 @@ Filter KMS keys which have cross account permissions
     - type
 
 
+
+
+Permissions - kms:GetKeyPolicy
+
+
 .. _aws.kms.filters.grant-count:
 
 grant-count
@@ -199,6 +205,11 @@ This can be used to ensure issues around grant limits are monitored
         - grant-count
     required:
     - type
+
+
+
+
+Permissions - kms:ListGrants
 
 
 
@@ -270,4 +281,9 @@ Action to remove policy statements from KMS
     required:
     - statement_ids
     - type
+
+
+
+
+Permissions - kms:GetKeyPolicy, kms:PutKeyPolicy
 

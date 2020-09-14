@@ -22,6 +22,7 @@ Returns all databricks named my-test-databricks
             op: eq
             value: my-test-databricks
 
+
 Filters
 -------
 

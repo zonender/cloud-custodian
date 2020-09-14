@@ -8,6 +8,7 @@ gcp.loadbalancer-ssl-policy
 GCP resource: https://cloud.google.com/compute/docs/reference/rest/v1/sslPolicies
     
 
+
 Filters
 -------
 
@@ -75,4 +76,9 @@ Example:
         - delete
     required:
     - type
+
+
+
+
+Permissions - compute.sslPolicies.delete
 

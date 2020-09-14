@@ -23,6 +23,7 @@ This policy will get Network Interfaces that have `User` added routes.
             value_type: swap
             value: User
 
+
 Filters
 -------
 
@@ -162,6 +163,9 @@ This policy will get Network Interfaces that have VirtualNetworkGateway and VNet
         - version
     required:
     - type
+
+
+
 
 
 

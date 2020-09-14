@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2867,6 +2880,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="default-vpc">
 <span id="aws-app-elb-filters-default-vpc"></span><h3>default-vpc<a class="headerlink" href="#default-vpc" title="Permalink to this headline">¶</a></h3>
@@ -2892,6 +2906,7 @@
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:DescribeVpcs</p>
 </div>
 <div class="section" id="healthcheck-protocol-mismatch">
 <span id="aws-app-elb-filters-healthcheck-protocol-mismatch"></span><h3>healthcheck-protocol-mismatch<a class="headerlink" href="#healthcheck-protocol-mismatch" title="Permalink to this headline">¶</a></h3>
@@ -2919,6 +2934,7 @@ does not match the load balancer health check protocol</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeTargetGroups</p>
 </div>
 <div class="section" id="is-logging">
 <span id="aws-app-elb-filters-is-logging"></span><h3>is-logging<a class="headerlink" href="#is-logging" title="Permalink to this headline">¶</a></h3>
@@ -2958,6 +2974,7 @@ does not match the load balancer health check protocol</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="is-not-logging">
 <span id="aws-app-elb-filters-is-not-logging"></span><h3>is-not-logging<a class="headerlink" href="#is-not-logging" title="Permalink to this headline">¶</a></h3>
@@ -2997,6 +3014,7 @@ does not match the load balancer health check protocol</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="json-diff">
 <span id="aws-app-elb-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
@@ -3023,6 +3041,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:GetResourceConfigHistory</p>
 </div>
 <div class="section" id="listener">
 <span id="aws-app-elb-filters-listener"></span><h3>listener<a class="headerlink" href="#listener" title="Permalink to this headline">¶</a></h3>
@@ -3130,6 +3149,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeLoadBalancerAttributes</p>
 </div>
 <div class="section" id="shield-enabled">
 <span id="aws-app-elb-filters-shield-enabled"></span><h3>shield-enabled<a class="headerlink" href="#shield-enabled" title="Permalink to this headline">¶</a></h3>
@@ -3146,6 +3166,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:ListProtections</p>
 </div>
 <div class="section" id="target-group">
 <span id="aws-app-elb-filters-target-group"></span><h3>target-group<a class="headerlink" href="#target-group" title="Permalink to this headline">¶</a></h3>
@@ -3229,6 +3250,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DescribeTargetGroups</p>
 </div>
 <div class="section" id="waf-enabled">
 <span id="aws-app-elb-filters-waf-enabled"></span><h3>waf-enabled<a class="headerlink" href="#waf-enabled" title="Permalink to this headline">¶</a></h3>
@@ -3247,6 +3269,7 @@ against a locked version (requires use of is-locked filter).</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - waf-regional:ListResourcesForWebACL, waf-regional:ListWebACLs</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3303,6 +3326,7 @@ to the rule</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:DeleteLoadBalancer, elasticloadbalancing:ModifyLoadBalancerAttributes</p>
 </div>
 <div class="section" id="modify-listener">
 <span id="aws-app-elb-actions-modify-listener"></span><h3>modify-listener<a class="headerlink" href="#modify-listener" title="Permalink to this headline">¶</a></h3>
@@ -3345,6 +3369,7 @@ to the rule</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:ModifyListener</p>
 </div>
 <div class="section" id="set-s3-logging">
 <span id="aws-app-elb-actions-set-s3-logging"></span><h3>set-s3-logging<a class="headerlink" href="#set-s3-logging" title="Permalink to this headline">¶</a></h3>
@@ -3383,6 +3408,7 @@ to the rule</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes</p>
 </div>
 <div class="section" id="set-shield">
 <span id="aws-app-elb-actions-set-shield"></span><h3>set-shield<a class="headerlink" href="#set-shield" title="Permalink to this headline">¶</a></h3>
@@ -3403,6 +3429,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:CreateProtection, shield:ListProtections</p>
 </div>
 <div class="section" id="set-waf">
 <span id="aws-app-elb-actions-set-waf"></span><h3>set-waf<a class="headerlink" href="#set-waf" title="Permalink to this headline">¶</a></h3>
@@ -3422,6 +3449,7 @@ for resources that no longer exist.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - waf-regional:AssociateWebACL, waf-regional:ListWebACLs</p>
 </div>
 </div>
 </div>

@@ -17,6 +17,7 @@ Finds all Route Tables in the subscription.
         - name: find-all-route-tables
           resource: azure.routetable
 
+
 Filters
 -------
 

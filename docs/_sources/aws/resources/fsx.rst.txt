@@ -7,6 +7,7 @@ aws.fsx
 
 
 
+
 Filters
 -------
 
@@ -144,6 +145,11 @@ of the kms key by using 'c7n:AliasName'
 
 
 
+Permissions - kms:ListKeys
+
+
+
+
 Actions
 -------
 
@@ -245,6 +251,11 @@ Tags are specified in key value pairs, e.g.: BackupSource: CloudCustodian
     - type
 
 
+
+
+Permissions - fsx:CreateBackup
+
+
 .. _aws.fsx.actions.delete:
 
 delete
@@ -304,6 +315,11 @@ Delete Filesystems
     - type
 
 
+
+
+Permissions - fsx:DeleteFileSystem
+
+
 .. _aws.fsx.actions.update:
 
 update
@@ -348,4 +364,9 @@ Reference: https://docs.aws.amazon.com/fsx/latest/APIReference/API_UpdateFileSys
         - update
     required:
     - type
+
+
+
+
+Permissions - fsx:UpdateFileSystem
 

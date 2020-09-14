@@ -8,6 +8,7 @@ aws.rds-cluster
 Resource manager for RDS clusters.
     
 
+
 Filters
 -------
 
@@ -81,6 +82,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 
@@ -177,6 +183,11 @@ filter to the rule
     - type
 
 
+
+
+Permissions - rds:DeleteDBCluster
+
+
 .. _aws.rds-cluster.actions.modify-db-cluster:
 
 modify-db-cluster
@@ -221,6 +232,11 @@ or not. If 'immediate' is not specified, default is false.
         - modify-db-cluster
     required:
     - attributes
+
+
+
+
+Permissions - rds:ModifyDBCluster
 
 
 .. _aws.rds-cluster.actions.retention:
@@ -273,6 +289,11 @@ enforce (min, max, exact) sets retention days occordingly.
     - type
 
 
+
+
+Permissions - rds:ModifyDBCluster
+
+
 .. _aws.rds-cluster.actions.snapshot:
 
 snapshot
@@ -307,6 +328,11 @@ Action to create a snapshot of a rds cluster
     - type
 
 
+
+
+Permissions - rds:CreateDBClusterSnapshot
+
+
 .. _aws.rds-cluster.actions.start:
 
 start
@@ -332,6 +358,11 @@ Start a stopped db cluster
     - type
 
 
+
+
+Permissions - rds:StartDBCluster
+
+
 .. _aws.rds-cluster.actions.stop:
 
 stop
@@ -355,4 +386,9 @@ Stop a running db cluster
         - stop
     required:
     - type
+
+
+
+
+Permissions - rds:StopDBCluster
 

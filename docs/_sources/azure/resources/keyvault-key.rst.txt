@@ -60,6 +60,7 @@ you can use this policy to find all Keys in all KeyVaults not backed by an HSM m
                key-types:
                  - RSA-HSM, EC-HSM
 
+
 Filters
 -------
 
@@ -111,6 +112,9 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+
 .. _azure.keyvault-key.filters.keyvault:
 
 keyvault
@@ -139,6 +143,9 @@ Parent base class for filters and actions.
     required:
     - vaults
     - type
+
+
+
 
 
 

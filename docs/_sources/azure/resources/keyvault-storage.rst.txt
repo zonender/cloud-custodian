@@ -17,6 +17,7 @@ List all Key Vault managed Storage Accounts
       - name: keyvault-storage
         resource: azure.keyvault-storage
 
+
 Filters
 -------
 
@@ -98,6 +99,9 @@ Regenerate all Access Keys older than 30 days.
     - type
 
 
+
+
+
 .. _azure.keyvault-storage.actions.update:
 
 update
@@ -147,4 +151,7 @@ Ensure all keys have auto regenerate enabled with 30 days rotation policy.
         - update
     required:
     - type
+
+
+
 

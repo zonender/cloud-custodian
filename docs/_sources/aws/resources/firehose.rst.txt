@@ -7,6 +7,7 @@ aws.firehose
 
 
 
+
 Filters
 -------
 
@@ -145,6 +146,11 @@ of the kms key by using 'c7n:AliasName'
 
 
 
+Permissions - kms:ListKeys
+
+
+
+
 Actions
 -------
 
@@ -205,6 +211,11 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+Permissions - firehose:DeleteDeliveryStream
+
+
 .. _aws.firehose.actions.encrypt-s3-destination:
 
 encrypt-s3-destination
@@ -242,4 +253,9 @@ Action to set encryption key a Firehose S3 destination
         - encrypt-s3-destination
     required:
     - key_arn
+
+
+
+
+Permissions - firehose:UpdateDestination
 

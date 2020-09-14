@@ -7,6 +7,7 @@ gcp.snapshot
 
 
 
+
 Filters
 -------
 
@@ -63,4 +64,9 @@ an encapsulation of the 80%.
         - delete
     required:
     - type
+
+
+
+
+Permissions - compute.snapshots.delete
 

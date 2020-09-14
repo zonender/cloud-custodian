@@ -7,6 +7,7 @@ aws.sagemaker-job
 
 
 
+
 Filters
 -------
 
@@ -90,4 +91,9 @@ Stops a SageMaker job
         - stop
     required:
     - type
+
+
+
+
+Permissions - sagemaker:StopTrainingJob
 

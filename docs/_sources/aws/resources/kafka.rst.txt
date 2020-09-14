@@ -7,6 +7,7 @@ aws.kafka
 
 
 
+
 Filters
 -------
 
@@ -93,6 +94,11 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+Permissions - kafka:DeleteCluster
+
+
 .. _aws.kafka.actions.set-monitoring:
 
 set-monitoring
@@ -119,4 +125,9 @@ Parent base class for filters and actions.
         - set-monitoring
     required:
     - config
+
+
+
+
+Permissions - kafka:UpdateClusterConfiguration
 

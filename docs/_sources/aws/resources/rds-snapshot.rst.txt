@@ -8,6 +8,7 @@ aws.rds-snapshot
 Resource manager for RDS DB snapshots.
     
 
+
 Filters
 -------
 
@@ -101,6 +102,9 @@ Filters RDS snapshots based on age (in days)
         - age
     required:
     - type
+
+
+
 
 
 .. _aws.rds-snapshot.filters.cross-account:
@@ -226,6 +230,11 @@ Check a resource's embedded iam policy for cross account access.
     - type
 
 
+
+
+Permissions - rds:DescribeDBSnapshotAttributes
+
+
 .. _aws.rds-snapshot.filters.json-diff:
 
 json-diff
@@ -265,6 +274,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.rds-snapshot.filters.latest:
 
 latest
@@ -290,6 +304,11 @@ Return the latest snapshot for each database.
         - latest
     required:
     - type
+
+
+
+
+Permissions - rds:DescribeDBSnapshots
 
 
 
@@ -369,6 +388,11 @@ Deletes a RDS snapshot resource
     - type
 
 
+
+
+Permissions - rds:DeleteDBSnapshot
+
+
 .. _aws.rds-snapshot.actions.region-copy:
 
 region-copy
@@ -427,6 +451,11 @@ Example::
     - target_region
 
 
+
+
+Permissions - rds:CopyDBSnapshot
+
+
 .. _aws.rds-snapshot.actions.restore:
 
 restore
@@ -461,4 +490,9 @@ can be specified via `modify_options` settings.
         - restore
     required:
     - type
+
+
+
+
+Permissions - rds:ModifyDBInstance, rds:ModifyDBParameterGroup, rds:ModifyOptionGroup, rds:RebootDBInstance, rds:RestoreDBInstanceFromDBSnapshot
 

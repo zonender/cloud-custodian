@@ -23,6 +23,7 @@ Returns all CDNs with Standard_Verizon sku
             value_type: normalize
             value: Standard_Verizon
 
+
 Filters
 -------
 

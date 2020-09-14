@@ -7,6 +7,7 @@ aws.sagemaker-endpoint
 
 
 
+
 Filters
 -------
 
@@ -96,4 +97,9 @@ Delete a SageMaker endpoint
         - delete
     required:
     - type
+
+
+
+
+Permissions - sagemaker:DeleteEndpoint, sagemaker:DeleteEndpointConfig
 

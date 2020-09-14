@@ -120,6 +120,7 @@ mark for deletion in 7 days
             op: delete
             days: 7
 
+
 Filters
 -------
 
@@ -245,6 +246,9 @@ network-interface
 
 
 
+
+
+
 Actions
 -------
 
@@ -307,6 +311,9 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+
 .. _azure.vm.actions.restart:
 
 restart
@@ -330,6 +337,9 @@ Parent base class for filters and actions.
         - restart
     required:
     - type
+
+
+
 
 
 .. _azure.vm.actions.start:
@@ -357,6 +367,9 @@ Parent base class for filters and actions.
     - type
 
 
+
+
+
 .. _azure.vm.actions.stop:
 
 stop
@@ -380,4 +393,7 @@ Parent base class for filters and actions.
         - stop
     required:
     - type
+
+
+
 

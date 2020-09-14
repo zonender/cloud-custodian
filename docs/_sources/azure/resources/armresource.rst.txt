@@ -19,6 +19,7 @@ This policy will find all ARM resources with the tag 'Tag1' present
         filters:
           - tag:Tag1: present
 
+
 Filters
 -------
 
@@ -73,6 +74,9 @@ Parent base class for filters and actions.
     required:
     - values
     - type
+
+
+
 
 
 

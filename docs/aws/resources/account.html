@@ -491,6 +491,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-codeartifact.html">codeartifact resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="artifact-domain.html">aws.artifact-domain</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-domain.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="artifact-repo.html">aws.artifact-repo</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="artifact-repo.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-codebuild.html">codebuild resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="codebuild.html">aws.codebuild</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="codebuild.html#filters">Filters</a></li>
@@ -2744,6 +2757,7 @@
 <h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
+<li><p><a class="reference internal" href="#aws-account-filters-access-analyzer"><span class="std std-ref">access-analyzer</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-account-filters-check-cloudtrail"><span class="std std-ref">check-cloudtrail</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-account-filters-check-config"><span class="std std-ref">check-config</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-account-filters-credential"><span class="std std-ref">credential</span></a></p></li>
@@ -2767,6 +2781,104 @@
 <li><p><a class="reference internal" href="#aws-account-filters-xray-encrypt-key"><span class="std std-ref">xray-encrypt-key</span></a></p></li>
 </ul>
 </div></blockquote>
+<div class="section" id="access-analyzer">
+<span id="aws-account-filters-access-analyzer"></span><h3>access-analyzer<a class="headerlink" href="#access-analyzer" title="Permalink to this headline">¶</a></h3>
+<p>Check for access analyzers in an account</p>
+<dl class="field-list simple">
+<dt class="field-odd">example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">account-access-analyzer</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">account</span>
+    <span class="nt">filters</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">access-analyzer</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="s">&#39;status&#39;</span>
+        <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ACTIVE</span>
+        <span class="nt">op</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">eq</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">default</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">key</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="nt">op</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">eq</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">equal</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ne</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">not-equal</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gt</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">greater-than</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ge</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">gte</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">le</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lte</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">lt</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">less-than</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">glob</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">regex</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">regex-case</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">in</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">ni</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">not-in</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">contains</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">difference</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">intersect</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">access-analyzer</span>
+  <span class="nt">value</span><span class="p">:</span>
+    <span class="nt">oneOf</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+    <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+    <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">number</span>
+    <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="s">&#39;null&#39;</span>
+  <span class="nt">value_from</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="s">&#39;False&#39;</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">expr</span><span class="p">:</span>
+        <span class="nt">oneOf</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">format</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">txt</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv2dict</span>
+      <span class="nt">url</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">required</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">url</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">value_regex</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="nt">value_type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">age</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">expiration</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">normalize</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">size</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cidr</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cidr_size</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">swap</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">resource_count</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">expr</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">unique_size</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">date</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">version</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - access-analyzer:ListAnalyzers</p>
+</div>
 <div class="section" id="check-cloudtrail">
 <span id="aws-account-filters-check-cloudtrail"></span><h3>check-cloudtrail<a class="headerlink" href="#check-cloudtrail" title="Permalink to this headline">¶</a></h3>
 <p>Verify cloud trail enabled for this account per specifications.</p>
@@ -2814,6 +2926,7 @@ in the current region, either as a multi region trail or as a trail with it as t
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus</p>
 </div>
 <div class="section" id="check-config">
 <span id="aws-account-filters-check-config"></span><h3>check-config<a class="headerlink" href="#check-config" title="Permalink to this headline">¶</a></h3>
@@ -2849,6 +2962,7 @@ in the current region, either as a multi region trail or as a trail with it as t
 </pre></div>
 </div>
 </div>
+<p>Permissions - config:DescribeDeliveryChannels, config:DescribeConfigurationRecorders, config:DescribeConfigurationRecorderStatus</p>
 </div>
 <div class="section" id="credential">
 <span id="aws-account-filters-credential"></span><h3>credential<a class="headerlink" href="#credential" title="Permalink to this headline">¶</a></h3>
@@ -2972,6 +3086,7 @@ into boolean values.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:GenerateCredentialReport, iam:GetCredentialReport</p>
 </div>
 <div class="section" id="default-ebs-encryption">
 <span id="aws-account-filters-default-ebs-encryption"></span><h3>default-ebs-encryption<a class="headerlink" href="#default-ebs-encryption" title="Permalink to this headline">¶</a></h3>
@@ -3023,6 +3138,7 @@ into boolean values.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:GetEbsEncryptionByDefault</p>
 </div>
 <div class="section" id="emr-block-public-access">
 <span id="aws-account-filters-emr-block-public-access"></span><h3>emr-block-public-access<a class="headerlink" href="#emr-block-public-access" title="Permalink to this headline">¶</a></h3>
@@ -3117,6 +3233,7 @@ into boolean values.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticmapreduce:GetBlockPublicAccessConfiguration</p>
 </div>
 <div class="section" id="glue-security-config">
 <span id="aws-account-filters-glue-security-config"></span><h3>glue-security-config<a class="headerlink" href="#glue-security-config" title="Permalink to this headline">¶</a></h3>
@@ -3151,6 +3268,7 @@ into boolean values.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - glue:GetDataCatalogEncryptionSettings</p>
 </div>
 <div class="section" id="guard-duty">
 <span id="aws-account-filters-guard-duty"></span><h3>guard-duty<a class="headerlink" href="#guard-duty" title="Permalink to this headline">¶</a></h3>
@@ -3193,6 +3311,7 @@ master if any.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - guardduty:GetMasterAccount, guardduty:ListDetectors, guardduty:GetDetector</p>
 </div>
 <div class="section" id="has-virtual-mfa">
 <span id="aws-account-filters-has-virtual-mfa"></span><h3>has-virtual-mfa<a class="headerlink" href="#has-virtual-mfa" title="Permalink to this headline">¶</a></h3>
@@ -3222,6 +3341,7 @@ master if any.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:ListVirtualMFADevices</p>
 </div>
 <div class="section" id="iam-summary">
 <span id="aws-account-filters-iam-summary"></span><h3>iam-summary<a class="headerlink" href="#iam-summary" title="Permalink to this headline">¶</a></h3>
@@ -3356,6 +3476,7 @@ enabled with root mfa or has root api keys.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:GetAccountSummary</p>
 </div>
 <div class="section" id="missing">
 <span id="aws-account-filters-missing"></span><h3>missing<a class="headerlink" href="#missing" title="Permalink to this headline">¶</a></h3>
@@ -3484,6 +3605,7 @@ account has attempted to set a policy at all.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:GetAccountPasswordPolicy</p>
 </div>
 <div class="section" id="s3-public-block">
 <span id="aws-account-filters-s3-public-block"></span><h3>s3-public-block<a class="headerlink" href="#s3-public-block" title="Permalink to this headline">¶</a></h3>
@@ -3568,6 +3690,7 @@ account has attempted to set a policy at all.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:GetAccountPublicAccessBlock</p>
 </div>
 <div class="section" id="securityhub">
 <span id="aws-account-filters-securityhub"></span><h3>securityhub<a class="headerlink" href="#securityhub" title="Permalink to this headline">¶</a></h3>
@@ -3596,6 +3719,7 @@ account has attempted to set a policy at all.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - securityhub:DescribeHub</p>
 </div>
 <div class="section" id="service-limit">
 <span id="aws-account-filters-service-limit"></span><h3>service-limit<a class="headerlink" href="#service-limit" title="Permalink to this headline">¶</a></h3>
@@ -3721,6 +3845,7 @@ advisor.  In this case, some of these checks have no results.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - support:DescribeTrustedAdvisorCheckRefreshStatuses, support:DescribeTrustedAdvisorCheckResult, support:DescribeTrustedAdvisorChecks, support:RefreshTrustedAdvisorCheck</p>
 </div>
 <div class="section" id="shield-enabled">
 <span id="aws-account-filters-shield-enabled"></span><h3>shield-enabled<a class="headerlink" href="#shield-enabled" title="Permalink to this headline">¶</a></h3>
@@ -3737,6 +3862,7 @@ advisor.  In this case, some of these checks have no results.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:DescribeSubscription</p>
 </div>
 <div class="section" id="xray-encrypt-key">
 <span id="aws-account-filters-xray-encrypt-key"></span><h3>xray-encrypt-key<a class="headerlink" href="#xray-encrypt-key" title="Permalink to this headline">¶</a></h3>
@@ -3776,6 +3902,7 @@ advisor.  In this case, some of these checks have no results.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - xray:GetEncryptionConfig</p>
 </div>
 </div>
 <div class="section" id="actions">
@@ -3845,6 +3972,7 @@ advisor.  In this case, some of these checks have no results.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudtrail:CreateTrail, cloudtrail:DescribeTrails, cloudtrail:GetTrailStatus, cloudtrail:StartLogging, cloudtrail:UpdateTrail, s3:CreateBucket, s3:GetBucketPolicy, s3:PutBucketPolicy</p>
 </div>
 <div class="section" id="enable-data-events">
 <span id="aws-account-actions-enable-data-events"></span><h3>enable-data-events<a class="headerlink" href="#enable-data-events" title="Permalink to this headline">¶</a></h3>
@@ -3910,6 +4038,7 @@ a trail this will do so without management events.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - cloudtrail:DescribeTrails, cloudtrail:GetEventSelectors, cloudtrail:PutEventSelectors</p>
 </div>
 <div class="section" id="request-limit-increase">
 <span id="aws-account-actions-request-limit-increase"></span><h3>request-limit-increase<a class="headerlink" href="#request-limit-increase" title="Permalink to this headline">¶</a></h3>
@@ -3975,6 +4104,7 @@ a trail this will do so without management events.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - support:CreateCase</p>
 </div>
 <div class="section" id="set-ebs-encryption">
 <span id="aws-account-actions-set-ebs-encryption"></span><h3>set-ebs-encryption<a class="headerlink" href="#set-ebs-encryption" title="Permalink to this headline">¶</a></h3>
@@ -4009,6 +4139,7 @@ a trail this will do so without management events.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - ec2:EnableEbsEncryptionByDefault, ec2:DisableEbsEncryptionByDefault</p>
 </div>
 <div class="section" id="set-emr-block-public-access">
 <span id="aws-account-actions-set-emr-block-public-access"></span><h3>set-emr-block-public-access<a class="headerlink" href="#set-emr-block-public-access" title="Permalink to this headline">¶</a></h3>
@@ -4068,6 +4199,7 @@ a trail this will do so without management events.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - elasticmapreduce:PutBlockPublicAccessConfiguration</p>
 </div>
 <div class="section" id="set-password-policy">
 <span id="aws-account-actions-set-password-policy"></span><h3>set-password-policy<a class="headerlink" href="#set-password-policy" title="Permalink to this headline">¶</a></h3>
@@ -4106,6 +4238,7 @@ set to the defaults defined in the boto docs for IAM.Client.update_account_passw
 </pre></div>
 </div>
 </div>
+<p>Permissions - iam:GetAccountPasswordPolicy, iam:UpdateAccountPasswordPolicy</p>
 </div>
 <div class="section" id="set-s3-public-block">
 <span id="aws-account-actions-set-s3-public-block"></span><h3>set-s3-public-block<a class="headerlink" href="#set-s3-public-block" title="Permalink to this headline">¶</a></h3>
@@ -4138,6 +4271,7 @@ with the extant configuration.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - s3:PutAccountPublicAccessBlock, s3:GetAccountPublicAccessBlock</p>
 </div>
 <div class="section" id="set-shield-advanced">
 <span id="aws-account-actions-set-shield-advanced"></span><h3>set-shield-advanced<a class="headerlink" href="#set-shield-advanced" title="Permalink to this headline">¶</a></h3>
@@ -4154,6 +4288,7 @@ with the extant configuration.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - shield:CreateSubscription, shield:DeleteSubscription</p>
 </div>
 <div class="section" id="set-xray-encrypt">
 <span id="aws-account-actions-set-xray-encrypt"></span><h3>set-xray-encrypt<a class="headerlink" href="#set-xray-encrypt" title="Permalink to this headline">¶</a></h3>
@@ -4188,6 +4323,7 @@ with the extant configuration.</p>
 </pre></div>
 </div>
 </div>
+<p>Permissions - xray:PutEncryptionConfig</p>
 </div>
 </div>
 </div>

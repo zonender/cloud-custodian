@@ -17,6 +17,7 @@ This policy will enumerate all cosmos databases
       - name: cosmosdb-database
         resource: azure.cosmosdb-database
 
+
 Filters
 -------
 

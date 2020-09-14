@@ -7,6 +7,7 @@ aws.rest-stage
 
 
 
+
 Filters
 -------
 
@@ -68,6 +69,11 @@ against a locked version (requires use of is-locked filter).
         - json-diff
     required:
     - type
+
+
+
+
+Permissions - config:GetResourceConfigHistory
 
 
 
@@ -143,6 +149,11 @@ Delete an api stage
     - type
 
 
+
+
+Permissions - apigateway:DELETE
+
+
 .. _aws.rest-stage.actions.update:
 
 update
@@ -205,4 +216,9 @@ Update/remove values of an api stage
     required:
     - patch
     - type
+
+
+
+
+Permissions - apigateway:PATCH
 

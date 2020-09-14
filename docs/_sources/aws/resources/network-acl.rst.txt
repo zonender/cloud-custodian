@@ -7,6 +7,7 @@ aws.network-acl
 
 
 
+
 Filters
 -------
 
@@ -74,6 +75,11 @@ against a locked version (requires use of is-locked filter).
     - type
 
 
+
+
+Permissions - config:GetResourceConfigHistory
+
+
 .. _aws.network-acl.filters.s3-cidr:
 
 s3-cidr
@@ -119,6 +125,11 @@ Defaults to filtering those nacls that do not allow s3 communication.
         - s3-cidr
     required:
     - type
+
+
+
+
+Permissions - ec2:DescribePrefixLists
 
 
 

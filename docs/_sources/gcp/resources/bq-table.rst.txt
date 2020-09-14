@@ -8,6 +8,7 @@ gcp.bq-table
 GCP resource: https://cloud.google.com/bigquery/docs/reference/rest/v2/tables
     
 
+
 Filters
 -------
 
