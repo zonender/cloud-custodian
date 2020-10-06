@@ -44,6 +44,8 @@ Filters
   
   - :ref:`vpc-attributes <aws.vpc.filters.vpc-attributes>`
 
+  - :ref:`vpc-endpoint <aws.vpc.filters.vpc-endpoint>`
+
 
 
 .. _aws.vpc.filters.dhcp-options:
@@ -759,6 +761,116 @@ Filters VPCs based on their DNS attributes
 
 
 Permissions - ec2:DescribeVpcAttribute
+
+
+.. _aws.vpc.filters.vpc-endpoint:
+
+vpc-endpoint
+++++++++++++
+Filters vpcs based on their vpc-endpoints
+
+:example:
+
+.. code-block:: yaml
+
+        policies:
+          - name: s3-vpc-endpoint-enabled
+            resource: vpc
+            filters:
+              - type: vpc-endpoint
+                key: ServiceName
+                value: com.amazonaws.us-east-1.s3
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      default:
+        type: object
+      key:
+        type: string
+      op:
+        enum:
+        - eq
+        - equal
+        - ne
+        - not-equal
+        - gt
+        - greater-than
+        - ge
+        - gte
+        - le
+        - lte
+        - lt
+        - less-than
+        - glob
+        - regex
+        - regex-case
+        - in
+        - ni
+        - not-in
+        - contains
+        - difference
+        - intersect
+      type:
+        enum:
+        - vpc-endpoint
+      value:
+        oneOf:
+        - type: array
+        - type: string
+        - type: boolean
+        - type: number
+        - type: 'null'
+      value_from:
+        additionalProperties: 'False'
+        properties:
+          expr:
+            oneOf:
+            - type: integer
+            - type: string
+          format:
+            enum:
+            - csv
+            - json
+            - txt
+            - csv2dict
+          url:
+            type: string
+        required:
+        - url
+        type: object
+      value_regex:
+        type: string
+      value_type:
+        enum:
+        - age
+        - integer
+        - expiration
+        - normalize
+        - size
+        - cidr
+        - cidr_size
+        - swap
+        - resource_count
+        - expr
+        - unique_size
+        - date
+        - version
+    required:
+    - type
+
+
+
+
+Permissions - ec2:DescribeVpcEndpoints
 
 
 
