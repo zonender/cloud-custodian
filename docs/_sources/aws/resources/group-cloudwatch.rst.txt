@@ -9,3 +9,5 @@ cloudwatch resources
 
 
    alarm.rst
+
+   insight-rule.rst
