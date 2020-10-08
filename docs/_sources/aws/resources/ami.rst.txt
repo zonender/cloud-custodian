@@ -379,6 +379,13 @@ launching it
   .. code-block:: yaml
 
     properties:
+      accounts:
+        oneOf:
+        - enum:
+          - matched
+        - maxLength: 12
+          minLength: 12
+          type: string
       type:
         enum:
         - remove-launch-permissions
@@ -388,5 +395,5 @@ launching it
 
 
 
-Permissions - ec2:ResetImageAttribute
+Permissions - ec2:ResetImageAttribute, ec2:ModifyImageAttribute
 

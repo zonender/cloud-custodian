@@ -3022,6 +3022,13 @@ launching it</p>
 </div>
 <div class="toggle docutils container">
 <div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">accounts</span><span class="p">:</span>
+    <span class="nt">oneOf</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">enum</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">matched</span>
+    <span class="p p-Indicator">-</span> <span class="nt">maxLength</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+      <span class="nt">minLength</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
   <span class="nt">type</span><span class="p">:</span>
     <span class="nt">enum</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">remove-launch-permissions</span>
@@ -3030,7 +3037,7 @@ launching it</p>
 </pre></div>
 </div>
 </div>
-<p>Permissions - ec2:ResetImageAttribute</p>
+<p>Permissions - ec2:ResetImageAttribute, ec2:ModifyImageAttribute</p>
 </div>
 </div>
 </div>
