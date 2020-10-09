@@ -3026,6 +3026,37 @@ as normal.</p>
 </pre></div>
 </div>
 </li>
+<li><p>Value From:</p>
+<p><code class="docutils literal notranslate"><span class="pre">value_from</span></code> allows the use of external values in the Value Filter</p>
+<p>Retrieve values from a url.</p>
+<p>Supports json, csv and line delimited text files and expressions
+to retrieve a subset of values.</p>
+<p>Expression syntax
+- on json, a jmespath expr is evaluated
+- on csv, an integer column or jmespath expr can be specified
+- on csv2dict, a jmespath expr (the csv is parsed into a dictionary where
+the keys are the headers and the values are the remaining columns)</p>
+<p>Text files are expected to be line delimited values.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">value_from</span><span class="p">:</span>
+   <span class="n">url</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">bucket</span><span class="o">/</span><span class="n">xyz</span><span class="o">/</span><span class="n">foo</span><span class="o">.</span><span class="n">json</span>
+   <span class="n">expr</span><span class="p">:</span> <span class="p">[]</span><span class="o">.</span><span class="n">AppId</span>
+
+<span class="n">value_from</span><span class="p">:</span>
+   <span class="n">url</span><span class="p">:</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">foobar</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">mydata</span>
+   <span class="nb">format</span><span class="p">:</span> <span class="n">json</span>
+   <span class="n">expr</span><span class="p">:</span> <span class="n">Region</span><span class="o">.</span><span class="s2">&quot;us-east-1&quot;</span><span class="p">[]</span><span class="o">.</span><span class="n">ImageId</span>
+
+<span class="n">value_from</span><span class="p">:</span>
+   <span class="n">url</span><span class="p">:</span> <span class="n">s3</span><span class="p">:</span><span class="o">//</span><span class="n">bucket</span><span class="o">/</span><span class="n">abc</span><span class="o">/</span><span class="n">foo</span><span class="o">.</span><span class="n">csv</span>
+   <span class="nb">format</span><span class="p">:</span> <span class="n">csv2dict</span>
+   <span class="n">expr</span><span class="p">:</span> <span class="n">key</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+ <span class="c1"># inferred from extension</span>
+ <span class="nb">format</span><span class="p">:</span> <span class="p">[</span><span class="n">json</span><span class="p">,</span> <span class="n">csv</span><span class="p">,</span> <span class="n">csv2dict</span><span class="p">,</span> <span class="n">txt</span><span class="p">]</span>
+</pre></div>
+</div>
+</li>
 </ul>
 </div>
 <div class="section" id="event-filter">
