@@ -18,6 +18,8 @@ ec2 resources
 
    ec2.rst
 
+   ec2-host.rst
+
    ec2-reserved.rst
 
    elastic-ip.rst
