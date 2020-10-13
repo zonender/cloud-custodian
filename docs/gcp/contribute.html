@@ -2080,9 +2080,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#testing">Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#test-cases-for-resources-list-methods">Test cases for resources list methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#test-cases-for-resources-get-methods">Test cases for resources get methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-tests">Running tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#updating-existing-tests">Updating Existing Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="resources/index.html">GCP Reference</a><ul>
@@ -2913,103 +2911,26 @@ then import the new service module in entry.py:</p>
 </div>
 <div class="section" id="testing">
 <h1>Testing<a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="test-cases-for-resources-list-methods">
-<h2>Test cases for resources list methods<a class="headerlink" href="#test-cases-for-resources-list-methods" title="Permalink to this headline">¶</a></h2>
-<p>To create a test case for <cite>list</cite> method is used following scenario.</p>
-<ul>
-<li><p>A factory is created based on recording real data from a GCP project resource.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record_flight_data</span><span class="p">(</span><span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-<p>The <cite>name of a file</cite> means the folder name that has JSON file(s) with expected response(s) on the request from a testing policy.</p>
-<ul>
-<li><p>The factory is used for creating the testing policy.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">policy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_policy</span><span class="p">(</span>
-    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;policy name&gt;&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;resource&#39;</span><span class="p">:</span> <span class="s1">&#39;gcp.&lt;name of the resource&gt;&#39;</span><span class="p">},</span>
-    <span class="n">session_factory</span><span class="o">=</span><span class="n">factory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-<p>The <cite>policy name</cite> means the name of the policy. It can be used any name of the policy.
-The <cite>name of the resource</cite> is the name of testing resource. It’s the <cite>resource_name</cite> from &#64;resources.register(‘&lt;resource_name&gt;’).</p>
-<ul>
-<li><p>The result of the running policy is a list of resources. Below code can be used for the policy running:</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">resources</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>The next step is current results verification with expecting results.</p></li>
-<li><p>Last step is replacing <cite>record_flight_data</cite> in creating the factory by <cite>replay_flight_data</cite>. After that step recorded data in JSON files will be used instead of real data. Name of project in GOOGLE_CLOUD_PROJECT may be replaced on any one.</p></li>
-</ul>
-</div>
-<div class="section" id="test-cases-for-resources-get-methods">
-<h2>Test cases for resources get methods<a class="headerlink" href="#test-cases-for-resources-get-methods" title="Permalink to this headline">¶</a></h2>
-<p>To create a test case for <cite>get</cite> method is used following scenario.</p>
-<ul>
-<li><p>A factory was created based on recording real data from a GCP project resource.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">factory</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">record_flight_data</span><span class="p">(</span><span class="o">&lt;</span><span class="n">name</span> <span class="n">of</span> <span class="n">a</span> <span class="n">file</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">project_id</span><span class="o">=</span><span class="n">project_id</span><span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-<p>The <cite>name of a file</cite> means the folder name that has JSON file(s) with expected response(s) on the request from a testing policy.</p>
-<ul>
-<li><p>The factory is used for creating the testing policy.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">policy</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">load_policy</span><span class="p">(</span>
-    <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;policy name&gt;&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;resource&#39;</span><span class="p">:</span> <span class="s1">&#39;gcp.&lt;name of the resource&gt;&#39;</span><span class="p">,</span>
-     <span class="s1">&#39;mode&#39;</span><span class="p">:</span> <span class="p">{</span>
-         <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;gcp-audit&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;methods&#39;</span><span class="p">:</span> <span class="p">[]</span>
-     <span class="p">}},</span>
-    <span class="n">session_factory</span><span class="o">=</span><span class="n">factory</span><span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-</ul>
-<p>The <cite>policy name</cite> means the name of the policy. It can be used any name of the policy.
-The <cite>name of the resource</cite> is the name of testing resource. It’s the <cite>resource_name</cite> from &#64;resources.register(‘&lt;resource_name&gt;’).
-The policy should also be tested in gcp-audit mode to ensure that testing the resource in a serverless environment is covered.</p>
-<ul>
-<li><p>The next step is invoking <cite>get</cite> method of GCP resource that is used for development. The result of invoking is logged in Stackdriver. The result should be copied from Stackdriver log and be put into a JSON file in tools/c7n_gcp/test/data/events folder.</p></li>
-<li><p>The next step is creating an event based on JSON file that was created in the previous step. The event is run within policy’s execution mode. The sample is below.</p>
-<blockquote>
-<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">exec_mode</span> <span class="o">=</span> <span class="n">policy</span><span class="o">.</span><span class="n">get_execution_mode</span><span class="p">()</span>
-<span class="n">event</span> <span class="o">=</span> <span class="n">event_data</span><span class="p">(</span><span class="s1">&#39;&lt;name of JSON file&gt;&#39;</span><span class="p">)</span>
-<span class="n">instances</span> <span class="o">=</span> <span class="n">exec_mode</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">event</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-</pre></div>
-</div>
-</div></blockquote>
-</li>
-<li><p>Further current results should be verified with expecting results.</p></li>
-<li><p>Last step is replacing <cite>record_flight_data</cite> in creating the factory by <cite>replay_flight_data</cite>. After that step recorded data in JSON files will be used instead of real data. Name of project in GOOGLE_CLOUD_PROJECT may be replaced on any one.</p></li>
-</ul>
-</div>
-<div class="section" id="running-tests">
-<h2>Running tests<a class="headerlink" href="#running-tests" title="Permalink to this headline">¶</a></h2>
-<p>Tests for c7n_gcp run automatically with other Custodian tests. See <a class="reference internal" href="../developer/tests.html#developer-tests"><span class="std std-ref">Testing for Developers</span></a> for information on how to run Tox.</p>
-<p>If you’d like to run tests at the command line or in your IDE then reference <cite>tox.ini</cite> to see the required
-environment variables and command lines for running <cite>pytest</cite>.</p>
-<p>You can use <cite>tox</cite> to run all tests or instead you can use <cite>pytest</cite> and run only GCP tests (or only specific set of tests). Running recorded tests still requires some authentication, it is possible to use fake data for credentials to GCP and name of Google Cloud project.</p>
+<p>c7n_gcp follows the same guideance for test authoring as the <a class="reference internal" href="../developer/tests.html#creating-tests"><span class="std std-ref">core c7n code
+base</span></a>. Examples with relative directories (for example, <code class="docutils literal notranslate"><span class="pre">tests/foo/bar</span></code>)
+should be applied to <code class="docutils literal notranslate"><span class="pre">tools/c7n_gcp</span></code> and not the root of the cloud-custodian
+repository.</p>
+<p>In order to execute live tests you will need to set two additional environment
+variables. These can be either set in your IDE or exported on the command line.
+The first is <code class="docutils literal notranslate"><span class="pre">GOOGLE_CLOUD_PROJECT</span></code> - this should point to a valid Google
+Cloud Project you have access to. The second, <code class="docutils literal notranslate"><span class="pre">GOOGLE_APPLICATION_CREDENTIALS</span></code>
+should be the corresponding credentials json with access to the aforementioned
+project.</p>
+<p>For example:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">GOOGLE_CLOUD_PROJECT</span><span class="o">=</span>cloud-custodian
 <span class="nb">export</span> <span class="nv">GOOGLE_APPLICATION_CREDENTIALS</span><span class="o">=</span>data/credentials.json
-pytest tools/c7n_gcp/tests
+pytest tools/c7n_gcp/tests -n auto
 </pre></div>
 </div>
+<div class="section" id="updating-existing-tests">
+<h2>Updating Existing Tests<a class="headerlink" href="#updating-existing-tests" title="Permalink to this headline">¶</a></h2>
+<p>Many of tests in this project were created prior to the current functional
+testing practices. To convert an existing test see <a class="reference internal" href="../developer/tests.html#converting-tests"><span class="std std-ref">how to convert existing tests</span></a>.</p>
 </div>
 </div>
 

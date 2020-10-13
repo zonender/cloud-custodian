@@ -2080,9 +2080,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gcp/contribute.html#testing">Testing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../gcp/contribute.html#test-cases-for-resources-list-methods">Test cases for resources list methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gcp/contribute.html#test-cases-for-resources-get-methods">Test cases for resources get methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../gcp/contribute.html#running-tests">Running tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../gcp/contribute.html#updating-existing-tests">Updating Existing Tests</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../gcp/resources/index.html">GCP Reference</a><ul>
@@ -2806,7 +2804,7 @@ the pytest-terraform library.</p>
 </ul>
 </div></blockquote>
 <div class="section" id="creating-cloud-resources-with-terraform">
-<h3>Creating Cloud Resources with Terraform<a class="headerlink" href="#creating-cloud-resources-with-terraform" title="Permalink to this headline">¶</a></h3>
+<span id="creating-tests"></span><h3>Creating Cloud Resources with Terraform<a class="headerlink" href="#creating-cloud-resources-with-terraform" title="Permalink to this headline">¶</a></h3>
 <p>If a test requires pre-existing cloud resources in order to operate,
 <cite>pytest-terraform</cite> is the preferred method for creating those
 resources.  Pytest Terraform uses <a class="reference external" href="https://terraform.io">Terraform</a>
@@ -3036,7 +3034,7 @@ deleted. To avoid terraform erroring on teardown <cite>TEARDOWN_IGNORE</cite> is
 </div>
 </div>
 <div class="section" id="converting-older-functional-tests">
-<h2>Converting older functional tests<a class="headerlink" href="#converting-older-functional-tests" title="Permalink to this headline">¶</a></h2>
+<span id="converting-tests"></span><h2>Converting older functional tests<a class="headerlink" href="#converting-older-functional-tests" title="Permalink to this headline">¶</a></h2>
 <p>Before the introduction of pytest-terraform many functional tests were wrapped
 with <code class="docutils literal notranslate"><span class="pre">&#64;functional</span></code> and used class-based tests which inherited <code class="docutils literal notranslate"><span class="pre">BaseTest</span></code>.</p>
 <p>To convert a previous functional testing to use the preferred pytest-terraform method
