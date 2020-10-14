@@ -160,6 +160,8 @@ be applies for all resources.
 
    group-serverlessrepo.rst
 
+   group-servicecatalog.rst
+
    group-shield.rst
 
    group-snowball.rst
