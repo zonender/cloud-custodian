@@ -11,3 +11,5 @@ batch resources
    batch-compute.rst
 
    batch-definition.rst
+
+   batch-queue.rst
