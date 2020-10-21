@@ -328,7 +328,6 @@ Enforce a 1 month maximum retention for weekly backups on all SQL Databases
         - weekly
         - monthly
         - yearly
-      op: null
       retention-period:
         type: number
       retention-period-units:
@@ -386,7 +385,6 @@ Update any SQL Database short term retentions to at least 7 days.
   .. code-block:: yaml
 
     properties:
-      op: null
       retention-period-days:
         type: number
       type:

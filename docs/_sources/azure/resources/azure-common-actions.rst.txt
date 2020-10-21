@@ -377,7 +377,6 @@ This policy will call logic app with list of VM's
       type:
         enum:
         - logic-app
-      url: null
     required:
     - resource-group
     - logic-app-name

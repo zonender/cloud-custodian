@@ -105,8 +105,6 @@ List all Key Vault managed Storage Accounts with Active Key Name key1
     properties:
       default:
         type: object
-      key: null
-      op: null
       type:
         enum:
         - active-key-name
@@ -132,7 +130,6 @@ List all Key Vault managed Storage Accounts with Active Key Name key1
         type: object
       value_regex:
         type: string
-      value_type: null
     required:
     - value
     - type
@@ -174,8 +171,6 @@ List all Key Vault managed Storage Accounts with disabled automatic keys regener
     properties:
       default:
         type: object
-      key: null
-      op: null
       type:
         enum:
         - auto-regenerate-key
@@ -201,7 +196,6 @@ List all Key Vault managed Storage Accounts with disabled automatic keys regener
         type: object
       value_regex:
         type: string
-      value_type: null
     required:
     - type
 
@@ -370,7 +364,6 @@ SQL servers that were cost more than 2000 in the last 30 days not including toda
     properties:
       default:
         type: object
-      key: null
       op:
         enum:
         - eq
@@ -1556,7 +1549,6 @@ List all Key Vault managed Storage Accounts with regeneration period not equal t
     properties:
       default:
         type: object
-      key: null
       op:
         enum:
         - eq
@@ -1610,7 +1602,6 @@ List all Key Vault managed Storage Accounts with regeneration period not equal t
         type: object
       value_regex:
         type: string
-      value_type: null
     required:
     - type
 
