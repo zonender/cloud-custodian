@@ -283,6 +283,10 @@ User.action_registry.register('mark-for-op', TagDelayedAction)
 User.filter_registry.register('marked-for-op', TagActionFilter)
 
 
+Role.action_registry.register('mark-for-op', TagDelayedAction)
+Role.filter_registry.register('marked-for-op', TagActionFilter)
+
+
 @User.action_registry.register('set-groups')
 class SetGroups(BaseAction):
     """Set a specific IAM user as added/removed from a group
