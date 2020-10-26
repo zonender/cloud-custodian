@@ -9,3 +9,5 @@ mq resources
 
 
    message-broker.rst
+
+   message-config.rst
