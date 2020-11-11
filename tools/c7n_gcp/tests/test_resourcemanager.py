@@ -5,6 +5,7 @@ import logging
 
 import time
 
+from c7n_gcp.resources.resourcemanager import HierarchyAction
 from gcp_common import BaseTest
 from mock import mock
 
@@ -121,6 +122,53 @@ class FolderTest(BaseTest):
 
 
 class ProjectTest(BaseTest):
+
+    def test_project_hierarchy(self):
+        factory = self.replay_flight_data('project-hierarchy')
+        p = self.load_policy({
+            'name': 'p-parents',
+            'resource': 'gcp.project',
+            'query': [
+                {'filter': 'parent.id:389734459213 parent.type:folder'}],
+        }, session_factory=factory)
+        resources = p.run()
+        hierarchy = HierarchyAction({}, p.resource_manager)
+        hierarchy.load_hierarchy(resources)
+        assert hierarchy.folder_ids == set(('389734459213', '264112811077'))
+        hierarchy.load_folders()
+        assert hierarchy.folders == {
+            '264112811077': {'createTime': '2020-11-05T15:31:46.060Z',
+                             'displayName': 'apps',
+                             'lifecycleState': 'ACTIVE',
+                             'name': 'folders/264112811077',
+                             'parent': 'organizations/11144'},
+            '389734459213': {'createTime': '2020-11-05T15:32:49.681Z',
+                             'displayName': 'ftests',
+                             'lifecycleState': 'ACTIVE',
+                             'name': 'folders/389734459213',
+                             'parent': 'folders/264112811077'}}
+        self.assertRaises(NotImplementedError, hierarchy.load_metadata)
+        self.assertRaises(NotImplementedError, hierarchy.diff, [])
+
+    def test_project_hierarchy_no_op(self):
+
+        class Sub(HierarchyAction):
+            # dummy impl for coverage check
+            def load_hierarchy(self, resources):
+                pass
+
+            def diff(self, resources):
+                return ()
+
+            def load_metadata(self):
+                pass
+
+        factory = self.replay_flight_data('project-hierarchy')
+        p = self.load_policy({
+            'name': 'p-parents',
+            'resource': 'gcp.project'}, session_factory=factory)
+        hierarchy = Sub({}, p.resource_manager)
+        hierarchy.process([])
 
     def test_project_delete(self):
         factory = self.replay_flight_data('project-delete')
