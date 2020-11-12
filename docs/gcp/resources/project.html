@@ -2870,6 +2870,7 @@ in which to interpret the clock (default value is ‘utc’)</p>
 <li><p><a class="reference internal" href="#gcp-project-actions-mark-for-op"><span class="std std-ref">mark-for-op</span></a></p></li>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-notify"><span class="std std-ref">notify</span></a></p></li>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-post-finding"><span class="std std-ref">post-finding</span></a></p></li>
+<li><p><a class="reference internal" href="#gcp-project-actions-propagate-labels"><span class="std std-ref">propagate-labels</span></a></p></li>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-set-iam-policy"><span class="std std-ref">set-iam-policy</span></a></p></li>
 <li><p><a class="reference internal" href="#gcp-project-actions-set-labels"><span class="std std-ref">set-labels</span></a></p></li>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
@@ -2946,6 +2947,74 @@ to marking the resource for action 4 days in the future.</p>
 </div>
 </div>
 <p>Permissions - resourcemanager.projects.update</p>
+</div>
+<div class="section" id="propagate-labels">
+<span id="gcp-project-actions-propagate-labels"></span><h3>propagate-labels<a class="headerlink" href="#propagate-labels" title="Permalink to this headline">¶</a></h3>
+<p>Propagate labels from the organization hierarchy to a project.</p>
+<p>folder-labels should resolve to a json data mapping of folder path
+to labels that should be applied to contained projects.</p>
+<p>as a worked example assume the following resource hierarchy</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">-</span> <span class="o">/</span><span class="n">dev</span>
+     <span class="o">/</span><span class="n">network</span>
+        <span class="o">/</span><span class="n">project</span><span class="o">-</span><span class="n">a</span>
+     <span class="o">/</span><span class="n">ml</span>
+        <span class="o">/</span><span class="n">project</span><span class="o">-</span><span class="n">b</span>
+</pre></div>
+</div>
+<p>Given a folder-labels json with contents like</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;dev&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;env&quot;</span><span class="p">:</span> <span class="s2">&quot;dev&quot;</span><span class="p">,</span> <span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;dev&quot;</span><span class="p">},</span>
+ <span class="nt">&quot;dev/network&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;network&quot;</span><span class="p">},</span>
+ <span class="nt">&quot;dev/ml&quot;</span><span class="p">:</span> <span class="p">{</span><span class="nt">&quot;owner&quot;</span><span class="p">:</span> <span class="s2">&quot;ml&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Running the following policy</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+ <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">tag-projects</span>
+   <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp.project</span>
+   <span class="c1"># use a server side filter to only look at projects</span>
+   <span class="c1"># under the /dev folder the id for the dev folder needs</span>
+   <span class="c1"># to be manually resolved outside of the policy.</span>
+   <span class="nt">query</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="nt">filter</span><span class="p">:</span> <span class="s">&quot;parent.id:389734459211</span><span class="nv"> </span><span class="s">parent.type:folder&quot;</span>
+   <span class="nt">filters</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="s">&quot;tag:owner&quot;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">absent</span>
+   <span class="nt">actions</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">propagate-labels</span>
+       <span class="nt">folder-labels</span><span class="p">:</span>
+          <span class="nt">url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">file://folder-labels.json</span>
+</pre></div>
+</div>
+<p>Will result in project-a being tagged with owner: network and env: dev
+and project-b being tagged with owner: ml and env: dev</p>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">folder-labels</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="s">&#39;False&#39;</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">expr</span><span class="p">:</span>
+        <span class="nt">oneOf</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">format</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">txt</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv2dict</span>
+      <span class="nt">url</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">required</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">url</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">propagate-labels</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">folder-labels</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - resourcemanager.folders.get, resourcemanager.projects.update</p>
 </div>
 <div class="section" id="set-labels">
 <span id="gcp-project-actions-set-labels"></span><h3>set-labels<a class="headerlink" href="#set-labels" title="Permalink to this headline">¶</a></h3>

@@ -110,6 +110,8 @@ Actions
   
   - :ref:`post-finding <gcp.common.actions.post-finding>`
   
+  - :ref:`propagate-labels <gcp.project.actions.propagate-labels>`
+
   - :ref:`set-iam-policy <gcp.common.actions.set-iam-policy>`
   
   - :ref:`set-labels <gcp.project.actions.set-labels>`
@@ -219,6 +221,96 @@ to marking the resource for action 4 days in the future.
 
 
 Permissions - resourcemanager.projects.update
+
+
+.. _gcp.project.actions.propagate-labels:
+
+propagate-labels
+++++++++++++++++
+Propagate labels from the organization hierarchy to a project.
+
+folder-labels should resolve to a json data mapping of folder path
+to labels that should be applied to contained projects.
+
+as a worked example assume the following resource hierarchy
+
+::
+
+  - /dev
+       /network
+          /project-a
+       /ml
+          /project-b
+
+Given a folder-labels json with contents like
+
+.. code-block:: json
+
+  {"dev": {"env": "dev", "owner": "dev"},
+   "dev/network": {"owner": "network"},
+   "dev/ml": {"owner": "ml"}
+
+Running the following policy
+
+.. code-block:: yaml
+
+  policies:
+   - name: tag-projects
+     resource: gcp.project
+     # use a server side filter to only look at projects
+     # under the /dev folder the id for the dev folder needs
+     # to be manually resolved outside of the policy.
+     query:
+       - filter: "parent.id:389734459211 parent.type:folder"
+     filters:
+       - "tag:owner": absent
+     actions:
+       - type: propagate-labels
+         folder-labels:
+            url: file://folder-labels.json
+
+Will result in project-a being tagged with owner: network and env: dev
+and project-b being tagged with owner: ml and env: dev
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      folder-labels:
+        additionalProperties: 'False'
+        properties:
+          expr:
+            oneOf:
+            - type: integer
+            - type: string
+          format:
+            enum:
+            - csv
+            - json
+            - txt
+            - csv2dict
+          url:
+            type: string
+        required:
+        - url
+        type: object
+      type:
+        enum:
+        - propagate-labels
+    required:
+    - folder-labels
+
+
+
+
+Permissions - resourcemanager.folders.get, resourcemanager.projects.update
 
 
 .. _gcp.project.actions.set-labels:
