@@ -2867,6 +2867,7 @@ in which to interpret the clock (default value is ‘utc’)</p>
 <h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
+<li><p><a class="reference internal" href="#gcp-instance-actions-create-machine-image"><span class="std std-ref">create-machine-image</span></a></p></li>
 <li><p><a class="reference internal" href="#gcp-instance-actions-delete"><span class="std std-ref">delete</span></a></p></li>
 <li><p><a class="reference internal" href="#gcp-instance-actions-detach-disks"><span class="std std-ref">detach-disks</span></a></p></li>
 <li><p><a class="reference internal" href="#gcp-instance-actions-mark-for-op"><span class="std std-ref">mark-for-op</span></a></p></li>
@@ -2878,6 +2879,51 @@ in which to interpret the clock (default value is ‘utc’)</p>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
 </ul>
 </div></blockquote>
+<div class="section" id="create-machine-image">
+<span id="gcp-instance-actions-create-machine-image"></span><h3>create-machine-image<a class="headerlink" href="#create-machine-image" title="Permalink to this headline">¶</a></h3>
+<dl class="simple">
+<dt><a class="reference external" href="https://cloud.google.com/compute/docs/reference/rest/beta/machineImages/insert">Creates</a></dt><dd><p>Machine Image from instance.</p>
+</dd>
+</dl>
+<p>The <cite>name_format</cite> specifies name of image in python <cite>format string &lt;https://pyformat.info/&gt;</cite></p>
+<dl class="simple">
+<dt>Inside format string there are defined variables:</dt><dd><ul class="simple">
+<li><p><cite>now</cite>: current time</p></li>
+<li><p><cite>instance</cite>: whole instance resource</p></li>
+</ul>
+</dd>
+</dl>
+<p>Default name format is <cite>{instance[name]}</cite></p>
+<dl class="field-list simple">
+<dt class="field-odd">Example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp-create-machine-image</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">gcp.instance</span>
+    <span class="nt">filters</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">name</span>
+        <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">instance-create-to-make-image</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">create-machine-image</span>
+        <span class="nt">name_format</span><span class="p">:</span> <span class="s">&quot;{instance[name]:.50}-{now:%Y-%m-%d}&quot;</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">name_format</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">create-machine-image</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - compute.machineImages.create</p>
+</div>
 <div class="section" id="delete">
 <span id="gcp-instance-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <p>Invoke an api call on each resource.</p>

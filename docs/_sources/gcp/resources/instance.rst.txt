@@ -105,6 +105,8 @@ Actions
 -------
 
 
+  - :ref:`create-machine-image <gcp.instance.actions.create-machine-image>`
+
   - :ref:`delete <gcp.instance.actions.delete>`
 
   - :ref:`detach-disks <gcp.instance.actions.detach-disks>`
@@ -124,6 +126,61 @@ Actions
   - :ref:`webhook <gcp.common.actions.webhook>`
   
 
+
+
+.. _gcp.instance.actions.create-machine-image:
+
+create-machine-image
+++++++++++++++++++++
+`Creates <https://cloud.google.com/compute/docs/reference/rest/beta/machineImages/insert>`_
+ Machine Image from instance.
+
+The `name_format` specifies name of image in python `format string <https://pyformat.info/>`
+
+Inside format string there are defined variables:
+  - `now`: current time
+  - `instance`: whole instance resource
+
+Default name format is `{instance[name]}`
+
+:Example:
+
+.. code-block:: yaml
+
+    policies:
+      - name: gcp-create-machine-image
+        resource: gcp.instance
+        filters:
+          - type: value
+            key: name
+            value: instance-create-to-make-image
+        actions:
+          - type: create-machine-image
+            name_format: "{instance[name]:.50}-{now:%Y-%m-%d}"
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      name_format:
+        type: string
+      type:
+        enum:
+        - create-machine-image
+    required:
+    - type
+
+
+
+
+Permissions - compute.machineImages.create
 
 
 .. _gcp.instance.actions.delete:
