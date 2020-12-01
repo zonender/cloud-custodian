@@ -3323,6 +3323,7 @@ against a locked version (requires use of is-locked filter).</p>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-invoke-lambda"><span class="std std-ref">invoke-lambda</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-invoke-sfn"><span class="std std-ref">invoke-sfn</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-mark-for-op"><span class="std std-ref">mark-for-op</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-app-elb-actions-modify-attributes"><span class="std std-ref">modify-attributes</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-app-elb-actions-modify-listener"><span class="std std-ref">modify-listener</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-modify-security-groups"><span class="std std-ref">modify-security-groups</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-notify"><span class="std std-ref">notify</span></a></p></li>
@@ -3368,6 +3369,82 @@ to the rule</p>
 </div>
 </div>
 <p>Permissions - elasticloadbalancing:DeleteLoadBalancer, elasticloadbalancing:ModifyLoadBalancerAttributes</p>
+</div>
+<div class="section" id="modify-attributes">
+<span id="aws-app-elb-actions-modify-attributes"></span><h3>modify-attributes<a class="headerlink" href="#modify-attributes" title="Permalink to this headline">¶</a></h3>
+<p>Modify load balancer attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">turn-on-elb-deletion-protection</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">app-elb</span>
+    <span class="nt">filters</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">attributes</span>
+        <span class="nt">key</span><span class="p">:</span> <span class="s">&quot;deletion_protection.enabled&quot;</span>
+        <span class="nt">value</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">modify-attributes</span>
+        <span class="nt">attributes</span><span class="p">:</span>
+          <span class="s">&quot;deletion_protection.enabled&quot;</span><span class="p p-Indicator">:</span> <span class="s">&quot;true&quot;</span>
+          <span class="s">&quot;idle_timeout.timeout_seconds&quot;</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">120</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">attributes</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">access_logs.s3.bucket</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">access_logs.s3.enabled</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;true&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;false&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">access_logs.s3.prefix</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">deletion_protection.enabled</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;true&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;false&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">idle_timeout.timeout_seconds</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">number</span>
+      <span class="nt">load_balancing.cross_zone.enabled</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;true&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;false&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">routing.http.desync_mitigation_mode</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">monitor</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">defensive</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">strictest</span>
+      <span class="nt">routing.http.drop_invalid_header_fields.enabled</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;true&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;false&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+      <span class="nt">routing.http2.enabled</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;true&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="s">&#39;false&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">false</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">modify-attributes</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - elasticloadbalancing:ModifyLoadBalancerAttributes</p>
 </div>
 <div class="section" id="modify-listener">
 <span id="aws-app-elb-actions-modify-listener"></span><h3>modify-listener<a class="headerlink" href="#modify-listener" title="Permalink to this headline">¶</a></h3>
