@@ -52,7 +52,7 @@ be applies for all resources.
 
    group-pubsub.rst
 
-   group-servicemanagement.rst
+   group-serviceusage.rst
 
    group-sourcerepo.rst
 

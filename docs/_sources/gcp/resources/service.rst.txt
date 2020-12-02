@@ -5,7 +5,9 @@
 gcp.service
 ===========
 
-GCP Service Management
+GCP Service Usage Management
+
+https://cloud.google.com/service-usage/docs/reference/rest
 https://cloud.google.com/service-infrastructure/docs/service-management/reference/rest/v1/services
 
 
@@ -52,7 +54,7 @@ Example::
         methods:
          - google.api.servicemanagement.v1.ServiceManagerV1.ActivateServices
       filters:
-       - serviceName: translate.googleapis.com
+       - config.name: translate.googleapis.com
       actions:
        - disable
 
@@ -67,14 +69,21 @@ Example::
   .. code-block:: yaml
 
     properties:
+      dependents:
+        default: false
+        type: boolean
       type:
         enum:
         - disable
+      usage:
+        enum:
+        - SKIP
+        - CHECK
     required:
     - type
 
 
 
 
-Permissions - servicemanagement.services.update
+Permissions - serviceusage.services.disable
 
