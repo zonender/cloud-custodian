@@ -374,6 +374,8 @@ Actions
   
   - :ref:`rename-tag <aws.common.actions.rename-tag>`
   
+  - :ref:`set-permissions <aws.ebs-snapshot.actions.set-permissions>`
+
   - :ref:`tag <aws.common.actions.tag>`
   
   - :ref:`tag-trim <aws.common.actions.tag-trim>`
@@ -480,4 +482,71 @@ Deletes EBS snapshots
 
 
 Permissions - ec2:DeleteSnapshot
+
+
+.. _aws.ebs-snapshot.actions.set-permissions:
+
+set-permissions
++++++++++++++++
+Action to set permissions for creating volumes from a snapshot
+
+Use the 'add' and 'remove' parameters to control which accounts to
+add or remove respectively.  The default is to remove any create
+volume permissions granted to other AWS accounts.
+
+Combining this action with the 'cross-account' filter allows you
+greater control over which accounts will be removed, e.g. using a
+whitelist:
+
+:example:
+
+.. code-block:: yaml
+
+        policies:
+          - name: ebs-dont-share-cross-account
+            resource: ebs-snapshot
+            filters:
+              - type: cross-account
+                whitelist:
+                - '112233445566'
+            actions:
+              - type: set-permissions
+                remove: matched
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      add:
+        items:
+          maxLength: 12
+          minLength: 12
+          type: string
+        type: array
+      remove:
+        oneOf:
+        - enum:
+          - matched
+        - items:
+            maxLength: 12
+            minLength: 12
+            type: string
+          type: array
+      type:
+        enum:
+        - set-permissions
+    required:
+    - type
+
+
+
+
+Permissions - ec2:ModifySnapshotAttribute
 
