@@ -2799,6 +2799,7 @@
 <blockquote>
 <div><ul class="simple">
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-config-compliance"><span class="std std-ref">config-compliance</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-elasticsearch-filters-cross-account"><span class="std std-ref">cross-account</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-event"><span class="std std-ref">event</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-finding"><span class="std std-ref">finding</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-elasticsearch-filters-json-diff"><span class="std std-ref">json-diff</span></a></p></li>
@@ -2813,6 +2814,130 @@
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-vpc"><span class="std std-ref">vpc</span></a></p></li>
 </ul>
 </div></blockquote>
+<div class="section" id="cross-account">
+<span id="aws-elasticsearch-filters-cross-account"></span><h3>cross-account<a class="headerlink" href="#cross-account" title="Permalink to this headline">¶</a></h3>
+<p>Filter to return all elasticsearch domains with cross account access permissions</p>
+<dl class="field-list simple">
+<dt class="field-odd">example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">check-elasticsearch-cross-account</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws.elasticsearch</span>
+    <span class="nt">filters</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cross-account</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">actions</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">everyone_only</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">cross-account</span>
+  <span class="nt">whitelist</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">whitelist_conditions</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">whitelist_from</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="s">&#39;False&#39;</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">expr</span><span class="p">:</span>
+        <span class="nt">oneOf</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">format</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">txt</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv2dict</span>
+      <span class="nt">url</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">required</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">url</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">whitelist_orgids</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">whitelist_orgids_from</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="s">&#39;False&#39;</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">expr</span><span class="p">:</span>
+        <span class="nt">oneOf</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">format</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">txt</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv2dict</span>
+      <span class="nt">url</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">required</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">url</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">whitelist_vpc</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">whitelist_vpc_from</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="s">&#39;False&#39;</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">expr</span><span class="p">:</span>
+        <span class="nt">oneOf</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">format</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">txt</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv2dict</span>
+      <span class="nt">url</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">required</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">url</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+  <span class="nt">whitelist_vpce</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">whitelist_vpce_from</span><span class="p">:</span>
+    <span class="nt">additionalProperties</span><span class="p">:</span> <span class="s">&#39;False&#39;</span>
+    <span class="nt">properties</span><span class="p">:</span>
+      <span class="nt">expr</span><span class="p">:</span>
+        <span class="nt">oneOf</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">format</span><span class="p">:</span>
+        <span class="nt">enum</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">txt</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">csv2dict</span>
+      <span class="nt">url</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">required</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">url</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">object</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - es:DescribeElasticsearchDomainConfig</p>
+</div>
 <div class="section" id="json-diff">
 <span id="aws-elasticsearch-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
 <p>Compute the diff from the current resource to a previous version.</p>
@@ -2961,6 +3086,7 @@ of the kms key by using ‘c7n:AliasName’</p>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-post-finding"><span class="std std-ref">post-finding</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-post-item"><span class="std std-ref">post-item</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-put-metric"><span class="std std-ref">put-metric</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-elasticsearch-actions-remove-statements"><span class="std std-ref">remove-statements</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-remove-tag"><span class="std std-ref">remove-tag</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-tag"><span class="std std-ref">tag</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
@@ -2980,6 +3106,44 @@ of the kms key by using ‘c7n:AliasName’</p>
 </div>
 </div>
 <p>Permissions - es:DeleteElasticsearchDomain</p>
+</div>
+<div class="section" id="remove-statements">
+<span id="aws-elasticsearch-actions-remove-statements"></span><h3>remove-statements<a class="headerlink" href="#remove-statements" title="Permalink to this headline">¶</a></h3>
+<p>Action to remove policy statements from elasticsearch</p>
+<dl class="field-list simple">
+<dt class="field-odd">example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">elasticsearch-cross-account</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws.elasticsearch</span>
+    <span class="nt">filters</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cross-account</span>
+    <span class="nt">actions</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">remove-statements</span>
+        <span class="nt">statement_ids</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">matched</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">statement_ids</span><span class="p">:</span>
+    <span class="nt">oneOf</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">enum</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">matched</span>
+      <span class="p p-Indicator">-</span> <span class="s">&#39;*&#39;</span>
+    <span class="p p-Indicator">-</span> <span class="nt">items</span><span class="p">:</span>
+        <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">remove-statements</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">statement_ids</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - es:DescribeElasticsearchDomainConfig, es:UpdateElasticsearchDomainConfig</p>
 </div>
 </div>
 </div>
