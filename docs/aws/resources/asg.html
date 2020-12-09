@@ -3370,7 +3370,7 @@ associated to the results from describing the autoscaling groups.</p>
 <h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
-<li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-auto-tag-user"><span class="std std-ref">auto-tag-user</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-asg-actions-auto-tag-user"><span class="std std-ref">auto-tag-user</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-copy-related-tag"><span class="std std-ref">copy-related-tag</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-asg-actions-delete"><span class="std std-ref">delete</span></a></p></li>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-invoke-lambda"><span class="std std-ref">invoke-lambda</span></a></p></li>
@@ -3391,6 +3391,69 @@ associated to the results from describing the autoscaling groups.</p>
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
 </ul>
 </div></blockquote>
+<div class="section" id="auto-tag-user">
+<span id="aws-asg-actions-auto-tag-user"></span><h3>auto-tag-user<a class="headerlink" href="#auto-tag-user" title="Permalink to this headline">¶</a></h3>
+<p>Tag a resource with the user who created/modified it.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ec2-auto-tag-ownercontact</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ec2</span>
+    <span class="nt">description</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+      <span class="no">Triggered when a new EC2 Instance is launched. Checks to see if</span>
+      <span class="no">it&#39;s missing the OwnerContact tag. If missing it gets created</span>
+      <span class="no">with the value of the ID of whomever called the RunInstances API</span>
+    <span class="nt">mode</span><span class="p">:</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">cloudtrail</span>
+      <span class="nt">role</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">arn:aws:iam::123456789000:role/custodian-auto-tagger</span>
+      <span class="nt">events</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">RunInstances</span>
+    <span class="nt">filters</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tag:OwnerContact</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">absent</span>
+    <span class="nt">actions</span><span class="p">:</span>
+     <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">auto-tag-user</span>
+       <span class="nt">tag</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">OwnerContact</span>
+</pre></div>
+</div>
+<p>There’s a number of caveats to usage. Resources which don’t
+include tagging as part of their api may have some delay before
+automation kicks in to create a tag. Real world delay may be several
+minutes, with worst case into hours[0]. This creates a race condition
+between auto tagging and automation.</p>
+<p>In practice this window is on the order of a fraction of a second, as
+we fetch the resource and evaluate the presence of the tag before
+attempting to tag it.</p>
+<p>References</p>
+<blockquote>
+<div><p>CloudTrail User
+<a class="reference external" href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html">https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html</a></p>
+</div></blockquote>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">principal_id_tag</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="nt">propagate</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+  <span class="nt">tag</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">auto-tag-user</span>
+  <span class="nt">update</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">boolean</span>
+  <span class="nt">user-type</span><span class="p">:</span>
+    <span class="nt">items</span><span class="p">:</span>
+      <span class="nt">enum</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">IAMUser</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">AssumedRole</span>
+      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FederatedUser</span>
+      <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">string</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">array</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - autoscaling:CreateOrUpdateTags</p>
+</div>
 <div class="section" id="delete">
 <span id="aws-asg-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <p>Action to delete an ASG</p>
@@ -3480,9 +3543,12 @@ attached to it.</p>
 <div class="section" id="propagate-tags">
 <span id="aws-asg-actions-propagate-tags"></span><h3>propagate-tags<a class="headerlink" href="#propagate-tags" title="Permalink to this headline">¶</a></h3>
 <p>Propagate tags to an asg instances.</p>
-<p>In AWS changing an asg tag does not propagate to instances.</p>
-<p>This action exists to do that, and can also trim older tags
-not present on the asg anymore that are present on instances.</p>
+<p>In AWS changing an asg tag does not automatically propagate to
+extant instances even if the tag is set to propagate. It only
+is applied to new instances.</p>
+<p>This action exists to ensure that extant instances also have these
+propagated tags set, and can also trim older tags not present on
+the asg anymore that are present on instances.</p>
 <dl class="field-list simple">
 <dt class="field-odd">example</dt>
 <dd class="field-odd"><p></p></dd>

@@ -750,8 +750,8 @@ Actions
 -------
 
 
-  - :ref:`auto-tag-user <aws.common.actions.auto-tag-user>`
-  
+  - :ref:`auto-tag-user <aws.asg.actions.auto-tag-user>`
+
   - :ref:`copy-related-tag <aws.common.actions.copy-related-tag>`
   
   - :ref:`delete <aws.asg.actions.delete>`
@@ -789,6 +789,86 @@ Actions
   - :ref:`webhook <aws.common.actions.webhook>`
   
 
+
+
+.. _aws.asg.actions.auto-tag-user:
+
+auto-tag-user
++++++++++++++
+Tag a resource with the user who created/modified it.
+
+.. code-block:: yaml
+
+  policies:
+    - name: ec2-auto-tag-ownercontact
+      resource: ec2
+      description: |
+        Triggered when a new EC2 Instance is launched. Checks to see if
+        it's missing the OwnerContact tag. If missing it gets created
+        with the value of the ID of whomever called the RunInstances API
+      mode:
+        type: cloudtrail
+        role: arn:aws:iam::123456789000:role/custodian-auto-tagger
+        events:
+          - RunInstances
+      filters:
+       - tag:OwnerContact: absent
+      actions:
+       - type: auto-tag-user
+         tag: OwnerContact
+
+There's a number of caveats to usage. Resources which don't
+include tagging as part of their api may have some delay before
+automation kicks in to create a tag. Real world delay may be several
+minutes, with worst case into hours[0]. This creates a race condition
+between auto tagging and automation.
+
+In practice this window is on the order of a fraction of a second, as
+we fetch the resource and evaluate the presence of the tag before
+attempting to tag it.
+
+References
+
+ CloudTrail User
+ https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-event-reference-user-identity.html
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      principal_id_tag:
+        type: string
+      propagate:
+        type: boolean
+      tag:
+        type: string
+      type:
+        enum:
+        - auto-tag-user
+      update:
+        type: boolean
+      user-type:
+        items:
+          enum:
+          - IAMUser
+          - AssumedRole
+          - FederatedUser
+          type: string
+        type: array
+    required:
+    - type
+
+
+
+
+Permissions - autoscaling:CreateOrUpdateTags
 
 
 .. _aws.asg.actions.delete:
@@ -910,11 +990,13 @@ propagate-tags
 ++++++++++++++
 Propagate tags to an asg instances.
 
-In AWS changing an asg tag does not propagate to instances.
+In AWS changing an asg tag does not automatically propagate to
+extant instances even if the tag is set to propagate. It only
+is applied to new instances.
 
-This action exists to do that, and can also trim older tags
-not present on the asg anymore that are present on instances.
-
+This action exists to ensure that extant instances also have these
+propagated tags set, and can also trim older tags not present on
+the asg anymore that are present on instances.
 
 :example:
 
