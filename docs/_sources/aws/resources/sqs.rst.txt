@@ -340,7 +340,7 @@ The KmsMasterId returned for SQS sometimes has the alias name directly in the va
 
 
 
-Permissions - kms:ListKeys
+Permissions - kms:ListKeys, kms:DescribeKey
 
 
 

@@ -389,7 +389,7 @@ of the kms key by using 'c7n:AliasName'
 
 
 
-Permissions - kms:ListKeys
+Permissions - kms:ListKeys, kms:DescribeKey
 
 
 
