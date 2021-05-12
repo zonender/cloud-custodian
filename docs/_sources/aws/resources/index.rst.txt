@@ -26,6 +26,8 @@ be applies for all resources.
 
    group-apigateway.rst
 
+   group-appflow.rst
+
    group-autoscaling.rst
 
    group-backup.rst
@@ -124,6 +126,8 @@ be applies for all resources.
 
    group-kinesisanalytics.rst
 
+   group-kinesisvideo.rst
+
    group-kms.rst
 
    group-lambda.rst
@@ -135,6 +139,8 @@ be applies for all resources.
    group-machinelearning.rst
 
    group-mq.rst
+
+   group-network-firewall.rst
 
    group-opsworks.rst
 

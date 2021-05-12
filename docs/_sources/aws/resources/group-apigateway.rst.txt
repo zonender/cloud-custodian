@@ -12,6 +12,8 @@ apigateway resources
 
    rest-api.rst
 
+   rest-client-certificate.rst
+
    rest-resource.rst
 
    rest-stage.rst

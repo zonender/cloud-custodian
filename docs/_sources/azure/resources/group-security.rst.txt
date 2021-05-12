@@ -13,5 +13,3 @@ Security resources
    keyvault-certificate.rst
 
    keyvault-key.rst
-
-   keyvault-storage.rst

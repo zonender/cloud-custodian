@@ -5,7 +5,8 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  
+  <meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>aws.ebs &mdash; Cloud Custodian  documentation</title>
@@ -84,7 +85,7 @@
               
             
             
-              <p class="caption"><span class="caption-text">Introduction</span></p>
+              <p><span class="caption-text">Introduction</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../quickstart/index.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart/index.html#install-cloud-custodian">Install Cloud Custodian</a><ul>
@@ -146,7 +147,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">AWS</span></p>
+<p><span class="caption-text">AWS</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../gettingstarted.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../gettingstarted.html#write-your-first-policy">Write your first policy</a></li>
@@ -356,6 +357,11 @@
 <li class="toctree-l4"><a class="reference internal" href="rest-api.html#actions">Actions</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="rest-client-certificate.html">aws.rest-client-certificate</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="rest-client-certificate.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="rest-client-certificate.html#actions">Actions</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="rest-resource.html">aws.rest-resource</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="rest-resource.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="rest-resource.html#actions">Actions</a></li>
@@ -373,6 +379,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-appflow.html">appflow resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="app-flow.html">aws.app-flow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="app-flow.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="app-flow.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-autoscaling.html">autoscaling resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="asg.html">aws.asg</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="asg.html#filters">Filters</a></li>
@@ -382,6 +396,11 @@
 <li class="toctree-l3"><a class="reference internal" href="launch-config.html">aws.launch-config</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="launch-config.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="launch-config.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scaling-policy.html">aws.scaling-policy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scaling-policy.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scaling-policy.html#actions">Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -905,6 +924,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="group-events.html">events resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event-bus.html">aws.event-bus</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="event-bus.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event-bus.html#actions">Actions</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="event-rule.html">aws.event-rule</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="event-rule.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="event-rule.html#actions">Actions</a></li>
@@ -1105,6 +1129,14 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="group-kinesisvideo.html">kinesisvideo resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="kinesis-video.html">aws.kinesis-video</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="kinesis-video.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="kinesis-video.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="group-kms.html">kms resources</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="kms.html">aws.kms</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="kms.html#filters">Filters</a></li>
@@ -1174,6 +1206,14 @@
 <li class="toctree-l3"><a class="reference internal" href="message-config.html">aws.message-config</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="message-config.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="message-config.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="group-network-firewall.html">network-firewall resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="firewall.html">aws.firewall</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="firewall.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="firewall.html#actions">Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -1493,7 +1533,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Azure</span></p>
+<p><span class="caption-text">Azure</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../azure/gettingstarted.html">Getting Started</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../azure/gettingstarted.html#install-cloud-custodian-and-azure-plugin">Install Cloud Custodian and Azure Plugin</a><ul>
@@ -1529,6 +1569,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../azure/configuration/authentication.html#managed-service-identity">Managed Service Identity</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/configuration/authentication.html#azure-key-vault-integration">Azure Key Vault Integration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/configuration/authentication.html#azure-storage-access">Azure Storage access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../azure/configuration/authentication.html#azure-cloud-offerings">Azure Cloud Offerings</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../azure/configuration/monitoring.html">Logging, Metrics and Output</a><ul>
@@ -1604,13 +1645,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/virtualmachineswithpublicip-compute-networking.html">Virtual Machines - Find Virtual Machines with public IP address</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../azure/examples/index.html#databases">Databases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../azure/examples/index.html#storage-and-databases">Storage and Databases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/cosmosdb-collection-on-off-hours-databases.html">Cosmos DB Collections - Resize Throughput with On/Off Hours</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/sqldatabasebackupretention-databases.html">SQL - Find databases with specific retention options</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/sqldatabaseupdateretentionpolicies-databases.html">SQL - Update SQL Database retention policies</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/sqldatabasewithpremiumsku-databases.html">SQL - Find all SQL Databases with Premium SKU</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/storageaddfirewallrulestostorage-databases-networking.html">Storage - Add storage firewall rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/examples/storageblockpublicaccess-networking-databases.html">Storage - Block public access</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../azure/examples/storagecontainerevent-databases.html">Storage - Monitor newly created Containers for public access</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../azure/examples/index.html#identity">Identity</a><ul>
@@ -1683,8 +1725,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#logic-app">logic-app</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#mark-for-op">mark-for-op</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#notify">notify</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#resize-plan">resize-plan</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#set-public-access">set-public-access</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#tag">tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#tag-trim">tag-trim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-actions.html#untag">untag</a></li>
@@ -1692,11 +1732,11 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../azure/resources/azure-common-filters.html">Azure Common Filters</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#active-key-name">active-key-name</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#auto-regenerate-key">auto-regenerate-key</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#azure-ad-administrators">azure-ad-administrators</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#configuration">configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#cost">cost</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#diagnostic-settings">diagnostic-settings</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#effective-route-table">effective-route-table</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#event">event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#firewall-rules">firewall-rules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#instance-view">instance-view</a></li>
@@ -1708,7 +1748,6 @@
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#parent">parent</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#policy-compliant">policy-compliant</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#reduce">reduce</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#regeneration-period">regeneration-period</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#resource-lock">resource-lock</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#storage-diagnostic-settings">storage-diagnostic-settings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/azure-common-filters.html#value">value</a></li>
@@ -1807,9 +1846,9 @@
 <li class="toctree-l4"><a class="reference internal" href="../../azure/resources/container-group.html#actions">Actions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/containerregistry.html">azure.containerregistry</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../azure/resources/containerregistry.html#filters">Filters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../azure/resources/containerregistry.html#actions">Actions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/container-registry.html">azure.container-registry</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../azure/resources/container-registry.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../azure/resources/container-registry.html#actions">Actions</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../azure/resources/containerservice.html">azure.containerservice</a><ul>
@@ -1987,11 +2026,6 @@
 <li class="toctree-l4"><a class="reference internal" href="../../azure/resources/keyvault-key.html#actions">Actions</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="../../azure/resources/keyvault-storage.html">azure.keyvault-storage</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../azure/resources/keyvault-storage.html#filters">Filters</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../azure/resources/keyvault-storage.html#actions">Actions</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../azure/resources/group-storage.html">Storage resources</a><ul>
@@ -2051,7 +2085,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">GCP</span></p>
+<p><span class="caption-text">GCP</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../gcp/gettingstarted.html">Getting Started (Beta)</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../gcp/gettingstarted.html#install-gcp-plugin">Install GCP Plugin</a><ul>
@@ -2116,6 +2150,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-modes.html#pull">pull</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-modes.html#gcp-audit">gcp-audit</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-modes.html#gcp-periodic">gcp-periodic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-modes.html#gcp-scc">gcp-scc</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gcp/resources/gcp-common-actions.html">GCP Common Actions</a><ul>
@@ -2126,10 +2161,12 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html">GCP Common Filters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#effective-firewall">effective-firewall</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#event">event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#offhour">offhour</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#onhour">onhour</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#reduce">reduce</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#scc-findings">scc-findings</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/gcp-common-filters.html#value">value</a></li>
 </ul>
 </li>
@@ -2455,6 +2492,11 @@
 <li class="toctree-l4"><a class="reference internal" href="../../gcp/resources/service-account.html#actions">Actions</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../gcp/resources/service-account-key.html">gcp.service-account-key</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../gcp/resources/service-account-key.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../gcp/resources/service-account-key.html#actions">Actions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../gcp/resources/group-logging.html">logging resources</a><ul>
@@ -2569,7 +2611,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Tools</span></p>
+<p><span class="caption-text">Tools</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../tools/c7n-org.html">c7n-org: Multi Account Custodian Execution</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#installation">Installation</a><ul>
@@ -2577,7 +2619,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#running-a-policy-with-c7n-org">Running a Policy with c7n-org</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#selecting-accounts-and-policy-for-execution">Selecting accounts and policy for execution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#selecting-accounts-regions-policies-for-execution">Selecting accounts, regions, policies for execution</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#defining-and-using-variables">Defining and using variables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#other-commands">Other commands</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/c7n-org.html#additional-azure-instructions">Additional Azure Instructions</a></li>
@@ -2672,7 +2714,7 @@
 </ul>
 </li>
 </ul>
-<p class="caption"><span class="caption-text">Contributing</span></p>
+<p><span class="caption-text">Contributing</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../contribute.html">Contributing to Cloud Custodian</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../contribute.html#developer-install">Developer install</a></li>
@@ -2692,6 +2734,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../developer/installing.html#installing-custodian">Installing Custodian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../developer/installing.html#installing-in-your-own-virtual-environment">Installing in Your Own Virtual Environment</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../developer/tests.html">Testing for Developers</a><ul>
@@ -2792,9 +2835,9 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="aws-ebs">
+  <section id="aws-ebs">
 <span id="id1"></span><h1>aws.ebs<a class="headerlink" href="#aws-ebs" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="filters">
+<section id="filters">
 <h2>Filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
@@ -2815,7 +2858,7 @@
 <li><p><a class="reference internal" href="aws-common-filters.html#aws-common-filters-value"><span class="std std-ref">value</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="fault-tolerant">
+<section id="fault-tolerant">
 <span id="aws-ebs-filters-fault-tolerant"></span><h3>fault-tolerant<a class="headerlink" href="#fault-tolerant" title="Permalink to this headline">¶</a></h3>
 <p>This filter will return any EBS volume that does/does not have a
 snapshot within the last 7 days. ‘Fault-Tolerance’ in this instance
@@ -2842,8 +2885,8 @@ from a snapshot with (reasonable) data loss</p>
 </div>
 </div>
 <p>Permissions - support:RefreshTrustedAdvisorCheck, support:DescribeTrustedAdvisorCheckResult</p>
-</div>
-<div class="section" id="health-event">
+</section>
+<section id="health-event">
 <span id="aws-ebs-filters-health-event"></span><h3>health-event<a class="headerlink" href="#health-event" title="Permalink to this headline">¶</a></h3>
 <p>Check if there are operations health events (phd) related to the resources</p>
 <p><a class="reference external" href="https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/">https://aws.amazon.com/premiumsupport/technology/personal-health-dashboard/</a></p>
@@ -2875,8 +2918,8 @@ from a snapshot with (reasonable) data loss</p>
 </div>
 </div>
 <p>Permissions - health:DescribeEvents, health:DescribeAffectedEntities, health:DescribeEventDetails, config:GetResourceConfigHistory</p>
-</div>
-<div class="section" id="instance">
+</section>
+<section id="instance">
 <span id="aws-ebs-filters-instance"></span><h3>instance<a class="headerlink" href="#instance" title="Permalink to this headline">¶</a></h3>
 <p>Filter volumes based on filtering on their attached instance</p>
 <dl class="field-list simple">
@@ -2972,8 +3015,8 @@ from a snapshot with (reasonable) data loss</p>
 </div>
 </div>
 <p>Permissions - ec2:DescribeInstances, ec2:DescribeTags</p>
-</div>
-<div class="section" id="json-diff">
+</section>
+<section id="json-diff">
 <span id="aws-ebs-filters-json-diff"></span><h3>json-diff<a class="headerlink" href="#json-diff" title="Permalink to this headline">¶</a></h3>
 <p>Compute the diff from the current resource to a previous version.</p>
 <p>A resource matches the filter if a diff exists between the current
@@ -2999,8 +3042,8 @@ against a locked version (requires use of is-locked filter).</p>
 </div>
 </div>
 <p>Permissions - config:GetResourceConfigHistory</p>
-</div>
-<div class="section" id="kms-alias">
+</section>
+<section id="kms-alias">
 <span id="aws-ebs-filters-kms-alias"></span><h3>kms-alias<a class="headerlink" href="#kms-alias" title="Permalink to this headline">¶</a></h3>
 <div class="toggle docutils container">
 <div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
@@ -3082,8 +3125,8 @@ against a locked version (requires use of is-locked filter).</p>
 </div>
 </div>
 <p>Permissions - kms:ListAliases</p>
-</div>
-<div class="section" id="modifyable">
+</section>
+<section id="modifyable">
 <span id="aws-ebs-filters-modifyable"></span><h3>modifyable<a class="headerlink" href="#modifyable" title="Permalink to this headline">¶</a></h3>
 <p>Check if an ebs volume is modifyable online.</p>
 <dl class="simple">
@@ -3112,9 +3155,9 @@ Current Generation Instances (2017-2)
 </div>
 </div>
 <p>Permissions - ec2:DescribeInstances</p>
-</div>
-</div>
-<div class="section" id="actions">
+</section>
+</section>
+<section id="actions">
 <h2>Actions<a class="headerlink" href="#actions" title="Permalink to this headline">¶</a></h2>
 <blockquote>
 <div><ul class="simple">
@@ -3141,7 +3184,7 @@ Current Generation Instances (2017-2)
 <li><p><a class="reference internal" href="aws-common-actions.html#aws-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
 </ul>
 </div></blockquote>
-<div class="section" id="copy-instance-tags">
+<section id="copy-instance-tags">
 <span id="aws-ebs-actions-copy-instance-tags"></span><h3>copy-instance-tags<a class="headerlink" href="#copy-instance-tags" title="Permalink to this headline">¶</a></h3>
 <p>Copy instance tags to its attached volume.</p>
 <p>Useful for cost allocation to ebs volumes and tracking usage
@@ -3183,8 +3226,8 @@ was actually used.</p>
 </div>
 </div>
 <p>Permissions - ec2:DescribeInstances, ec2:DescribeTags, ec2:CreateTags</p>
-</div>
-<div class="section" id="delete">
+</section>
+<section id="delete">
 <span id="aws-ebs-actions-delete"></span><h3>delete<a class="headerlink" href="#delete" title="Permalink to this headline">¶</a></h3>
 <p>Delete an ebs volume.</p>
 <p>If the force boolean is true, we will detach an attached volume
@@ -3217,8 +3260,8 @@ root volumes.</p>
 </div>
 </div>
 <p>Permissions - ec2:DetachVolume, ec2:DeleteVolume, ec2:DescribeVolumes</p>
-</div>
-<div class="section" id="detach">
+</section>
+<section id="detach">
 <span id="aws-ebs-actions-detach"></span><h3>detach<a class="headerlink" href="#detach" title="Permalink to this headline">¶</a></h3>
 <p>Detach an EBS volume from an Instance.</p>
 <p>If ‘Force’ Param is True, then we’ll do a forceful detach
@@ -3251,8 +3294,8 @@ of the Volume. The default value for ‘Force’ is False.</p>
 </div>
 </div>
 <p>Permissions - ec2:DetachVolume</p>
-</div>
-<div class="section" id="encrypt-instance-volumes">
+</section>
+<section id="encrypt-instance-volumes">
 <span id="aws-ebs-actions-encrypt-instance-volumes"></span><h3>encrypt-instance-volumes<a class="headerlink" href="#encrypt-instance-volumes" title="Permalink to this headline">¶</a></h3>
 <p>Encrypt extant volumes attached to an instance</p>
 <ul class="simple">
@@ -3326,8 +3369,8 @@ of the Volume. The default value for ‘Force’ is False.</p>
 </div>
 </div>
 <p>Permissions - ec2:CopySnapshot, ec2:CreateSnapshot, ec2:CreateVolume, ec2:DescribeInstances, ec2:DescribeSnapshots, ec2:DescribeVolumes, ec2:StopInstances, ec2:StartInstances, ec2:ModifyInstanceAttribute, ec2:DeleteTags</p>
-</div>
-<div class="section" id="modify">
+</section>
+<section id="modify">
 <span id="aws-ebs-actions-modify"></span><h3>modify<a class="headerlink" href="#modify" title="Permalink to this headline">¶</a></h3>
 <p>Modify an ebs volume online.</p>
 <p><strong>Note this action requires use of modifyable filter</strong></p>
@@ -3415,8 +3458,8 @@ setting <cite>shrink: true</cite> on the action.</p>
 </div>
 </div>
 <p>Permissions - ec2:ModifyVolumeAttribute</p>
-</div>
-<div class="section" id="snapshot">
+</section>
+<section id="snapshot">
 <span id="aws-ebs-actions-snapshot"></span><h3>snapshot<a class="headerlink" href="#snapshot" title="Permalink to this headline">¶</a></h3>
 <p>Snapshot an EBS volume.</p>
 <p>Tags may be optionally added to the snapshot during creation.</p>
@@ -3468,9 +3511,9 @@ is added.</p></li>
 </div>
 </div>
 <p>Permissions - ec2:CreateSnapshot, ec2:CreateTags</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>

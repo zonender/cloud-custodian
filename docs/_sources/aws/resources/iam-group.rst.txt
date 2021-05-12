@@ -174,6 +174,8 @@ Actions
 
   - :ref:`delete <aws.iam-group.actions.delete>`
 
+  - :ref:`delete-inline-policies <aws.iam-group.actions.delete-inline-policies>`
+
   - :ref:`invoke-lambda <aws.common.actions.invoke-lambda>`
   
   - :ref:`invoke-sfn <aws.common.actions.invoke-sfn>`
@@ -236,4 +238,46 @@ For example, if you want to delete a group named 'test'.
 
 
 Permissions - iam:DeleteGroup, iam:RemoveUserFromGroup
+
+
+.. _aws.iam-group.actions.delete-inline-policies:
+
+delete-inline-policies
+++++++++++++++++++++++
+Delete inline policies embedded in an IAM group.
+
+:example:
+
+  .. code-block:: yaml
+
+    - name: iam-delete-group-policies
+      resource: aws.iam-group
+      filters:
+        - type: value
+          key: GroupName
+          value: test
+      actions:
+        - type: delete-inline-policies
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      type:
+        enum:
+        - delete-inline-policies
+    required:
+    - type
+
+
+
+
+Permissions - iam:ListGroupPolicies, iam:DeleteGroupPolicy
 
