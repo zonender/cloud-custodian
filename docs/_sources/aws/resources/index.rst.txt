@@ -126,6 +126,8 @@ be applies for all resources.
 
    group-kinesisanalytics.rst
 
+   group-kinesisanalyticsv2.rst
+
    group-kinesisvideo.rst
 
    group-kms.rst
