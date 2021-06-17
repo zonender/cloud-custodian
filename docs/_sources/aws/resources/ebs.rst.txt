@@ -804,6 +804,7 @@ setting `shrink: true` on the action.
         enum:
         - io1
         - gp2
+        - gp3
         - st1
         - sc1
     required:
