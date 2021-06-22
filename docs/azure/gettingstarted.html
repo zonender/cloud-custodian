@@ -1544,14 +1544,6 @@
 <p><span class="caption-text">Azure</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Getting Started</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#install-cloud-custodian-and-azure-plugin">Install Cloud Custodian and Azure Plugin</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#install-latest-from-the-repository-to-virtual-python-environment">Install latest from the repository to virtual Python environment</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#linux-and-mac-os">Linux and Mac OS</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#windows-cmd-powershell">Windows (CMD/PowerShell)</a></li>
-</ul>
-</li>
-</ul>
-</li>
 <li class="toctree-l2"><a class="reference internal" href="#write-your-first-policy">Write your first policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#run-your-policy">Run your policy</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#optional-run-your-policy-with-azure-monitoring">(Optional) Run your policy with Azure Monitoring</a></li>
@@ -1827,6 +1819,21 @@
 <li class="toctree-l4"><a class="reference internal" href="resources/image.html#actions">Actions</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="resources/logic-app-workflow.html">azure.logic-app-workflow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/logic-app-workflow.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/logic-app-workflow.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/service-fabric-cluster.html">azure.service-fabric-cluster</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/service-fabric-cluster.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/service-fabric-cluster.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/service-fabric-cluster-managed.html">azure.service-fabric-cluster-managed</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/service-fabric-cluster-managed.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/service-fabric-cluster-managed.html#actions">Actions</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="resources/vm.html">azure.vm</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="resources/vm.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="resources/vm.html#actions">Actions</a></li>
@@ -1889,6 +1896,11 @@
 <li class="toctree-l3"><a class="reference internal" href="resources/cosmosdb-database.html">azure.cosmosdb-database</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="resources/cosmosdb-database.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="resources/cosmosdb-database.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/mysql.html">azure.mysql</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/mysql.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/mysql.html#actions">Actions</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="resources/postgresql-database.html">azure.postgresql-database</a><ul>
@@ -1964,6 +1976,24 @@
 <li class="toctree-l3"><a class="reference internal" href="resources/cdnprofile.html">azure.cdnprofile</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="resources/cdnprofile.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="resources/cdnprofile.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="resources/group-network.html">Network resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="resources/application-gateway.html">azure.application-gateway</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/application-gateway.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/application-gateway.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/front-door.html">azure.front-door</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/front-door.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/front-door.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="resources/traffic-manager-profile.html">azure.traffic-manager-profile</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="resources/traffic-manager-profile.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="resources/traffic-manager-profile.html#actions">Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -2842,43 +2872,6 @@
             
   <section id="getting-started">
 <span id="azure-gettingstarted"></span><h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="#azure-install-cc"><span class="std std-ref">Install Cloud Custodian and Azure Plugin</span></a></p></li>
-<li><p><a class="reference internal" href="#azure-write-policy"><span class="std std-ref">Write your first policy</span></a></p></li>
-</ul>
-<section id="install-cloud-custodian-and-azure-plugin">
-<span id="azure-install-cc"></span><h2>Install Cloud Custodian and Azure Plugin<a class="headerlink" href="#install-cloud-custodian-and-azure-plugin" title="Permalink to this headline">¶</a></h2>
-<p>Cloud Custodian is a Python application and supports Python 2 and 3 on Linux and Windows.
-We recommend using Python 3.6 or higher.</p>
-<p>The Azure provider is an additional package which is installed in addition to c7n.</p>
-<section id="install-latest-from-the-repository-to-virtual-python-environment">
-<h3>Install latest from the repository to virtual Python environment<a class="headerlink" href="#install-latest-from-the-repository-to-virtual-python-environment" title="Permalink to this headline">¶</a></h3>
-<section id="linux-and-mac-os">
-<h4>Linux and Mac OS<a class="headerlink" href="#linux-and-mac-os" title="Permalink to this headline">¶</a></h4>
-<p>To install Cloud Custodian, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv custodian
-$ source custodian/bin/activate
-$ git clone https://github.com/cloud-custodian/cloud-custodian.git
-$ cd cloud-custodian
-$ pip install -e .
-$ pip install -e tools/c7n_azure
-</pre></div>
-</div>
-</section>
-<section id="windows-cmd-powershell">
-<h4>Windows (CMD/PowerShell)<a class="headerlink" href="#windows-cmd-powershell" title="Permalink to this headline">¶</a></h4>
-<p>To install Cloud Custodian, run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv custodian
-$ ./custodian/Scripts/activate
-$ git clone https://github.com/cloud-custodian/cloud-custodian.git
-$ cd cloud-custodian
-$ pip install -e .
-$ pip install -e tools/c7n_azure
-</pre></div>
-</div>
-</section>
-</section>
-</section>
 <section id="write-your-first-policy">
 <span id="azure-write-policy"></span><h2>Write your first policy<a class="headerlink" href="#write-your-first-policy" title="Permalink to this headline">¶</a></h2>
 <p>Cloud Custodian is a stateless rules engine that filters Azure resources and takes actions on based on policies that you define.</p>
