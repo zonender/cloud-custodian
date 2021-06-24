@@ -2931,10 +2931,10 @@ So for a test named <code class="docutils literal notranslate"><span class="pre"
 <p>Here’s an example terraform file for the upcoming example.
 It is placed in <code class="docutils literal notranslate"><span class="pre">tests/terraform/file_example/main.tf</span></code>.</p>
 <blockquote>
-<div><div class="highlight-terraform notranslate"><div class="highlight"><pre><span></span><span class="kr">resource</span> <span class="s">&quot;local_file&quot; &quot;bar&quot;</span> <span class=" -Punctuation">{</span>
-<span class="na">   content</span> <span class="o">=</span> <span class="s2">&quot;bar!&quot;</span>
-<span class="na">   filename</span> <span class="o">=</span> <span class="s2">&quot;${path.module}/bar.txt&quot;</span>
-<span class=" -Punctuation">}</span>
+<div><div class="highlight-terraform notranslate"><div class="highlight"><pre><span></span><span class="kr">resource</span> <span class="nc">&quot;local_file&quot;</span> <span class="nv">&quot;bar&quot;</span> <span class="p">{</span>
+   <span class="na">content</span> <span class="o">=</span> <span class="s2">&quot;bar!&quot;</span>
+   <span class="na">filename</span> <span class="o">=</span> <span class="s2">&quot;${path.module}/bar.txt&quot;</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div></blockquote>
@@ -3097,11 +3097,11 @@ to inspect cloud entities after each test run.</p>
 <p>In this example we create a new SQS and a policy to delete it then assert it is
 deleted. To avoid terraform erroring on teardown <cite>TEARDOWN_IGNORE</cite> is used.</p>
 <blockquote>
-<div><div class="highlight-terraform notranslate"><div class="highlight"><pre><span></span><span class="kr">provider</span> <span class="s">&quot;aws&quot;</span> <span class=" -Punctuation">{}</span>
+<div><div class="highlight-terraform notranslate"><div class="highlight"><pre><span></span>provider &quot;aws&quot; {}
 
-<span class="kr">resource</span> <span class="s">&quot;aws_sqs_queue&quot; &quot;test_sqs&quot;</span> <span class=" -Punctuation">{</span>
-<span class="na">  name</span> <span class="o">=</span> <span class="s2">&quot;delete-me&quot;</span>
-<span class=" -Punctuation">}</span>
+resource &quot;aws_sqs_queue&quot; &quot;test_sqs&quot; {
+  name = &quot;delete-me&quot;
+}
 </pre></div>
 </div>
 </div></blockquote>
