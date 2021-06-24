@@ -186,6 +186,8 @@ be applies for all resources.
 
    group-support.rst
 
+   group-swf.rst
+
    group-waf.rst
 
    group-waf-regional.rst
