@@ -3034,6 +3034,7 @@
 <div><ul class="simple">
 <li><p><a class="reference internal" href="#gcp-sql-instance-actions-delete"><span class="std std-ref">delete</span></a></p></li>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-notify"><span class="std std-ref">notify</span></a></p></li>
+<li><p><a class="reference internal" href="#gcp-sql-instance-actions-start"><span class="std std-ref">start</span></a></p></li>
 <li><p><a class="reference internal" href="#gcp-sql-instance-actions-stop"><span class="std std-ref">stop</span></a></p></li>
 <li><p><a class="reference internal" href="gcp-common-actions.html#gcp-common-actions-webhook"><span class="std std-ref">webhook</span></a></p></li>
 </ul>
@@ -3056,6 +3057,25 @@ an encapsulation of the 80%.</p>
 </div>
 </div>
 <p>Permissions - cloudsql.instances.delete</p>
+</section>
+<section id="start">
+<span id="gcp-sql-instance-actions-start"></span><h3>start<a class="headerlink" href="#start" title="Permalink to this headline">¶</a></h3>
+<p>Invoke an api call on each resource.</p>
+<p>Quite a number of procedural actions are simply invoking an api
+call on a filtered set of resources. The exact handling is mostly
+boilerplate at that point following an 80/20 rule. This class is
+an encapsulation of the 80%.</p>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">start</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
+</pre></div>
+</div>
+</div>
+<p>Permissions - cloudsql.instances.update</p>
 </section>
 <section id="stop">
 <span id="gcp-sql-instance-actions-stop"></span><h3>stop<a class="headerlink" href="#stop" title="Permalink to this headline">¶</a></h3>
