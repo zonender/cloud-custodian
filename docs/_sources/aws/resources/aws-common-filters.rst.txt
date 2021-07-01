@@ -69,6 +69,9 @@ Filters
    - :ref:`usage <AWS.common.filters.usage>`
 
 
+   - :ref:`usage-metric <AWS.common.filters.usage-metric>`
+
+
    - :ref:`value <AWS.common.filters.value>`
 
 
@@ -1879,6 +1882,50 @@ https://aws.amazon.com/blogs/security/automate-analyzing-permissions-using-iam-a
         - usage
     required:
     - match-operator
+
+
+
+.. _AWS.common.filters.usage-metric:
+
+usage-metric
+++++++++++++
+
+Filter service quotas by usage, only compatible with service quotas
+that return a UsageMetric attribute.
+
+Default limit is 80%
+
+.. code-block:: yaml
+
+    policies:
+        - name: service-quota-usage-limit
+          description: |
+              find any services that have usage stats of
+              over 80%
+          resource: aws.service-quota
+          filters:
+            - UsageMetric: present
+            - type: usage-metric
+              limit: 19
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      limit:
+        type: integer
+      type:
+        enum:
+        - usage-metric
+    required:
+    - type
 
 
 

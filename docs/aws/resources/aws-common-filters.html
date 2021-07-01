@@ -327,6 +327,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#subnet">subnet</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tag-count">tag-count</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#usage">usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#usage-metric">usage-metric</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#value">value</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vpc">vpc</a></li>
 </ul>
@@ -1419,6 +1420,19 @@
 <li class="toctree-l3"><a class="reference internal" href="serverless-app.html">aws.serverless-app</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="serverless-app.html#filters">Filters</a></li>
 <li class="toctree-l4"><a class="reference internal" href="serverless-app.html#actions">Actions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="group-service-quotas.html">service-quotas resources</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="service-quota.html">aws.service-quota</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="service-quota.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="service-quota.html#actions">Actions</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="service-quota-request.html">aws.service-quota-request</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="service-quota-request.html#filters">Filters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="service-quota-request.html#actions">Actions</a></li>
 </ul>
 </li>
 </ul>
@@ -2922,6 +2936,7 @@
 <li><p><a class="reference internal" href="#aws-common-filters-subnet"><span class="std std-ref">subnet</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-common-filters-tag-count"><span class="std std-ref">tag-count</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-common-filters-usage"><span class="std std-ref">usage</span></a></p></li>
+<li><p><a class="reference internal" href="#aws-common-filters-usage-metric"><span class="std std-ref">usage-metric</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-common-filters-value"><span class="std std-ref">value</span></a></p></li>
 <li><p><a class="reference internal" href="#aws-common-filters-vpc"><span class="std std-ref">vpc</span></a></p></li>
 </ul>
@@ -4447,6 +4462,36 @@ means all service access records have to match.</p>
     <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usage</span>
 <span class="nt">required</span><span class="p">:</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">match-operator</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="usage-metric">
+<span id="aws-common-filters-usage-metric"></span><h2>usage-metric<a class="headerlink" href="#usage-metric" title="Permalink to this headline">¶</a></h2>
+<p>Filter service quotas by usage, only compatible with service quotas
+that return a UsageMetric attribute.</p>
+<p>Default limit is 80%</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">service-quota-usage-limit</span>
+      <span class="nt">description</span><span class="p">:</span> <span class="p p-Indicator">|</span>
+          <span class="no">find any services that have usage stats of</span>
+          <span class="no">over 80%</span>
+      <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws.service-quota</span>
+      <span class="nt">filters</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="nt">UsageMetric</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">present</span>
+        <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">usage-metric</span>
+          <span class="nt">limit</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">19</span>
+</pre></div>
+</div>
+<div class="toggle docutils container">
+<div class="header docutils container" style=""></div><div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">properties</span><span class="p">:</span>
+  <span class="nt">limit</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">integer</span>
+  <span class="nt">type</span><span class="p">:</span>
+    <span class="nt">enum</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">usage-metric</span>
+<span class="nt">required</span><span class="p">:</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span>
 </pre></div>
 </div>
 </div>

@@ -168,6 +168,8 @@ be applies for all resources.
 
    group-serverlessrepo.rst
 
+   group-service-quotas.rst
+
    group-servicecatalog.rst
 
    group-shield.rst
