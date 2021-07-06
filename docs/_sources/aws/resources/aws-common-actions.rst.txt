@@ -883,7 +883,7 @@ to post-findings, see Getting Started with :ref:`Security Hub <aws-securityhub>`
     properties:
       batch_size:
         default: 1
-        maximum: 10
+        maximum: 100
         minimum: 1
         type: integer
       compliance_status:
