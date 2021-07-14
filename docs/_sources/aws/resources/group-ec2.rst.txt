@@ -22,6 +22,8 @@ ec2 resources
 
    ec2-reserved.rst
 
+   ec2-spot-fleet-request.rst
+
    elastic-ip.rst
 
    eni.rst
