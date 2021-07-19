@@ -12,6 +12,8 @@ ssm resources
 
    ssm-activation.rst
 
+   ssm-data-sync.rst
+
    ssm-document.rst
 
    ssm-managed-instance.rst
