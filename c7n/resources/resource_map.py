@@ -3,6 +3,7 @@
 ResourceMap = {
     "aws.account": "c7n.resources.account.Account",
     "aws.acm-certificate": "c7n.resources.acm.Certificate",
+    "aws.airflow": "c7n.resources.airflow.ApacheAirflow",
     "aws.alarm": "c7n.resources.cw.Alarm",
     "aws.ami": "c7n.resources.ami.AMI",
     "aws.app-elb": "c7n.resources.appelb.AppELB",
