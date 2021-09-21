@@ -9,3 +9,5 @@ workspaces resources
 
 
    workspaces.rst
+
+   workspaces-image.rst

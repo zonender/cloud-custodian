@@ -8,6 +8,8 @@ Security resources
    :titlesonly:
 
 
+   advisor-recommendation.rst
+
    keyvault.rst
 
    keyvault-certificate.rst
