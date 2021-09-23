@@ -92,6 +92,8 @@ Actions
   
   - :ref:`copy-related-tag <aws.common.actions.copy-related-tag>`
   
+  - :ref:`delete <aws.workspaces-image.actions.delete>`
+
   - :ref:`invoke-lambda <aws.common.actions.invoke-lambda>`
   
   - :ref:`invoke-sfn <aws.common.actions.invoke-sfn>`
@@ -113,4 +115,45 @@ Actions
   - :ref:`webhook <aws.common.actions.webhook>`
   
 
+
+
+.. _aws.workspaces-image.actions.delete:
+
+delete
+++++++
+Deletes a Workspace Image
+
+:example:
+
+.. code-block:: yaml
+
+  policies:
+    - name: delete-workspace-img
+      resource: workspaces-image
+      filters:
+        - "tag:DeleteMe": present
+      actions:
+        - delete
+
+.. container:: toggle
+
+  
+
+  .. raw:: html
+     
+    <div class="header docutils container" style=""></div>
+
+  .. code-block:: yaml
+
+    properties:
+      type:
+        enum:
+        - delete
+    required:
+    - type
+
+
+
+
+Permissions - workspaces:DeleteWorkspaceImage
 
