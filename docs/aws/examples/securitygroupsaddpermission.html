@@ -3011,7 +3011,7 @@ User defined rule is added to the filtered results.</p>
         <span class="nt">events</span><span class="p">:</span>
           <span class="p p-Indicator">-</span> <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ec2.amazonaws.com</span>
             <span class="nt">event</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AuthorizeSecurityGroupIngress</span>
-            <span class="nt">ids</span><span class="p">:</span> <span class="s">&quot;requestParameters.groupId&quot;</span>
+            <span class="nt">ids</span><span class="p">:</span> <span class="s">&quot;responseElements.securityGroupRuleSet.items[].groupId&quot;</span>
           <span class="p p-Indicator">-</span> <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ec2.amazonaws.com</span>
             <span class="nt">event</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">RevokeSecurityGroupIngress</span>
             <span class="nt">ids</span><span class="p">:</span> <span class="s">&quot;requestParameters.groupId&quot;</span>
