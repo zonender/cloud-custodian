@@ -120,7 +120,7 @@ Filters for S3 buckets that have bucket-encryption
 
 
 
-Permissions - s3:GetEncryptionConfiguration, kms:DescribeKey
+Permissions - s3:GetEncryptionConfiguration, kms:DescribeKey, kms:ListAliases
 
 
 .. _aws.s3.filters.bucket-logging:
