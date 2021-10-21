@@ -3444,7 +3444,11 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;describe&#39;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">get_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_type</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">source_type</span><span class="p">)(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">source_type</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_mapping</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">source_mapping</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">source_type</span><span class="p">)(</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">source_type</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">sources</span><span class="p">[</span><span class="n">source_type</span><span class="p">](</span><span class="bp">self</span><span class="p">)</span>
+        <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s2">&quot;Invalid Source </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">source_type</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
     <span class="k">def</span> <span class="nf">has_arn</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
