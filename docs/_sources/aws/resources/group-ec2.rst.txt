@@ -40,6 +40,8 @@ ec2 resources
 
    peering-connection.rst
 
+   prefix-list.rst
+
    route-table.rst
 
    security-group.rst
