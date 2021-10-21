@@ -208,12 +208,27 @@ Find users that can create other users
 
     policies:
       - name: super-users
-        resource: iam-user
+        resource: aws.iam-user
         filters:
           - type: check-permissions
             match: allowed
             actions:
              - iam:CreateUser
+
+:example:
+
+Find users with access to all services and actions
+
+.. code-block:: yaml
+
+    policies:
+      - name: admin-users
+        resource: aws.iam-user
+        filters:
+          - type: check-permissions
+            match: allowed
+            actions:
+              - '*:*'
 
 By default permission boundaries are checked.
 

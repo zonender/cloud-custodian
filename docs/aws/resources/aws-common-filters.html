@@ -3130,12 +3130,27 @@
 <p>Find users that can create other users</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">super-users</span>
-    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">iam-user</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws.iam-user</span>
     <span class="nt">filters</span><span class="p">:</span>
       <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">check-permissions</span>
         <span class="nt">match</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">allowed</span>
         <span class="nt">actions</span><span class="p">:</span>
          <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">iam:CreateUser</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">example</dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
+<p>Find users with access to all services and actions</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">policies</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">admin-users</span>
+    <span class="nt">resource</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">aws.iam-user</span>
+    <span class="nt">filters</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">check-permissions</span>
+        <span class="nt">match</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">allowed</span>
+        <span class="nt">actions</span><span class="p">:</span>
+          <span class="p p-Indicator">-</span> <span class="s">&#39;*:*&#39;</span>
 </pre></div>
 </div>
 <p>By default permission boundaries are checked.</p>
