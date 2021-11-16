@@ -3038,7 +3038,8 @@ specific cloud.</p>
 <h3>Windows (CMD/PowerShell)<a class="headerlink" href="#windows-cmd-powershell" title="Permalink to this headline">¶</a></h3>
 <p>To install Cloud Custodian run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">venv</span> <span class="n">custodian</span>
-<span class="o">./</span><span class="n">custodian</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="o">.</span>\<span class="n">custodian</span>\<span class="n">Scripts</span>\<span class="n">Activate</span><span class="o">.</span><span class="n">ps1</span>   <span class="c1"># For Powershell users</span>
+<span class="c1"># .\custodian\Scripts\activate.bat # Or use this for CMD users</span>
 <span class="n">pip</span> <span class="n">install</span> <span class="n">c7n</span>    <span class="c1"># This includes AWS support</span>
 </pre></div>
 </div>
