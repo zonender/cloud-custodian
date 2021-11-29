@@ -98,6 +98,7 @@ for more details.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -190,6 +191,7 @@ A lambda policy using cloudwatch events rules on cloudtrail api logs.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -273,6 +275,7 @@ pushes resource evaluations to config.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       schedule:
         enum:
         - One_Hour
@@ -356,6 +359,7 @@ See `AWS Config <https://aws.amazon.com/config/>`_ for more details.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -442,6 +446,7 @@ for more details.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -520,6 +525,7 @@ by AWS Guard Duty for automated incident response. See `Guard Duty
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -614,6 +620,7 @@ resource specific.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -716,6 +723,7 @@ https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-cloudwatch-
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       subnets:
@@ -791,6 +799,7 @@ Runs Custodian in AWS lambda at user defined cron interval.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       schedule:
         type: string
       security_groups:
@@ -883,6 +892,7 @@ for more details.
         - python3.6
         - python3.7
         - python3.8
+        - python3.9
       security_groups:
         type: array
       statuses:
